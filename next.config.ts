@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com'
+        hostname: 'upload.wikimedia.org'
       }
     ],
     formats: ['image/avif', 'image/webp']

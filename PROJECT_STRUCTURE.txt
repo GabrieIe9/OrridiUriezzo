@@ -1,47 +1,54 @@
-.env.example
-.gitignore
-PROJECT_STRUCTURE.txt
-README.md
-VALIDATION.md
-app/[locale]/layout.tsx
-app/[locale]/marmitte-dei-giganti/page.tsx
-app/[locale]/orridi-uriezzo/page.tsx
-app/[locale]/page.tsx
-app/[locale]/qrcode/page.tsx
-app/api/tts/route.ts
-app/globals.css
-app/layout.tsx
-app/page.tsx
-app/qrcode/page.tsx
-app/robots.ts
-app/sitemap.ts
-components/attraction-page.tsx
-components/audio-guide.tsx
-components/fade-in.tsx
-components/footer.tsx
-components/header.tsx
-components/language-switcher.tsx
-components/qr-code-panel.tsx
-components/restaurant-grid.tsx
-components/service-worker-register.tsx
-data/attractions.ts
-data/restaurants.json
-eslint.config.mjs
-i18n/navigation.ts
-i18n/request.ts
-i18n/routing.ts
-messages/de.json
-messages/en.json
-messages/es.json
-messages/it.json
-next-env.d.ts
-next.config.ts
-package-lock.json
-package.json
-postcss.config.mjs
-proxy.ts
-public/icon.svg
-public/manifest.webmanifest
-public/offline.html
-public/sw.js
-tsconfig.json
+OrridiUriezzo/
+├── app/
+│   ├── [locale]/
+│   │   ├── marmitte-dei-giganti/page.tsx
+│   │   ├── orridi-uriezzo/page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── api/
+│   │   ├── chat/route.ts
+│   │   └── tts/route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── robots.ts
+│   └── sitemap.ts
+├── components/
+│   ├── attraction-page.tsx
+│   ├── audio-guide.tsx
+│   ├── floating-tools.tsx
+│   ├── footer.tsx
+│   ├── header.tsx
+│   ├── language-switcher.tsx
+│   ├── location-map.tsx
+│   ├── nearby-places.tsx
+│   ├── service-worker-register.tsx
+│   ├── share-qr-button.tsx
+│   └── theme-toggle.tsx
+├── data/
+│   ├── attractions.ts
+│   └── nearby-places.json
+├── i18n/
+│   ├── navigation.ts
+│   ├── request.ts
+│   └── routing.ts
+├── lib/site-url.ts
+├── messages/{it,en,es,de}.json
+├── public/
+│   ├── icon.svg
+│   ├── manifest.webmanifest
+│   ├── offline.html
+│   ├── qrcode.png
+│   └── sw.js
+├── .env.example
+├── .gitignore
+├── .npmrc
+├── CHANGES.md
+├── README.md
+├── VALIDATION.md
+├── VERCEL_ENV_SETUP.md
+├── next.config.ts
+├── package.json
+├── package-lock.json
+├── proxy.ts
+└── tsconfig.json

@@ -9,14 +9,17 @@
     "nav": {
       "home": "Home",
       "orridi": "Gorges",
-      "marmitte": "Potholes",
-      "qrcode": "QR code"
+      "marmitte": "Potholes"
     },
     "footer": {
       "description": "An essential guide to reading the glacial landscape of Antigorio Valley, one step at a time.",
       "explore": "Explore",
       "localLinks": "Nearby places",
       "disclaimer": "Always check trail conditions, weather and local information before visiting."
+    },
+    "theme": {
+      "switchToDark": "Enable dark mode",
+      "switchToLight": "Enable light mode"
     }
   },
   "home": {
@@ -36,13 +39,13 @@
         "title": "Uriezzo Gorges",
         "subtitle": "Walk through the fossil bed of subglacial streams, between narrow walls, moss and shafts of light.",
         "location": "Baceno · Premia · Verampio",
-        "alt": "Mountain landscape and rocky gorge, illustrative image"
+        "alt": "Sinuous walls and a narrow passage inside the Uriezzo Gorges"
       },
       "marmitte-dei-giganti": {
         "title": "Giant’s Potholes",
         "subtitle": "See hollows polished by the Toce’s whirlpools, where water and pebbles worked the rock for millennia.",
         "location": "Maiesso · Toce River",
-        "alt": "Alpine river flowing among polished rocks, illustrative image"
+        "alt": "Giant’s Potholes and polished rocks along the Toce River at Maiesso"
       }
     }
   },
@@ -55,55 +58,26 @@
     "stop": "Stop",
     "genericError": "The audio guide could not be loaded. Please try again shortly."
   },
-  "restaurants": {
-    "eyebrow": "After the trail",
-    "title": "Where to eat nearby",
-    "intro": "A data structure ready for verified venues in Baceno, Premia, Verampio and Crodo.",
-    "placeholderWarning": "The venues shown are demonstrative examples. Names, hours, distances and contact details must be verified before publication.",
-    "close": "Close dialog",
-    "demoBadge": "Demo data",
-    "address": "Address",
-    "distance": "Distance",
-    "hours": "Hours",
-    "phone": "Phone",
-    "phoneMissing": "To be added",
-    "openMaps": "Open Google Maps search"
-  },
-  "qrcode": {
-    "meta": {
-      "title": "Printable QR code",
-      "description": "Generate and download the site QR code as PNG or SVG for information panels."
-    },
-    "eyebrow": "For panels and signs",
-    "title": "High-resolution QR code",
-    "intro": "Enter the final Vercel production URL, check the preview and download the best format for printing.",
-    "imageTitle": "QR code for the Gorges and Potholes website",
-    "urlLabel": "Destination URL",
-    "urlHelp": "Use the production address, not a temporary Vercel preview URL.",
-    "downloadPng": "Download PNG",
-    "downloadSvg": "Download SVG",
-    "printTitle": "Printing tip",
-    "printText": "For outdoor panels, prefer SVG, keep clear space around the code and test scanning from several distances before production."
-  },
   "orridi": {
     "meta": {
-      "title": "Uriezzo Gorges",
-      "description": "Guide to the Uriezzo Gorges: glacial geology, access from Premia, Baceno and Verampio, safety and visiting tips."
+      "title": "Uriezzo Gorges: history, geology and visit",
+      "description": "Complete guide to the Uriezzo Gorges in Antigorio Valley: glacial origins, routes, access from Baceno, Premia and Verampio, safety and real photographs."
     },
-    "heroAlt": "Deep alpine gorge between rock walls, illustrative image",
-    "eyebrow": "Antigorio Valley · VCO",
+    "heroAlt": "Sinuous walls and a narrow passage inside the Uriezzo Gorges",
+    "eyebrow": "Antigorio Valley · Piedmont",
     "title": "Uriezzo Gorges",
-    "subtitle": "A canyon without a river, where the glacier left granite corridors, shade and silence.",
-    "introEyebrow": "Inside the landscape",
+    "subtitle": "An ancient network of subglacial streams transformed into a dry canyon that can be explored on foot, among polished granite, moss and shafts of light.",
+    "introEyebrow": "Inside the memory of the ice",
     "intro": [
-      "Entering the gorges means walking where streams once ran beneath the Toce Glacier. Water no longer fills these passages; polished walls, sudden bends and a narrow blade of sky now guide the route.",
-      "Moisture sustains mosses and ferns while light filters down and changes tone across the rock. Sometimes called the “Grand Canyon of Piedmont”, it is a more intimate landscape whose scale is best understood on foot."
+      "Entering the Uriezzo Gorges means walking through a landscape that no longer belongs to the valley’s present drainage system. The passages are now almost dry, yet their walls preserve the shape and force of streams that once flowed beneath and beside the great Toce Glacier. The result is an intimate landscape of narrow corridors, rounded chambers, niches, grooves and sudden blades of light.",
+      "The complex lies in Antigorio Valley between Baceno, Premia and the Verampio area. The South Gorge, locally known as the “Tomb of Uriezzo”, is the most monumental; the North-East Gorge is shorter and narrower; the West Gorge has less straightforward passages and calls for more experience. Vallaccia, the fourth gorge, is difficult to reach and is not suitable for an ordinary visit.",
+      "These gorges are more than a geological curiosity. They reveal the relationship between water, stone and Alpine communities: access routes follow old mule tracks, abandoned terraces and links between hamlets. Silence, humidity and vegetation clinging to the walls turn the walk into a close reading of the natural history of the Ossola Valley."
     ],
     "facts": [
       {
         "icon": "location",
         "label": "Area",
-        "value": "Baceno, Premia and Verampio"
+        "value": "Baceno · Premia · Verampio"
       },
       {
         "icon": "route",
@@ -112,163 +86,280 @@
       },
       {
         "icon": "difficulty",
-        "label": "Difficulty",
-        "value": "Easy hike, damp surface"
+        "label": "Route",
+        "value": "Hiking trail, often damp underfoot"
       },
       {
         "icon": "time",
-        "label": "Best season",
-        "value": "Spring and autumn"
+        "label": "Typical time",
+        "value": "35 min; 1 h 10 with Maiesso"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "How to get there",
-        "body": "The main access points are Premia, Baceno and Verampio. Premia is often the most convenient. From Baceno, park near the Church of San Gaudenzio and follow the signs and yellow arrows on foot. Always rely on current on-site signage as well, since mobile coverage can be uneven."
+        "title": "Getting there and finding your way",
+        "body": [
+          "The most direct and usually recommended access is from the Premia side. The road toward Crego and Uriezzo leads to the Oratory of Santa Lucia; from there continue on foot, following hiking signs and yellow arrows. The North-East Gorge comes first, while the South Gorge is reached by continuing downhill along the unpaved track to the marked entrance.",
+          "From Baceno, the route begins near the monumental church of San Gaudenzio. A mule track, partly paved and partly cut into the rock, descends toward Verampio. At the signed junction, take the path crossing terraced woodland and reaching the service track beside the South Gorge. It is a scenic approach, but adds elevation change and time compared with Premia.",
+          "From the Verampio valley floor, one route starts near Trattoria della Campagna and follows the track across the Devero stream, beside the Toce and toward Maiesso Bridge. Here you can see the Giant’s Potholes before continuing to the South Gorge. Times vary with access point, stops and conditions, so keep a sensible margin."
+        ]
       },
       "geology": {
-        "title": "History and geology",
-        "body": "During the last glaciation, which ended roughly 12,000 years ago, subglacial streams flowed beneath the Toce Glacier. Water, pressure and abrasive debris cut into the granite. When the ice retreated, the streams dried up and left fossil gorges that can now be walked through."
+        "title": "Glacial history and the making of the gorges",
+        "body": [
+          "During the last major glaciation, which ended roughly twelve thousand years ago, Antigorio Valley was occupied by the Toce Glacier. Meltwater under and along the ice flowed under strong pressure, carrying sand, gravel and pebbles that could cut the granite like a natural file.",
+          "The water did not carve a straight channel. Whirlpools, drops and changes in direction enlarged existing fractures, producing rounded chambers, winding passages and undulating walls. Niches that now look hand-carved resulted from prolonged erosion: every grain carried by the current helped polish, widen and deepen the route.",
+          "As the climate warmed, the glacier retreated and the drainage system changed. Streams abandoned these incisions, leaving fossil gorges without the water that had created them. This exceptional condition makes it possible to walk inside and inspect shapes that would be hidden beneath the current in an active gorge."
+        ]
       },
       "visit": {
-        "title": "Visiting advice",
-        "body": "Wear footwear with good grip: the floor may be wet and some sections include metal ladders. Avoid flip-flops and winter visits, when falling ice can be hazardous. Spring and autumn are generally preferable; wild cherry trees may flower from late March into April."
+        "title": "Environment, seasons and safety",
+        "body": [
+          "The gorges have a microclimate distinct from the surrounding woodland. Light enters mainly from above, humidity remains high, and mosses and ferns thrive on the shaded walls. After rain the colours intensify, but the floor and metal steps can become slippery.",
+          "Spring and autumn are generally the most pleasant seasons. From late March into May the landscape reopens after winter and wild cherry trees may flower nearby; autumn brings warm woodland colours against grey granite. Winter visits are discouraged because of ice and the risk of falling fragments.",
+          "Wear hiking shoes with reliable grip, carry a warm layer even in summer and supervise children on narrow or equipped sections. Do not enter during thunderstorms, heavy rain, ice or local closures. The West Gorge and Vallaccia should not be treated as a casual tourist stroll: assess experience, conditions and signs on site."
+        ]
       }
     },
     "highlights": {
-      "eyebrow": "Three main routes",
-      "title": "Each gorge has a different character",
+      "eyebrow": "Four cuts, four characters",
+      "title": "Reading the gorge system",
       "items": [
-        "South Gorge, locally called “Tomba d’Uriezzo”: the most dramatic, about 200 metres long and up to 20–30 metres deep.",
-        "North-East Gorge: about 100 metres long, narrower and more enclosed, with walls around 10 metres high.",
-        "West Gorge: less monumental and better suited to experienced hikers; a rope assists some passages.",
-        "Vallaccia: a fourth, difficult-to-reach gorge not recommended for an ordinary tourist visit."
+        "South Gorge, or “Tomb of Uriezzo”: the most dramatic section, about 200 metres long and up to 20–30 metres deep.",
+        "North-East Gorge: about 100 metres, narrow and enclosed, with walls that reveal the polishing process at close range.",
+        "West Gorge: less monumental but more demanding; some passages require care and are assisted by a rope.",
+        "Vallaccia: the fourth gorge, difficult to access and not recommended for visitors without suitable experience."
       ]
     },
     "gallery": {
-      "eyebrow": "Illustrative images",
-      "title": "Rock, shade and vegetation",
-      "intro": "These are alpine-themed placeholders. Replace them with authorised photographs of the site before publication.",
+      "eyebrow": "Photographs of the site",
+      "title": "Granite, shade and vegetation",
+      "intro": "These photographs show the actual Uriezzo Gorges. Each image links to its attribution page; recent visitor contributions can also be viewed on Google Maps.",
+      "sourceLabel": "Source and licence",
+      "mapsPhotos": "See more photos on Google Maps",
       "items": [
         {
-          "alt": "Rock walls in an alpine gorge",
-          "caption": "Rock corridors shaped by water."
+          "alt": "Rocky entrance to the Uriezzo Gorges",
+          "caption": "Approaching the incisions in the granite."
         },
         {
-          "alt": "Green, damp woodland",
-          "caption": "Mosses and ferns thrive in the shade."
+          "alt": "Polished walls inside an Uriezzo gorge",
+          "caption": "Undulating surfaces shaped by subglacial streams."
         },
         {
-          "alt": "Alpine lake and mountains",
-          "caption": "The valley’s glacial landscape."
+          "alt": "Path between the walls of the Uriezzo Gorges",
+          "caption": "The trail follows the fossil bed of the ancient stream."
         },
         {
-          "alt": "River between mountains and woodland",
-          "caption": "Water continues to shape the land."
+          "alt": "Vegetation and rock at the Uriezzo Gorges",
+          "caption": "Mosses and ferns thrive in the humid passage."
         },
         {
-          "alt": "Panoramic mountain trail",
-          "caption": "Access routes and links are walked."
+          "alt": "Narrow passage in an Uriezzo gorge",
+          "caption": "Vertical light reveals niches and grooves."
         },
         {
-          "alt": "Hiker in an alpine environment",
-          "caption": "Suitable footwear and a careful pace."
+          "alt": "Sinuous canyon in the Uriezzo Gorges",
+          "caption": "Curves in the rock preserve the motion of whirlpools."
         }
       ]
     },
-    "narration": "The Uriezzo Gorges lie in Antigorio Valley near Baceno, Premia and Verampio. They were carved into granite by streams flowing beneath the Toce Glacier during the last glaciation, which ended about twelve thousand years ago. When the ice retreated, the streams dried up and left a fossil canyon that can now be explored on foot. The South Gorge, locally known as Tomba d’Uriezzo, is the most spectacular. It is about two hundred metres long and between twenty and thirty metres deep. The North-East Gorge is shorter and narrower, while the West Gorge requires more experience. Spring and autumn are the best seasons. Shoes with good grip are essential because the floor can be damp and some sections include metal ladders. Winter visits are discouraged because of the risk of falling ice."
+    "narration": "The Uriezzo Gorges are fossil canyons in Antigorio Valley, created by meltwater flowing beneath the Toce Glacier during the last glaciation. Sand, gravel and pebbles carried at high energy cut winding corridors, chambers and polished walls into the granite. When the glacier retreated around twelve thousand years ago, the streams changed course and left the gorges dry enough to explore. The South Gorge, known as the Tomb of Uriezzo, is the most spectacular; the North-East Gorge is shorter and narrower, while the West Gorge requires greater experience. Main access points are Premia, Baceno and Verampio. Good footwear and caution are essential because the floor may be damp, metal steps are present and winter ice makes visits inadvisable.",
+    "map": {
+      "eyebrow": "Google map and key places",
+      "title": "Where the gorges are located",
+      "intro": "The map is centred on the Uriezzo Gorges complex. The cards link the main access points and landmarks to Google Maps, where you can check driving directions, recent photographs and local information.",
+      "iframeTitle": "Google map of the Uriezzo Gorges",
+      "openMap": "Open map",
+      "openPhotos": "Photos on Google Maps",
+      "photoSource": "Image source",
+      "points": {
+        "orrido-sud": {
+          "title": "South Gorge · Tomba d’Uriezzo",
+          "description": "The most dramatic gorge in the complex, about 200 metres long and up to 20–30 metres deep.",
+          "alt": "Vertical view of the rock walls inside the South Gorge of Uriezzo"
+        },
+        "santa-lucia": {
+          "title": "Premia access · Santa Lucia",
+          "description": "The most direct and generally recommended access: park near the oratory and continue on foot following the yellow arrows.",
+          "alt": "Landscape and trail in the Uriezzo Gorges area"
+        },
+        "baceno-access": {
+          "title": "Baceno access · San Gaudenzio",
+          "description": "A mule track descends from the monumental church toward Verampio and joins the trail leading to the South Gorge.",
+          "alt": "Rock passage along the Uriezzo Gorges route"
+        }
+      }
+    }
   },
   "marmitte": {
     "meta": {
-      "title": "Giant’s Potholes at Maiesso",
-      "description": "Guide to the Giant’s Potholes on the Toce: glacial formation, link to the gorges, access and visitor advice."
+      "title": "Giant’s Potholes at Maiesso: history and visit",
+      "description": "Complete guide to the Giant’s Potholes on the Toce at Maiesso: glacial origin, vortex erosion, connection with the gorges and safety advice."
     },
-    "heroAlt": "Alpine water among large polished rocks, illustrative image",
+    "heroAlt": "Giant’s Potholes and polished rocks along the Toce River at Maiesso",
     "eyebrow": "Maiesso · Toce River",
     "title": "Giant’s Potholes",
-    "subtitle": "Ancient whirlpools, pebbles and meltwater transformed granite into almost perfect forms.",
-    "introEyebrow": "The force of the river",
+    "subtitle": "Large circular hollows in granite, carved by meltwater, whirlpools and sediment carried by the Toce.",
+    "introEyebrow": "When the river becomes a sculptor",
     "intro": [
-      "At Maiesso, the Toce reveals the slow, powerful work of water. Hemispherical and cylindrical hollows appear in the rock, polished like enormous natural vessels: the Giant’s Potholes.",
-      "Their name suggests legends, but their origin is geological. Swirling currents loaded with sand and pebbles rotated in the same places, wearing down granite over millennia and leaving surfaces that look hand carved."
+      "At Maiesso the Toce crosses compact rock in which water has opened bowls, cylinders and rounded hollows. These are the Giant’s Potholes: striking forms that resemble deliberately carved vessels but are the result of natural processes lasting thousands of years.",
+      "Their name belongs to Alpine folklore, where cavities of this scale were attributed to giants. The geological explanation is just as compelling: turbulent water, sand and pebbles rotated in persistent eddies, turning sediment into abrasive tools and progressively deepening the granite.",
+      "The potholes are a natural continuation of a visit to the Uriezzo Gorges. Leaving the South Gorge and walking toward Maiesso Bridge takes you from a dry fossil canyon to an active river environment. Within a short walk, two different chapters of the same glacial story become visible."
     ],
     "facts": [
       {
         "icon": "location",
         "label": "Location",
-        "value": "Maiesso, beside the Toce"
+        "value": "Maiesso, along the Toce"
       },
       {
         "icon": "route",
         "label": "Connection",
-        "value": "Maiesso Bridge and South Gorge"
+        "value": "Maiesso Bridge · South Gorge"
       },
       {
         "icon": "difficulty",
-        "label": "Difficulty",
-        "value": "Easy trail, slippery rocks"
+        "label": "Caution",
+        "value": "Wet rock and active current"
       },
       {
         "icon": "time",
-        "label": "From Baceno",
-        "value": "about 1 h 10 min return with gorges"
+        "label": "From Santa Lucia",
+        "value": "about 1 h 10 return with gorges"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "How to get there",
-        "body": "The potholes lie at Maiesso beside the Toce. From the gorges trail, continue beyond the South Gorge towards Maiesso Bridge to combine both sites. From Baceno, the full return route takes roughly one hour and ten minutes, although stops and walking pace can add time."
+        "title": "Getting there and combining both visits",
+        "body": [
+          "The best-known viewpoint is near Maiesso Bridge on the Toce. From the Oratory of Santa Lucia and the gorge accesses, follow the route to the South Gorge; after crossing it, continue downhill to the bridge. This links the fossil canyon and the active river forms in a single walk.",
+          "From Baceno, descend on the mule track near San Gaudenzio church and continue toward Verampio and Maiesso. From the Verampio valley floor, the track follows the Devero stream and the Toce to the bridge, clearly showing the relationship between present waterways and the landscape shaped by ice.",
+          "The typical return time from Santa Lucia is about one hour and ten minutes when two gorges and Maiesso are included, without long stops. Allow more time for photographs, observation and crowds, and always check signs for diversions or restrictions."
+        ]
       },
       "geology": {
-        "title": "History and geology",
-        "body": "Glacial meltwater once flowed with great energy. Sand and pebbles caught in whirlpools acted as abrasive tools, rotating and cutting progressively deeper hollows. The rounded shapes preserve evidence of river dynamics and the valley’s glacial past."
+        "title": "Water, whirlpools and glacial memory",
+        "body": [
+          "The potholes developed especially when glacial meltwater supplied very high flows. Water accelerated through constrained granite channels and formed eddies. Where the current began to rotate, sand and pebbles became trapped and repeatedly followed circular paths.",
+          "Erosion depended not only on the force of water but also on the rock fragments it carried. Pebbles struck and polished the bottom, while finer grains wore down the walls. Over time, a small irregularity grew into a deep, often cylindrical hollow, with smooth surfaces and grooves recording the current’s movement.",
+          "Maiesso reveals the difference between the broad work of the glacier, which enlarged and organised the valley, and the finer work of meltwater, which carved details little by little. Nearby, the Crego hydroelectric station, designed by Piero Portaluppi between 1917 and 1926, adds a modern chapter: people began to harness the same water energy that had shaped the rock."
+        ]
       },
       "visit": {
-        "title": "Visiting advice",
-        "body": "Stay on safe passages and keep away from wet rocks and the river edge. Polished granite can be extremely slippery and the Toce’s flow may change. Wear hiking shoes, supervise children and turn back during high water, storms or any locally announced closure."
+        "title": "Observation and safety beside the Toce",
+        "body": [
+          "The potholes are viewed in an active river setting. Even when the water appears calm, flow can change and polished granite becomes extremely slippery. Stay on safe paths and viewpoints; do not step onto wet rocks or enter the hollows.",
+          "Wear shoes with a gripping sole, keep children close and do not cross barriers or signs. After heavy rain, thunderstorms or rapid snowmelt the Toce can rise; in such conditions, turn back or remain only at officially accessible viewpoints.",
+          "Low-angle light makes the depth of hollows and tones of granite easier to read. Do not focus solely on photographs, however: irregular ground requires constant attention. A slow visit reveals smooth surfaces, grooves, trapped pebbles and the relationship between bridge, river and the exit of the South Gorge."
+        ]
       }
     },
     "highlights": {
-      "eyebrow": "Reading the forms",
-      "title": "What to notice on site",
+      "eyebrow": "Reading the rock",
+      "title": "What to observe at Maiesso",
       "items": [
-        "Rounded hollows, some hemispherical and others more cylindrical, cut by sediment-filled whirlpools.",
-        "Smooth, grooved granite surfaces showing repeated abrasion by sand and pebbles.",
-        "The relationship between the potholes, Maiesso Bridge and the exit of the South Gorge along one route.",
-        "The nearby Crego hydroelectric station, designed by Piero Portaluppi between 1917 and 1926, as an optional industrial-history detail."
+        "Hemispherical and cylindrical hollows formed where eddies kept sand and pebbles rotating.",
+        "Polished surfaces and granite grooves recording the direction and intensity of abrasion.",
+        "Maiesso Bridge, the visual and walking link between the Toce, the potholes and the South Gorge exit.",
+        "The Crego power station, evidence of how Alpine water energy was converted into electricity in the twentieth century."
       ]
     },
     "gallery": {
-      "eyebrow": "Illustrative images",
-      "title": "Water, granite and woodland",
-      "intro": "These river and alpine images are placeholders. Replace them with authorised photographs from Maiesso.",
+      "eyebrow": "Photographs of the site",
+      "title": "Water and granite at Maiesso",
+      "intro": "These photographs show the actual Giant’s Potholes along the Toce. Each image links to its attribution page; Google Maps also provides recent visitor contributions.",
+      "sourceLabel": "Source and licence",
+      "mapsPhotos": "See more photos on Google Maps",
       "items": [
         {
-          "alt": "Alpine river among rocks",
-          "caption": "The current crosses polished granite."
+          "alt": "Giant’s Potholes in granite beside the Toce",
+          "caption": "Circular hollows emerge beside the current."
         },
         {
-          "alt": "Water and mountains in an alpine valley",
-          "caption": "The Toce links water, ice and landscape."
+          "alt": "Toce water among polished rocks at Maiesso",
+          "caption": "The river continues to shape and polish the surfaces."
         },
         {
-          "alt": "Alpine lake between mountains",
-          "caption": "The valley’s forms arise from its glacial past."
+          "alt": "Detail of the Giant’s Potholes",
+          "caption": "Rounded forms produced by rotating sediment."
         },
         {
-          "alt": "Dense woodland near a watercourse",
-          "caption": "The trail passes through a damp environment."
+          "alt": "Bridge and rocks near the Giant’s Potholes",
+          "caption": "Maiesso connects the river route with the gorges."
         },
         {
-          "alt": "Green vegetation growing on rocks",
-          "caption": "Life settles even on the hardest surfaces."
+          "alt": "Deep hollows in the rocks of the Toce",
+          "caption": "Each depression preserves the trace of ancient eddies."
         },
         {
-          "alt": "Natural rock formations",
-          "caption": "Observe details without leaving the route."
+          "alt": "River landscape at the Giant’s Potholes",
+          "caption": "Granite, water and woodland form a single geosite."
         }
       ]
     },
-    "narration": "The Giant’s Potholes are at Maiesso beside the Toce River and are connected to the Uriezzo Gorges by the same trail. Continuing beyond the South Gorge leads to Maiesso Bridge and then to the potholes. These hemispherical or cylindrical forms were cut into the rock by powerful glacial meltwater. Sand and pebbles carried by the current became trapped in whirlpools and acted as abrasive tools, wearing away the granite over thousands of years. From Baceno, a return route including both the gorges and the potholes takes roughly one hour and ten minutes without long stops. Wet rock can be extremely slippery and the Toce’s flow can vary. Stay on safe passages, wear suitable shoes and do not visit during high water or storms. Nearby stands the Crego hydroelectric station, designed by Piero Portaluppi between 1917 and 1926."
+    "narration": "The Giant’s Potholes lie at Maiesso along the Toce River and share a trail with the Uriezzo Gorges. These rounded and cylindrical hollows were carved into granite by glacial meltwater. Sand and pebbles trapped in eddies rotated like abrasive tools, polishing and deepening the rock for thousands of years. From Maiesso Bridge you can see the relationship between the present river and the exit of the South Gorge. Wet granite is very slippery and the Toce can change quickly, so remain at safe viewpoints, supervise children and turn back during floods or thunderstorms. Nearby stands the Crego hydroelectric station, designed by Piero Portaluppi between 1917 and 1926.",
+    "map": {
+      "eyebrow": "Google map and key places",
+      "title": "Maiesso, the bridge and the Toce",
+      "intro": "The map shows the Giants’ Potholes area along the Toce. The cards open the rock formations, Maiesso Bridge and the nearby Crego power station in Google Maps.",
+      "iframeTitle": "Google map of the Giants’ Potholes at Maiesso",
+      "openMap": "Open map",
+      "openPhotos": "Photos on Google Maps",
+      "photoSource": "Image source",
+      "points": {
+        "marmitte": {
+          "title": "Giants’ Potholes",
+          "description": "Hemispherical and cylindrical cavities shaped by abrasive glacial water, sand and pebbles.",
+          "alt": "Giants’ Potholes and pools in the rocky bed of the Toce"
+        },
+        "maiesso-bridge": {
+          "title": "Maiesso Bridge",
+          "description": "The viewpoint linking the trail from the South Gorge with the Giants’ Potholes area.",
+          "alt": "Smoothed rocks and water near Maiesso Bridge"
+        },
+        "crego": {
+          "title": "Crego hydroelectric power station",
+          "description": "A nearby industrial-history landmark designed by Piero Portaluppi in the early twentieth century.",
+          "alt": "The Crego hydroelectric power station building"
+        }
+      }
+    }
+  },
+  "assistant": {
+    "title": "Trail assistant",
+    "subtitle": "Only answers about the gorges and potholes",
+    "open": "Open AI assistant",
+    "close": "Close AI assistant",
+    "welcome": "Hello. I can help with routes, geology, safety and visits to the Uriezzo Gorges and the Giants’ Potholes.",
+    "placeholder": "Ask a question...",
+    "send": "Send message",
+    "sending": "Preparing the answer...",
+    "error": "Something went wrong. Please try again.",
+    "scopeNote": "The assistant only answers about the Uriezzo Gorges and the Giants’ Potholes.",
+    "backToTop": "Back to top",
+    "youLabel": "You",
+    "assistantLabel": "Assistant"
+  },
+  "share": {
+    "button": "Share this site",
+    "title": "Share the Gorges and Potholes",
+    "description": "Scan the QR code with your phone camera or share the website link directly.",
+    "close": "Close sharing window",
+    "nativeShare": "Share",
+    "copy": "Copy link",
+    "copied": "Link copied",
+    "qrAlt": "QR code to open the Uriezzo Gorges and Giant’s Potholes website"
+  },
+  "nearby": {
+    "eyebrow": "Nearby services",
+    "title": "Places to eat and motorhome stops",
+    "intro": "Open the Google Maps results to check locations, reviews, hours and current availability before setting out.",
+    "restaurants": "Restaurants and pizzerias",
+    "camperAreas": "Motorhome stops and parking",
+    "openMaps": "Open in Google Maps",
+    "liveNote": "Hours, seasonal opening, accessibility and availability may change. Always check the selected place on Google Maps.",
+    "restaurantsMapTitle": "Restaurants and pizzerias on the map",
+    "camperMapTitle": "Motorhome stops and parking on the map"
   }
 }

@@ -1,5 +1,5 @@
-const CACHE_NAME = 'ossola-guide-v1';
-const CORE_ROUTES = ['/it', '/en', '/es', '/de', '/offline.html', '/icon.svg'];
+const CACHE_NAME = 'ossola-guide-v3';
+const CORE_ROUTES = ['/it', '/en', '/es', '/de', '/offline.html', '/icon.svg', '/qrcode.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ROUTES)));

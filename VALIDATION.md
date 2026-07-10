@@ -1,25 +1,27 @@
 # Validation report
 
-Validated on 2026-07-10.
+Validated on the complete project after the mobile, Gemini chat and theme updates.
 
-## Commands executed
+## Automated checks
 
-```bash
-npm install
-npm run lint
-npm run build
-npm audit
-```
+- `npm run lint`: passed.
+- `npm run build`: passed.
+- TypeScript production type-check: passed.
+- Static generation: 22 pages generated.
+- Dynamic routes detected: `/api/chat` and `/api/tts`.
+- `package-lock.json`: public npm registry only.
 
-## Result
+## Implemented checks
 
-- ESLint: 0 errors, 0 warnings.
-- TypeScript: passed during `next build`.
-- Production build: passed.
-- Static output: 4 home pages, 8 attraction pages, 4 QR pages, sitemap and robots.
-- Serverless output: `/api/tts`.
-- Dependency audit: 0 known vulnerabilities.
-- HTTP smoke test: `/it`, `/en/orridi-uriezzo`, `/de/marmitte-dei-giganti`, `/it/qrcode` and `/sitemap.xml` returned HTTP 200.
-- TTS without `ELEVENLABS_API_KEY`: returned the expected HTTP 503 configuration error.
+- Gemini key is read only from `GEMINI_API_KEY` server-side.
+- Out-of-scope questions are rejected before calling Gemini.
+- Gemini receives a fixed system instruction limiting answers to the two attractions.
+- Chat input length, conversation history, request timeout and rate limit are bounded.
+- Theme preference is stored in `localStorage` and initialized before page paint.
+- Floating controls include accessible labels and mobile safe-area positioning.
+- Service-worker cache version incremented to `ossola-guide-v2`.
 
-The ElevenLabs call itself was not executed because no API key was provided. The endpoint and request body follow the official streaming Text-to-Speech API schema.
+## Not executed
+
+- A live Gemini request was not executed because no `GEMINI_API_KEY` was available in the validation environment.
+- A live ElevenLabs request was not executed because no `ELEVENLABS_API_KEY` was available.

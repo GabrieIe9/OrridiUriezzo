@@ -27,7 +27,6 @@ export async function Footer() {
           <div className="footer-links">
             <Link href="/orridi-uriezzo">{t('nav.orridi')}</Link>
             <Link href="/marmitte-dei-giganti">{t('nav.marmitte')}</Link>
-            <Link href="/qrcode">{t('nav.qrcode')}</Link>
           </div>
         </div>
 
@@ -44,6 +43,7 @@ export async function Footer() {
       </div>
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} {t('brand')}</span>
+        <span className="developer-credit">Developer by Gabriele</span>
         <span>{t('footer.disclaimer')}</span>
       </div>
     </footer>
