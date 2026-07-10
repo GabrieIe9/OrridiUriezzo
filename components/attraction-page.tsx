@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import {Camera, Clock3, ExternalLink, Footprints, MapPin, Mountain, Route, ShieldCheck} from 'lucide-react';
+import {Clock3, ExternalLink, Footprints, MapPin, Mountain, Route, ShieldCheck} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {attractionVisuals, type AttractionSlug} from '@/data/attractions';
 import {AudioGuide} from './audio-guide';
 import {FadeIn} from './fade-in';
-import {NearbyPlaces} from './nearby-places';
+import {RestaurantGrid} from './restaurant-grid';
 
 type Fact = {
   icon: 'route' | 'time' | 'difficulty' | 'location';
@@ -19,14 +19,6 @@ const factIcons = {
   location: MapPin
 };
 
-function Paragraphs({items}: {items: string[]}) {
-  return (
-    <div className="content-copy">
-      {items.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
-    </div>
-  );
-}
-
 export async function AttractionPage({slug}: {slug: AttractionSlug}) {
   const namespace = slug === 'orridi-uriezzo' ? 'orridi' : 'marmitte';
   const t = await getTranslations(namespace);
@@ -35,9 +27,6 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
   const intro = t.raw('intro') as string[];
   const facts = t.raw('facts') as Fact[];
   const highlights = t.raw('highlights.items') as string[];
-  const arrival = t.raw('sections.arrival.body') as string[];
-  const geology = t.raw('sections.geology.body') as string[];
-  const visit = t.raw('sections.visit.body') as string[];
 
   return (
     <main>
@@ -93,17 +82,17 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
           <FadeIn className="content-card">
             <span className="content-icon"><MapPin size={22} aria-hidden="true" /></span>
             <h2>{t('sections.arrival.title')}</h2>
-            <Paragraphs items={arrival} />
+            <p>{t('sections.arrival.body')}</p>
           </FadeIn>
           <FadeIn className="content-card" delay={70}>
             <span className="content-icon"><Mountain size={22} aria-hidden="true" /></span>
             <h2>{t('sections.geology.title')}</h2>
-            <Paragraphs items={geology} />
+            <p>{t('sections.geology.body')}</p>
           </FadeIn>
           <FadeIn className="content-card" delay={140}>
             <span className="content-icon"><ShieldCheck size={22} aria-hidden="true" /></span>
             <h2>{t('sections.visit.title')}</h2>
-            <Paragraphs items={visit} />
+            <p>{t('sections.visit.body')}</p>
           </FadeIn>
         </div>
       </section>
@@ -126,13 +115,10 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
 
       <section className="section gallery-section" aria-labelledby={`${slug}-gallery-title`}>
         <div className="shell">
-          <div className="section-heading gallery-heading">
+          <div className="section-heading">
             <span className="eyebrow">{t('gallery.eyebrow')}</span>
             <h2 id={`${slug}-gallery-title`}>{t('gallery.title')}</h2>
             <p>{t('gallery.intro')}</p>
-            <a className="button button-secondary gallery-maps-link" href={visuals.mapsPhotosUrl} target="_blank" rel="noreferrer">
-              <Camera size={18} aria-hidden="true" /> {t('gallery.mapsPhotos')} <ExternalLink size={15} aria-hidden="true" />
-            </a>
           </div>
           <div className="gallery-grid">
             {visuals.gallery.map((image, index) => (
@@ -144,12 +130,7 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
                     fill
                     sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
                   />
-                  <figcaption>
-                    <span>{t(image.captionKey)}</span>
-                    <a href={image.sourceUrl} target="_blank" rel="noreferrer">
-                      {t('gallery.sourceLabel')} <ExternalLink size={12} aria-hidden="true" />
-                    </a>
-                  </figcaption>
+                  <figcaption>{t(image.captionKey)}</figcaption>
                 </figure>
               </FadeIn>
             ))}
@@ -157,7 +138,7 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
         </div>
       </section>
 
-      <NearbyPlaces />
+      <RestaurantGrid slug={slug} />
     </main>
   );
 }

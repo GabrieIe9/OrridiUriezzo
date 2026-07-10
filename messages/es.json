@@ -9,17 +9,14 @@
     "nav": {
       "home": "Inicio",
       "orridi": "Gargantas",
-      "marmitte": "Marmitas"
+      "marmitte": "Marmitas",
+      "qrcode": "Código QR"
     },
     "footer": {
       "description": "Una guía esencial para interpretar el paisaje glaciar del Valle Antigorio, paso a paso.",
       "explore": "Explorar",
       "localLinks": "Lugares cercanos",
       "disclaimer": "Comprueba siempre el estado del sendero, el tiempo y la información local antes de la visita."
-    },
-    "theme": {
-      "switchToDark": "Activar modo oscuro",
-      "switchToLight": "Activar modo claro"
     }
   },
   "home": {
@@ -39,13 +36,13 @@
         "title": "Gargantas de Uriezzo",
         "subtitle": "Camina por el antiguo lecho de torrentes subglaciares, entre pasos estrechos, musgo y luz vertical.",
         "location": "Baceno · Premia · Verampio",
-        "alt": "Paredes sinuosas y paso estrecho en las Gargantas de Uriezzo"
+        "alt": "Paisaje de montaña y garganta rocosa, imagen ilustrativa"
       },
       "marmitte-dei-giganti": {
         "title": "Marmitas de los Gigantes",
         "subtitle": "Observa las cavidades pulidas por los remolinos del Toce, donde el agua y los guijarros trabajaron la roca durante milenios.",
         "location": "Maiesso · Río Toce",
-        "alt": "Marmitas de los Gigantes y rocas pulidas junto al Toce en Maiesso"
+        "alt": "Río alpino entre rocas pulidas, imagen ilustrativa"
       }
     }
   },
@@ -58,26 +55,55 @@
     "stop": "Detener",
     "genericError": "No se ha podido cargar la audioguía. Inténtalo de nuevo en unos instantes."
   },
+  "restaurants": {
+    "eyebrow": "Después del sendero",
+    "title": "Dónde comer cerca",
+    "intro": "Una estructura de datos preparada para incluir locales verificados de Baceno, Premia, Verampio y Crodo.",
+    "placeholderWarning": "Los establecimientos mostrados son ejemplos. Los nombres, horarios, distancias y datos de contacto deben verificarse antes de publicar.",
+    "close": "Cerrar ventana",
+    "demoBadge": "Datos de demostración",
+    "address": "Dirección",
+    "distance": "Distancia",
+    "hours": "Horario",
+    "phone": "Teléfono",
+    "phoneMissing": "Por añadir",
+    "openMaps": "Abrir búsqueda en Google Maps"
+  },
+  "qrcode": {
+    "meta": {
+      "title": "Código QR imprimible",
+      "description": "Genera y descarga el código QR del sitio en PNG o SVG para paneles informativos."
+    },
+    "eyebrow": "Para paneles y señalización",
+    "title": "Código QR de alta resolución",
+    "intro": "Introduce la URL final de producción en Vercel, revisa la vista previa y descarga el formato más adecuado para impresión.",
+    "imageTitle": "Código QR del sitio Gargantas y Marmitas",
+    "urlLabel": "URL de destino",
+    "urlHelp": "Usa la dirección de producción, no una URL temporal de vista previa de Vercel.",
+    "downloadPng": "Descargar PNG",
+    "downloadSvg": "Descargar SVG",
+    "printTitle": "Consejo de impresión",
+    "printText": "Para paneles exteriores, utiliza preferentemente SVG, deja un margen libre alrededor del código y prueba el escaneo desde varias distancias antes de producirlo."
+  },
   "orridi": {
     "meta": {
-      "title": "Gargantas de Uriezzo: historia, geología y visita",
-      "description": "Guía completa de las Gargantas de Uriezzo: origen glaciar, rutas, accesos desde Baceno, Premia y Verampio, seguridad y fotografías reales."
+      "title": "Gargantas de Uriezzo",
+      "description": "Guía de las Gargantas de Uriezzo: geología glaciar, accesos desde Premia, Baceno y Verampio, seguridad y consejos."
     },
-    "heroAlt": "Paredes sinuosas y paso estrecho en las Gargantas de Uriezzo",
-    "eyebrow": "Valle Antigorio · Piamonte",
+    "heroAlt": "Profunda garganta alpina entre paredes rocosas, imagen ilustrativa",
+    "eyebrow": "Valle Antigorio · VCO",
     "title": "Gargantas de Uriezzo",
-    "subtitle": "Una antigua red de torrentes subglaciares convertida en un cañón fósil transitable, entre granito pulido, musgo y luz vertical.",
-    "introEyebrow": "Dentro de la memoria del hielo",
+    "subtitle": "Un cañón sin río, donde el glaciar dejó corredores de granito, sombra y silencio.",
+    "introEyebrow": "Dentro del paisaje",
     "intro": [
-      "Entrar en las Gargantas de Uriezzo significa caminar por un paisaje que ya no pertenece a la red hidrográfica actual del valle. Los pasos están hoy casi secos, pero las paredes conservan la forma y la energía de torrentes que corrían bajo y junto al gran glaciar del Toce. El resultado es un entorno recogido de corredores estrechos, cámaras redondeadas, nichos, surcos y cortes repentinos de luz.",
-      "El conjunto se encuentra en el valle Antigorio, entre Baceno, Premia y Verampio. La Garganta Sur, conocida localmente como “Tumba de Uriezzo”, es la más monumental; la Nordeste es más corta y estrecha; la Oeste tiene pasos menos sencillos y exige más experiencia. Vallaccia, la cuarta garganta, es de acceso difícil y no es adecuada para una visita ordinaria.",
-      "Estas gargantas son más que una curiosidad geológica. Muestran la relación entre agua, roca y comunidades alpinas: los accesos siguen antiguas mulas, terrazas abandonadas y conexiones entre aldeas. El silencio, la humedad y la vegetación de las paredes convierten el recorrido en una lectura cercana de la historia natural del valle de Ossola."
+      "Entrar en las gargantas significa caminar por donde antiguamente circulaban torrentes ocultos bajo el Glaciar del Toce. Hoy el agua ya no ocupa estos pasos: quedan paredes pulidas, curvas inesperadas y una estrecha franja de cielo.",
+      "La humedad mantiene musgos y helechos; la luz desciende desde arriba y cambia de tono sobre la roca. A veces se las llama el “Gran Cañón del Piamonte”, aunque su escala íntima solo se comprende caminando."
     ],
     "facts": [
       {
         "icon": "location",
         "label": "Zona",
-        "value": "Baceno · Premia · Verampio"
+        "value": "Baceno, Premia y Verampio"
       },
       {
         "icon": "route",
@@ -86,100 +112,85 @@
       },
       {
         "icon": "difficulty",
-        "label": "Recorrido",
-        "value": "Senderista, suelo a menudo húmedo"
+        "label": "Dificultad",
+        "value": "Excursión fácil, suelo húmedo"
       },
       {
         "icon": "time",
-        "label": "Tiempo orientativo",
-        "value": "35 min; 1 h 10 con Maiesso"
+        "label": "Mejor época",
+        "value": "Primavera y otoño"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "Cómo llegar y orientarse",
-        "body": [
-          "El acceso más directo y normalmente recomendado parte del lado de Premia. La carretera hacia Crego y Uriezzo lleva al Oratorio de Santa Lucía; desde allí se continúa a pie siguiendo las señales y flechas amarillas. La Garganta Nordeste aparece primero, mientras que para la Sur se baja por la pista hasta la entrada señalizada.",
-          "Desde Baceno el recorrido comienza cerca de la iglesia monumental de San Gaudenzio. Una antigua vía, en parte empedrada y en parte excavada en la roca, desciende hacia Verampio. En el cruce indicado se toma el sendero que atraviesa el bosque aterrazado y alcanza la pista junto a la Garganta Sur. Es una llegada muy bella, pero añade desnivel y tiempo.",
-          "Desde el fondo del valle en Verampio se puede partir cerca de la Trattoria della Campagna y seguir la pista que cruza el torrente Devero, bordea el Toce y llega al puente de Maiesso. Allí se observan las Marmitas de los Gigantes antes de continuar hacia la Garganta Sur. Los tiempos varían según el acceso, las paradas y las condiciones."
-        ]
+        "title": "Cómo llegar",
+        "body": "Los accesos principales son Premia, Baceno y Verampio. Premia suele ser el más cómodo. Desde Baceno se puede aparcar cerca de la iglesia de San Gaudenzio y seguir a pie las señales y flechas amarillas. Comprueba también la señalización actual del lugar, ya que la cobertura móvil puede ser irregular."
       },
       "geology": {
-        "title": "Historia glaciar y formación de las gargantas",
-        "body": [
-          "Durante la última gran glaciación, terminada hace unos doce mil años, el valle Antigorio estaba ocupado por el glaciar del Toce. Bajo y junto al hielo corrían aguas de fusión a fuerte presión, cargadas de arena, grava y guijarros capaces de cortar el granito como una lima natural.",
-          "El agua no excavó un canal recto. Remolinos, saltos y cambios de dirección ampliaron fracturas preexistentes y crearon cámaras redondeadas, pasos sinuosos y paredes onduladas. Los nichos que hoy parecen tallados a mano son el resultado de una erosión prolongada en la que cada grano ayudó a pulir, ensanchar y profundizar el recorrido.",
-          "Cuando el clima se hizo más templado, el glaciar retrocedió y cambió la red de drenaje. Los torrentes abandonaron estas incisiones y dejaron gargantas fósiles sin el agua que las había creado. Esta condición excepcional permite recorrerlas a pie y observar desde dentro formas que en una garganta activa quedarían ocultas por la corriente."
-        ]
+        "title": "Historia y geología",
+        "body": "Durante la última glaciación, terminada hace unos 12.000 años, torrentes subglaciares fluían bajo el Glaciar del Toce. El agua, la presión y los sedimentos abrasivos excavaron el granito. Al retirarse el hielo, los torrentes se secaron y dejaron gargantas fósiles hoy transitables."
       },
       "visit": {
-        "title": "Ambiente, estaciones y seguridad",
-        "body": [
-          "El interior tiene un microclima distinto del bosque exterior. La luz entra sobre todo desde arriba, la humedad permanece alta y musgos y helechos colonizan las paredes. Después de la lluvia los colores se intensifican, pero el suelo y las escaleras metálicas pueden estar resbaladizos.",
-          "La primavera y el otoño suelen ser las estaciones más agradables. Desde finales de marzo hasta mayo el paisaje se abre tras el invierno y pueden florecer cerezos silvestres; el otoño aporta colores cálidos frente al granito gris. Se desaconseja el invierno por el hielo y el riesgo de caída de fragmentos.",
-          "Utiliza calzado de montaña con buen agarre, lleva una capa de abrigo incluso en verano y vigila a los niños en los pasos estrechos o equipados. No entres con tormentas, lluvia fuerte, hielo o cierres locales. La Garganta Oeste y Vallaccia no deben tratarse como un paseo turístico sencillo."
-        ]
+        "title": "Consejos para la visita",
+        "body": "Usa calzado con buena adherencia: el fondo puede estar mojado y algunos tramos incluyen escaleras metálicas. Evita las chanclas y las visitas invernales, cuando la caída de hielo puede ser peligrosa. Primavera y otoño suelen ofrecer mejores condiciones; los cerezos silvestres pueden florecer desde finales de marzo."
       }
     },
     "highlights": {
-      "eyebrow": "Cuatro cortes, cuatro caracteres",
-      "title": "Cómo leer el sistema de gargantas",
+      "eyebrow": "Tres recorridos principales",
+      "title": "Cada garganta tiene un carácter distinto",
       "items": [
-        "Garganta Sur o “Tumba de Uriezzo”: el tramo más espectacular, de unos 200 metros y hasta 20–30 metros de profundidad.",
-        "Garganta Nordeste: unos 100 metros, estrecha y recogida, con paredes que permiten observar de cerca el pulido.",
-        "Garganta Oeste: menos monumental pero más exigente; algunos pasos requieren atención y cuentan con cuerda.",
-        "Vallaccia: la cuarta garganta, difícil de alcanzar y no recomendada sin experiencia adecuada."
+        "Garganta Sur, llamada localmente “Tomba d’Uriezzo”: la más espectacular, de unos 200 metros y hasta 20–30 metros de profundidad.",
+        "Garganta Nordeste: alrededor de 100 metros, más estrecha y recogida, con paredes de unos 10 metros.",
+        "Garganta Oeste: menos monumental y más adecuada para excursionistas con experiencia; algunos pasos cuentan con cuerda.",
+        "Vallaccia: una cuarta garganta de acceso difícil, no recomendada para una visita turística ordinaria."
       ]
     },
     "gallery": {
-      "eyebrow": "Fotografías del lugar",
-      "title": "Granito, sombra y vegetación",
-      "intro": "Las imágenes muestran las Gargantas reales. Cada fotografía enlaza con su página de atribución; también puedes abrir Google Maps para ver aportaciones recientes.",
-      "sourceLabel": "Fuente y licencia",
-      "mapsPhotos": "Ver más fotos en Google Maps",
+      "eyebrow": "Imágenes ilustrativas",
+      "title": "Roca, sombra y vegetación",
+      "intro": "Son imágenes alpinas de sustitución. Cámbialas por fotografías autorizadas del lugar antes de publicar.",
       "items": [
         {
-          "alt": "Entrada rocosa a las Gargantas de Uriezzo",
-          "caption": "La aproximación a las incisiones del granito."
+          "alt": "Paredes rocosas de una garganta alpina",
+          "caption": "Corredores de roca modelados por el agua."
         },
         {
-          "alt": "Paredes pulidas en una garganta de Uriezzo",
-          "caption": "Superficies onduladas modeladas por torrentes subglaciares."
+          "alt": "Bosque verde y húmedo",
+          "caption": "Musgos y helechos prosperan en la penumbra."
         },
         {
-          "alt": "Sendero entre las paredes de Uriezzo",
-          "caption": "El camino sigue el lecho fósil del antiguo torrente."
+          "alt": "Lago y montañas alpinas",
+          "caption": "El paisaje glaciar del valle."
         },
         {
-          "alt": "Vegetación y roca en Uriezzo",
-          "caption": "Musgos y helechos prosperan en la humedad."
+          "alt": "Río entre montañas y bosque",
+          "caption": "El agua continúa dibujando el territorio."
         },
         {
-          "alt": "Paso estrecho en una garganta de Uriezzo",
-          "caption": "La luz vertical resalta nichos y surcos."
+          "alt": "Sendero panorámico de montaña",
+          "caption": "Los accesos y conexiones se recorren a pie."
         },
         {
-          "alt": "Cañón sinuoso de Uriezzo",
-          "caption": "Las curvas conservan la huella de los remolinos."
+          "alt": "Excursionista en ambiente alpino",
+          "caption": "Calzado adecuado y paso prudente."
         }
       ]
     },
-    "narration": "Las Gargantas de Uriezzo son cañones fósiles del valle Antigorio, creados por aguas de fusión que corrían bajo el glaciar del Toce durante la última glaciación. Arena, grava y guijarros excavaron corredores sinuosos, cámaras y paredes pulidas en el granito. Cuando el glaciar retrocedió hace unos doce mil años, los torrentes cambiaron de curso y dejaron las gargantas secas y transitables. La Garganta Sur es la más espectacular; la Nordeste es más corta y estrecha, mientras que la Oeste requiere más experiencia. Los accesos principales son Premia, Baceno y Verampio. Se necesita buen calzado y prudencia porque el suelo puede estar húmedo, hay escaleras metálicas y el hielo invernal hace desaconsejable la visita."
+    "narration": "Las Gargantas de Uriezzo se encuentran en el Valle Antigorio, cerca de Baceno, Premia y Verampio. Fueron excavadas en el granito por torrentes que circulaban bajo el Glaciar del Toce durante la última glaciación, terminada hace unos doce mil años. Cuando el hielo se retiró, los torrentes se secaron y dejaron un cañón fósil que hoy puede recorrerse a pie. La Garganta Sur, llamada localmente Tomba d’Uriezzo, es la más espectacular. Mide unos doscientos metros y alcanza entre veinte y treinta metros de profundidad. La Garganta Nordeste es más corta y estrecha, mientras que la Garganta Oeste exige más experiencia. La primavera y el otoño son las mejores estaciones. Es imprescindible llevar calzado con buena adherencia, porque el suelo puede estar húmedo y hay escaleras metálicas. En invierno se desaconseja la visita por el riesgo de caída de hielo."
   },
   "marmitte": {
     "meta": {
-      "title": "Marmitas de los Gigantes de Maiesso: historia y visita",
-      "description": "Guía completa de las Marmitas de los Gigantes en el Toce: origen glaciar, erosión de remolinos, conexión con las gargantas y seguridad."
+      "title": "Marmitas de los Gigantes de Maiesso",
+      "description": "Guía de las Marmitas de los Gigantes en el Toce: formación glaciar, conexión con las gargantas, acceso y consejos."
     },
-    "heroAlt": "Marmitas de los Gigantes y rocas pulidas junto al Toce en Maiesso",
+    "heroAlt": "Agua alpina entre grandes rocas pulidas, imagen ilustrativa",
     "eyebrow": "Maiesso · Río Toce",
     "title": "Marmitas de los Gigantes",
-    "subtitle": "Grandes cavidades circulares en el granito, excavadas por el agua de fusión, los remolinos y los sedimentos del Toce.",
-    "introEyebrow": "Cuando el río se convierte en escultor",
+    "subtitle": "Antiguos remolinos, guijarros y agua de deshielo transformaron el granito en formas casi perfectas.",
+    "introEyebrow": "La fuerza del río",
     "intro": [
-      "En Maiesso el Toce atraviesa roca compacta en la que el agua ha abierto cuencos, cilindros y cavidades redondeadas. Son las Marmitas de los Gigantes: formas espectaculares que parecen recipientes tallados intencionadamente, pero que proceden de procesos naturales de miles de años.",
-      "Su nombre pertenece al imaginario alpino, que atribuía cavidades tan grandes a seres gigantes. La explicación geológica es igual de fascinante: agua turbulenta, arena y guijarros giraron en remolinos persistentes, convirtiendo los sedimentos en herramientas abrasivas y profundizando progresivamente el granito.",
-      "Las marmitas son la continuación natural de la visita a las Gargantas de Uriezzo. Al salir de la Garganta Sur y caminar hacia el puente de Maiesso se pasa de un cañón fósil seco a un ambiente fluvial activo. En pocos minutos se observan dos capítulos distintos de la misma historia glaciar."
+      "En Maiesso, el Toce muestra el trabajo lento y poderoso del agua. En la roca aparecen cavidades hemisféricas y cilíndricas, pulidas como enormes recipientes naturales: son las Marmitas de los Gigantes.",
+      "El nombre evoca leyendas, pero su origen es geológico. Corrientes en remolino cargadas de arena y guijarros giraron en los mismos puntos, desgastando el granito durante milenios y dejando superficies que parecen talladas a mano."
     ],
     "facts": [
       {
@@ -190,122 +201,74 @@
       {
         "icon": "route",
         "label": "Conexión",
-        "value": "Puente de Maiesso · Garganta Sur"
+        "value": "Puente de Maiesso y Garganta Sur"
       },
       {
         "icon": "difficulty",
-        "label": "Atención",
-        "value": "Roca mojada y corriente activa"
+        "label": "Dificultad",
+        "value": "Sendero fácil, rocas resbaladizas"
       },
       {
         "icon": "time",
-        "label": "Desde Santa Lucía",
-        "value": "aprox. 1 h 10 ida/vuelta con gargantas"
+        "label": "Desde Baceno",
+        "value": "aprox. 1 h 10 min ida y vuelta con gargantas"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "Cómo llegar y unir ambas visitas",
-        "body": [
-          "El mirador más conocido se encuentra junto al puente de Maiesso, sobre el Toce. Desde el Oratorio de Santa Lucía y los accesos a las gargantas se sigue el recorrido hacia la Garganta Sur; después de cruzarla se continúa bajando hasta el puente. Así se unen el cañón fósil y las formas fluviales activas.",
-          "Desde Baceno se puede bajar por la antigua vía próxima a San Gaudenzio y continuar hacia Verampio y Maiesso. Desde el fondo del valle de Verampio, la pista sigue el torrente Devero y el Toce hasta el puente, mostrando la relación entre los cursos de agua actuales y el paisaje modelado por el hielo.",
-          "El tiempo orientativo desde Santa Lucía es de una hora y diez minutos ida y vuelta incluyendo dos gargantas y Maiesso, sin paradas largas. Reserva más tiempo para fotografías, observación y afluencia, y comprueba siempre las señales de desvío o limitación."
-        ]
+        "title": "Cómo llegar",
+        "body": "Las marmitas se encuentran en Maiesso, junto al Toce. Desde el itinerario de las gargantas se puede continuar más allá de la Garganta Sur hacia el Puente de Maiesso, enlazando ambas visitas. Desde Baceno, el recorrido completo de ida y vuelta dura aproximadamente una hora y diez minutos, según las paradas."
       },
       "geology": {
-        "title": "Agua, remolinos y memoria glaciar",
-        "body": [
-          "Las marmitas se desarrollaron especialmente cuando el deshielo glaciar alimentaba caudales muy elevados. El agua aceleraba en los pasos estrechos del granito y generaba remolinos. Allí donde la corriente empezaba a girar, arena y guijarros quedaban atrapados y repetían trayectorias circulares.",
-          "La erosión dependía tanto de la fuerza del agua como de los fragmentos transportados. Los guijarros golpeaban y pulían el fondo, mientras los granos finos desgastaban las paredes. Con el tiempo, una pequeña irregularidad se convertía en una cavidad profunda y a menudo cilíndrica, con superficies lisas y surcos.",
-          "Maiesso muestra la diferencia entre el trabajo general del glaciar, que amplió y organizó el valle, y el trabajo preciso del agua de fusión, capaz de tallar detalles poco a poco. Cerca, la central hidroeléctrica de Crego, diseñada por Piero Portaluppi entre 1917 y 1926, añade un capítulo moderno sobre el aprovechamiento de esa misma energía."
-        ]
+        "title": "Historia y geología",
+        "body": "Las aguas de deshielo del glaciar fluían con enorme energía. La arena y los guijarros atrapados en remolinos actuaban como herramientas abrasivas, girando y excavando cavidades cada vez más profundas. Las formas redondeadas conservan la memoria del río y del pasado glaciar del valle."
       },
       "visit": {
-        "title": "Observación y seguridad junto al Toce",
-        "body": [
-          "Las marmitas se observan en un entorno fluvial activo. Aunque el agua parezca tranquila, el caudal puede variar y el granito pulido se vuelve extremadamente resbaladizo. Permanece en senderos y miradores seguros, sin bajar a las rocas mojadas ni entrar en las cavidades.",
-          "Usa calzado con suela adherente, mantén a los niños cerca y no superes barreras ni señales. Tras lluvias intensas, tormentas o deshielo rápido el nivel del Toce puede subir; en esas condiciones es prudente regresar o limitarse a los puntos oficialmente accesibles.",
-          "La luz oblicua ayuda a percibir la profundidad de las cavidades y las tonalidades del granito. No te concentres solo en las fotografías: el suelo irregular exige atención constante. Una visita lenta permite distinguir superficies lisas, surcos, guijarros atrapados y la relación entre puente, río y salida de la Garganta Sur."
-        ]
+        "title": "Consejos para la visita",
+        "body": "Mantente en los pasos seguros y no te acerques a las rocas mojadas ni al borde del río. El granito pulido puede ser muy resbaladizo y el caudal del Toce puede variar. Lleva calzado de senderismo, vigila a los niños y no continúes con crecida, tormentas o cierres locales."
       }
     },
     "highlights": {
-      "eyebrow": "Leer la roca",
-      "title": "Qué observar en Maiesso",
+      "eyebrow": "Interpretar las formas",
+      "title": "Qué observar en el lugar",
       "items": [
-        "Cavidades hemisféricas y cilíndricas formadas donde los remolinos mantuvieron arena y guijarros en rotación.",
-        "Superficies pulidas y surcos del granito que registran la dirección y la intensidad de la abrasión.",
-        "El puente de Maiesso, enlace visual y peatonal entre el Toce, las marmitas y la salida de la Garganta Sur.",
-        "La central de Crego, testimonio de cómo la energía del agua alpina se transformó en electricidad en el siglo XX."
+        "Cavidades redondeadas, algunas hemisféricas y otras más cilíndricas, excavadas por remolinos cargados de sedimentos.",
+        "Superficies de granito lisas y acanaladas, huella de la abrasión repetida de arena y guijarros.",
+        "La relación entre las marmitas, el Puente de Maiesso y la salida de la Garganta Sur en un mismo itinerario.",
+        "La cercana central hidroeléctrica de Crego, proyectada por Piero Portaluppi entre 1917 y 1926, como curiosidad histórico-industrial."
       ]
     },
     "gallery": {
-      "eyebrow": "Fotografías del lugar",
-      "title": "Agua y granito en Maiesso",
-      "intro": "Las imágenes muestran las Marmitas reales junto al Toce. Cada fotografía enlaza con su página de atribución; Google Maps ofrece además aportaciones recientes de visitantes.",
-      "sourceLabel": "Fuente y licencia",
-      "mapsPhotos": "Ver más fotos en Google Maps",
+      "eyebrow": "Imágenes ilustrativas",
+      "title": "Agua, granito y bosque",
+      "intro": "Las fotografías son imágenes fluviales y alpinas de sustitución. Cámbialas por fotos autorizadas de Maiesso.",
       "items": [
         {
-          "alt": "Marmitas de los Gigantes en el granito junto al Toce",
-          "caption": "Las cavidades circulares aparecen junto a la corriente."
+          "alt": "Río alpino entre rocas",
+          "caption": "La corriente atraviesa el granito pulido."
         },
         {
-          "alt": "Agua del Toce entre rocas pulidas en Maiesso",
-          "caption": "El río sigue modelando y puliendo las superficies."
+          "alt": "Agua y montañas en un valle alpino",
+          "caption": "El Toce conecta agua, hielo y paisaje."
         },
         {
-          "alt": "Detalle de las Marmitas de los Gigantes",
-          "caption": "Formas redondeadas producidas por sedimentos en rotación."
+          "alt": "Lago alpino entre montañas",
+          "caption": "Las formas del valle nacen de su pasado glaciar."
         },
         {
-          "alt": "Puente y rocas cerca de las Marmitas",
-          "caption": "Maiesso conecta el recorrido fluvial con las gargantas."
+          "alt": "Bosque denso cerca de un curso de agua",
+          "caption": "El sendero cruza un ambiente húmedo."
         },
         {
-          "alt": "Cavidades profundas en las rocas del Toce",
-          "caption": "Cada depresión conserva la huella de antiguos remolinos."
+          "alt": "Vegetación verde sobre rocas",
+          "caption": "La vida coloniza incluso las superficies más duras."
         },
         {
-          "alt": "Paisaje fluvial de las Marmitas",
-          "caption": "Granito, agua y bosque forman un único geositio."
+          "alt": "Formaciones rocosas naturales",
+          "caption": "Observa los detalles sin salir del recorrido."
         }
       ]
     },
-    "narration": "Las Marmitas de los Gigantes se encuentran en Maiesso, junto al río Toce, y comparten sendero con las Gargantas de Uriezzo. Son cavidades redondeadas y cilíndricas excavadas en el granito por aguas de fusión glaciar. Arena y guijarros atrapados en remolinos giraban como herramientas abrasivas y pulieron la roca durante miles de años. Desde el puente de Maiesso se observa la relación entre el río actual y la salida de la Garganta Sur. El granito mojado es muy resbaladizo y el Toce puede cambiar de caudal: hay que permanecer en puntos seguros, vigilar a los niños y renunciar con crecidas o tormentas. Cerca se encuentra la central hidroeléctrica de Crego, diseñada por Piero Portaluppi entre 1917 y 1926."
-  },
-  "assistant": {
-    "title": "Asistente del sendero",
-    "subtitle": "Solo responde sobre los Orridi y las Marmitte",
-    "open": "Abrir asistente de IA",
-    "close": "Cerrar asistente de IA",
-    "welcome": "Hola. Puedo ayudarte con el recorrido, la geología, la seguridad y la visita a los Orridi di Uriezzo y las Marmitte dei Giganti.",
-    "placeholder": "Escribe una pregunta...",
-    "send": "Enviar mensaje",
-    "sending": "Preparando la respuesta...",
-    "error": "Se ha producido un error. Inténtalo de nuevo.",
-    "scopeNote": "El asistente responde únicamente sobre los Orridi di Uriezzo y las Marmitte dei Giganti.",
-    "backToTop": "Volver arriba",
-    "youLabel": "Tú",
-    "assistantLabel": "Asistente"
-  },
-  "share": {
-    "button": "Compartir el sitio",
-    "title": "Compartir Gargantas y Marmitas",
-    "description": "Escanea el código QR con la cámara del teléfono o comparte directamente el enlace del sitio.",
-    "close": "Cerrar ventana de compartir",
-    "nativeShare": "Compartir",
-    "copy": "Copiar enlace",
-    "copied": "Enlace copiado",
-    "qrAlt": "Código QR para abrir el sitio de las Gargantas de Uriezzo y las Marmitas de los Gigantes"
-  },
-  "nearby": {
-    "eyebrow": "Servicios cercanos",
-    "title": "Dónde comer y parar con autocaravana",
-    "intro": "Abre los resultados de Google Maps para comprobar ubicación, reseñas, horarios y disponibilidad actual antes de salir.",
-    "restaurants": "Restaurantes y pizzerías",
-    "camperAreas": "Áreas de autocaravanas y aparcamientos",
-    "openMaps": "Abrir en Google Maps",
-    "liveNote": "Los horarios, la apertura estacional, la accesibilidad y la disponibilidad pueden cambiar. Comprueba siempre la ficha en Google Maps."
+    "narration": "Las Marmitas de los Gigantes se encuentran en Maiesso, junto al río Toce, y están conectadas con las Gargantas de Uriezzo por el mismo sendero. Al continuar más allá de la Garganta Sur se llega al Puente de Maiesso y después a la zona de las cavidades. Las marmitas son formas hemisféricas o cilíndricas excavadas en la roca por la fuerza de las aguas de deshielo del glaciar. La arena y los guijarros transportados por la corriente quedaban atrapados en remolinos y actuaban como herramientas abrasivas, desgastando el granito durante milenios. Desde Baceno, el recorrido de ida y vuelta que incluye las gargantas y las marmitas dura aproximadamente una hora y diez minutos, sin paradas largas. Las rocas mojadas pueden ser muy resbaladizas y el caudal del Toce puede variar. Es importante permanecer en los pasos seguros, llevar calzado adecuado y no visitar el lugar durante crecidas o tormentas. Cerca se encuentra también la central hidroeléctrica de Crego, proyectada por Piero Portaluppi entre 1917 y 1926."
   }
 }

@@ -5,9 +5,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
 import {attractionVisuals} from '@/data/attractions';
 import {FadeIn} from '@/components/fade-in';
-import {ShareQrButton} from '@/components/share-qr-button';
 import type {AppLocale} from '@/i18n/routing';
-import {italianShareUrl} from '@/lib/site-url';
 
 export async function generateMetadata({params}: {params: Promise<{locale: AppLocale}>}): Promise<Metadata> {
   const {locale} = await params;
@@ -27,8 +25,6 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
   const {locale} = await params;
   setRequestLocale(locale);
   const t = await getTranslations('home');
-  const share = await getTranslations('share');
-  const shareUrl = italianShareUrl;
 
   const cards = [
     {
@@ -76,19 +72,6 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
       <section className="home-note shell">
         <FadeIn>
           <p><strong>{t('trailNoteTitle')}</strong> {t('trailNote')}</p>
-          <div className="home-share">
-            <ShareQrButton
-              shareUrl={shareUrl}
-              buttonLabel={share('button')}
-              title={share('title')}
-              description={share('description')}
-              closeLabel={share('close')}
-              nativeShareLabel={share('nativeShare')}
-              copyLabel={share('copy')}
-              copiedLabel={share('copied')}
-              qrAlt={share('qrAlt')}
-            />
-          </div>
         </FadeIn>
       </section>
     </main>

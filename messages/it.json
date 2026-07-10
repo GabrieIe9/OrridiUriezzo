@@ -9,17 +9,14 @@
     "nav": {
       "home": "Home",
       "orridi": "Orridi",
-      "marmitte": "Marmitte"
+      "marmitte": "Marmitte",
+      "qrcode": "QR code"
     },
     "footer": {
       "description": "Una guida essenziale per leggere il paesaggio glaciale della Valle Antigorio, passo dopo passo.",
       "explore": "Esplora",
       "localLinks": "Località vicine",
       "disclaimer": "Verifica sempre condizioni del sentiero, meteo e informazioni locali prima della visita."
-    },
-    "theme": {
-      "switchToDark": "Attiva modalità scura",
-      "switchToLight": "Attiva modalità chiara"
     }
   },
   "home": {
@@ -39,13 +36,13 @@
         "title": "Orridi di Uriezzo",
         "subtitle": "Cammina nel letto fossile dei torrenti subglaciali, tra gole strette, muschi e luce verticale.",
         "location": "Baceno · Premia · Verampio",
-        "alt": "Pareti sinuose e stretto passaggio nell’Orrido di Uriezzo"
+        "alt": "Paesaggio montano e gola rocciosa, immagine dimostrativa"
       },
       "marmitte-dei-giganti": {
         "title": "Marmitte dei Giganti",
         "subtitle": "Osserva le cavità levigate dai vortici del Toce, dove acqua e ciottoli hanno lavorato la roccia per millenni.",
         "location": "Maiesso · Fiume Toce",
-        "alt": "Marmitte dei Giganti e rocce levigate lungo il fiume Toce a Maiesso"
+        "alt": "Fiume alpino tra rocce levigate, immagine dimostrativa"
       }
     }
   },
@@ -58,26 +55,55 @@
     "stop": "Stop",
     "genericError": "Impossibile caricare l’audioguida. Riprova tra poco."
   },
+  "restaurants": {
+    "eyebrow": "Dopo il sentiero",
+    "title": "Dove mangiare nei dintorni",
+    "intro": "Una struttura dati pronta per ospitare locali verificati di Baceno, Premia, Verampio e Crodo.",
+    "placeholderWarning": "Le attività mostrate sono esempi dimostrativi: nomi, orari, distanze e recapiti devono essere verificati prima della pubblicazione.",
+    "close": "Chiudi finestra",
+    "demoBadge": "Dati dimostrativi",
+    "address": "Indirizzo",
+    "distance": "Distanza",
+    "hours": "Orari",
+    "phone": "Telefono",
+    "phoneMissing": "Da inserire",
+    "openMaps": "Apri ricerca su Google Maps"
+  },
+  "qrcode": {
+    "meta": {
+      "title": "QR code stampabile",
+      "description": "Genera e scarica il QR code del sito in PNG o SVG per pannelli informativi."
+    },
+    "eyebrow": "Per pannelli e segnaletica",
+    "title": "QR code ad alta risoluzione",
+    "intro": "Inserisci l’URL definitivo del progetto Vercel, controlla l’anteprima e scarica il formato più adatto alla stampa.",
+    "imageTitle": "QR code del sito Orridi e Marmitte",
+    "urlLabel": "URL di destinazione",
+    "urlHelp": "Usa l’indirizzo di produzione, non un’anteprima temporanea Vercel.",
+    "downloadPng": "Scarica PNG",
+    "downloadSvg": "Scarica SVG",
+    "printTitle": "Suggerimento di stampa",
+    "printText": "Per pannelli esterni preferisci SVG, mantieni un margine libero attorno al codice e prova la scansione da più distanze prima della produzione."
+  },
   "orridi": {
     "meta": {
-      "title": "Orridi di Uriezzo: storia, geologia e visita",
-      "description": "Guida completa agli Orridi di Uriezzo in Valle Antigorio: origine glaciale, percorsi, accessi da Baceno, Premia e Verampio, sicurezza e fotografie reali."
+      "title": "Orridi di Uriezzo",
+      "description": "Guida agli Orridi di Uriezzo: geologia glaciale, accessi da Premia, Baceno e Verampio, sicurezza e consigli di visita."
     },
-    "heroAlt": "Pareti sinuose e stretto passaggio nell’Orrido di Uriezzo",
-    "eyebrow": "Valle Antigorio · Piemonte",
+    "heroAlt": "Gola alpina profonda tra pareti rocciose, immagine dimostrativa",
+    "eyebrow": "Valle Antigorio · VCO",
     "title": "Orridi di Uriezzo",
-    "subtitle": "Un antico sistema di torrenti subglaciali trasformato in un canyon fossile percorribile a piedi, tra granito levigato, muschi e luce verticale.",
-    "introEyebrow": "Dentro la memoria del ghiaccio",
+    "subtitle": "Un canyon senza fiume, dove il ghiacciaio ha lasciato corridoi di granito, ombra e silenzio.",
+    "introEyebrow": "Dentro il paesaggio",
     "intro": [
-      "Entrare negli Orridi di Uriezzo significa camminare in un paesaggio che non appartiene più al presente idrografico della valle. Le gole sono oggi quasi asciutte, ma le loro pareti conservano la forma e l’energia di torrenti che scorrevano sotto e ai margini del grande Ghiacciaio del Toce. Il risultato è un ambiente raccolto e sorprendente, fatto di corridoi stretti, cavità arrotondate, nicchie, scanalature e improvvisi tagli di luce.",
-      "Il complesso si trova in Valle Antigorio, tra i territori di Baceno, Premia e l’area di Verampio. L’Orrido Sud, chiamato localmente “Tomba d’Uriezzo”, è il più monumentale; l’Orrido Nord-Est è più breve e stretto; l’Orrido Ovest presenta passaggi meno immediati e richiede maggiore esperienza. La Vallaccia, quarto orrido del sistema, resta invece di accesso difficile e non è adatta alla visita ordinaria.",
-      "Queste gole non sono soltanto una curiosità geologica. Raccontano il rapporto tra acqua, roccia e comunità alpine: i sentieri di accesso seguono antiche mulattiere, boschi terrazzati e collegamenti tra frazioni. Il silenzio, l’umidità e la vegetazione che riveste le pareti trasformano la visita in una lettura ravvicinata della storia naturale della Val d’Ossola."
+      "Entrare negli Orridi significa camminare dove un tempo correvano torrenti nascosti sotto il Ghiacciaio del Toce. Oggi l’acqua non occupa più queste gole: restano pareti levigate, curve improvvise e una lama di cielo che accompagna il percorso.",
+      "L’umidità conserva muschi e felci; la luce filtra dall’alto e cambia colore sulle rocce. È un ambiente raccolto e sorprendente, spesso chiamato il “Grand Canyon del Piemonte”, ma con una scala intima che si comprende solo a piedi."
     ],
     "facts": [
       {
         "icon": "location",
         "label": "Area",
-        "value": "Baceno · Premia · Verampio"
+        "value": "Baceno, Premia e Verampio"
       },
       {
         "icon": "route",
@@ -86,100 +112,85 @@
       },
       {
         "icon": "difficulty",
-        "label": "Percorso",
-        "value": "Escursionistico, fondo spesso umido"
+        "label": "Difficoltà",
+        "value": "Escursionistica facile, fondo umido"
       },
       {
         "icon": "time",
-        "label": "Tempo indicativo",
-        "value": "35 min; 1 h 10 con Maiesso"
+        "label": "Periodo",
+        "value": "Primavera e autunno"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "Come arrivare e orientarsi",
-        "body": [
-          "L’accesso più diretto e normalmente consigliato parte dal lato di Premia. Dalla strada che conduce verso Crego e Uriezzo si raggiunge l’Oratorio di Santa Lucia; da qui si prosegue a piedi seguendo la segnaletica escursionistica e le frecce gialle. L’Orrido Nord-Est si incontra per primo, mentre per l’Orrido Sud si continua in discesa lungo la pista sterrata fino all’ingresso segnalato.",
-          "Da Baceno il percorso parte nei pressi della Chiesa monumentale di San Gaudenzio. Una mulattiera in parte lastricata e in parte scavata nella roccia scende verso Verampio; al bivio indicato si imbocca il sentiero che attraversa il bosco terrazzato e raggiunge la pista parallela all’Orrido Sud. È un itinerario suggestivo, ma aggiunge dislivello e richiede più tempo rispetto all’accesso di Premia.",
-          "Dal fondovalle di Verampio si può partire nella zona della Trattoria della Campagna e seguire la pista che attraversa il torrente Devero, costeggia il Toce e raggiunge il Ponte di Maiesso. Da qui si osservano le Marmitte dei Giganti e si può proseguire verso l’Orrido Sud. I tempi dipendono da accesso, soste e condizioni: considera sempre un margine prudente."
-        ]
+        "title": "Come arrivare",
+        "body": "Gli accessi principali sono Premia, Baceno e Verampio. Premia è spesso il punto più comodo. Da Baceno si può lasciare l’auto vicino alla Chiesa di San Gaudenzio e seguire a piedi le indicazioni e le frecce gialle. Valuta sempre la segnaletica presente sul posto e non affidarti soltanto al telefono, perché la copertura può essere irregolare."
       },
       "geology": {
-        "title": "Storia glaciale e formazione delle gole",
-        "body": [
-          "Durante l’ultima grande glaciazione, terminata circa dodicimila anni fa, la Valle Antigorio era occupata dal Ghiacciaio del Toce. Sotto la massa di ghiaccio e lungo i suoi margini scorrevano acque di fusione sottoposte a forte pressione. Questi torrenti trasportavano sabbia, ghiaia e ciottoli, materiali capaci di incidere il granito come una lima naturale.",
-          "L’acqua non scavava in linea retta. Vortici, salti e deviazioni della corrente ampliarono fratture preesistenti, modellando cavità subcircolari, cunicoli meandriformi e pareti ondulate. Le nicchie che oggi sembrano scolpite a mano sono il risultato di un’erosione prolungata: ogni granello trascinato dalla corrente contribuiva a levigare, allargare e approfondire il passaggio.",
-          "Quando il clima divenne più mite, il ghiacciaio si ritirò e il sistema delle acque cambiò. I torrenti abbandonarono queste incisioni, lasciando gole fossili prive del corso d’acqua che le aveva create. Proprio questa condizione eccezionale rende possibile attraversarle a piedi e osservare dall’interno forme che, in una gola ancora attiva, sarebbero nascoste dalla corrente."
-        ]
+        "title": "Storia e geologia",
+        "body": "Durante l’ultima glaciazione, conclusa circa 12.000 anni fa, torrenti subglaciali scorrevano sotto il Ghiacciaio del Toce. Acqua, pressione e detriti abrasivi scavarono il granito. Dopo il ritiro dei ghiacci i corsi d’acqua si prosciugarono, lasciando gole fossili oggi percorribili."
       },
       "visit": {
-        "title": "Ambiente, stagioni e sicurezza",
-        "body": [
-          "L’interno degli orridi ha un microclima diverso dal bosco circostante. La luce entra soprattutto dall’alto, l’umidità rimane elevata e le pareti ospitano muschi, felci e piccole comunità vegetali adattate alla penombra. Dopo la pioggia i colori diventano più intensi, ma il fondo e le scalette metalliche possono risultare scivolosi.",
-          "Primavera e autunno sono generalmente i periodi più piacevoli. Tra fine marzo e maggio il paesaggio si riapre dopo l’inverno e nei dintorni possono fiorire i ciliegi selvatici; in autunno il bosco aggiunge colori caldi alle tonalità grigie del granito. In inverno la visita è sconsigliata per il rischio di ghiaccio e caduta di frammenti dalle pareti.",
-          "Indossa scarpe da trekking con buona aderenza, porta uno strato caldo anche in estate e sorveglia i bambini nei tratti stretti o attrezzati. Non entrare in caso di temporali, forte pioggia, ghiaccio o chiusure locali. L’Orrido Ovest e la Vallaccia non devono essere affrontati come una semplice passeggiata turistica: valuta esperienza, condizioni e indicazioni presenti sul posto."
-        ]
+        "title": "Consigli per la visita",
+        "body": "Indossa scarpe con buona aderenza: il fondo può essere bagnato e alcune zone comprendono scalette metalliche. Evita infradito e visita in inverno, quando la caduta di ghiaccio può essere pericolosa. Primavera e autunno offrono condizioni piacevoli; a fine marzo e in aprile possono fiorire i ciliegi selvatici."
       }
     },
     "highlights": {
-      "eyebrow": "Quattro incisioni, caratteri diversi",
-      "title": "Come leggere il sistema degli Orridi",
+      "eyebrow": "Tre percorsi principali",
+      "title": "Ogni orrido ha un carattere diverso",
       "items": [
-        "Orrido Sud, o “Tomba d’Uriezzo”: il tratto più scenografico, lungo circa 200 metri e profondo fino a 20–30 metri.",
-        "Orrido Nord-Est: circa 100 metri, stretto e raccolto, con passaggi che mostrano da vicino la levigatura delle pareti.",
-        "Orrido Ovest: meno monumentale, ma più impegnativo; alcuni tratti richiedono attenzione e sono assistiti da fune.",
-        "Vallaccia: il quarto orrido del complesso, difficile da raggiungere e non consigliato ai visitatori senza esperienza."
+        "Orrido Sud, o “Tomba d’Uriezzo”: il più scenografico, lungo circa 200 metri e profondo fino a 20–30 metri.",
+        "Orrido Nord-Est: circa 100 metri, più stretto e raccolto, con pareti che raggiungono all’incirca 10 metri.",
+        "Orrido Ovest: meno monumentale e più adatto a escursionisti esperti; alcuni passaggi sono assistiti da fune.",
+        "Vallaccia: un quarto orrido di accesso difficile, non indicato per la visita turistica ordinaria."
       ]
     },
     "gallery": {
-      "eyebrow": "Fotografie del luogo",
-      "title": "Granito, ombra e vegetazione",
-      "intro": "Le immagini mostrano gli Orridi reali. Ogni fotografia rimanda alla relativa pagina di attribuzione; per contributi recenti dei visitatori puoi aprire anche Google Maps.",
-      "sourceLabel": "Fonte e licenza",
-      "mapsPhotos": "Vedi altre foto su Google Maps",
+      "eyebrow": "Immagini dimostrative",
+      "title": "Roccia, ombra e vegetazione",
+      "intro": "Le fotografie sono placeholder a tema alpino: sostituiscile con immagini autorizzate del luogo prima della pubblicazione.",
       "items": [
         {
-          "alt": "Ingresso roccioso degli Orridi di Uriezzo",
-          "caption": "L’avvicinamento alle incisioni nel granito."
+          "alt": "Pareti rocciose di una gola alpina",
+          "caption": "Corridoi di roccia modellati dall’acqua."
         },
         {
-          "alt": "Pareti levigate in una gola degli Orridi",
-          "caption": "Superfici ondulate modellate dai torrenti subglaciali."
+          "alt": "Bosco verde e umido",
+          "caption": "Muschi e felci prosperano nella penombra."
         },
         {
-          "alt": "Sentiero tra le pareti degli Orridi di Uriezzo",
-          "caption": "Il percorso segue il letto fossile dell’antico torrente."
+          "alt": "Lago e montagne alpine",
+          "caption": "Il paesaggio glaciale della valle."
         },
         {
-          "alt": "Vegetazione e rocce agli Orridi di Uriezzo",
-          "caption": "Muschi e felci prosperano nell’umidità della gola."
+          "alt": "Fiume tra montagne e bosco",
+          "caption": "L’acqua continua a disegnare il territorio."
         },
         {
-          "alt": "Passaggio stretto nell’Orrido di Uriezzo",
-          "caption": "La luce verticale mette in risalto nicchie e scanalature."
+          "alt": "Sentiero montano panoramico",
+          "caption": "Accessi e collegamenti si percorrono a piedi."
         },
         {
-          "alt": "Canyon sinuoso dell’Orrido di Uriezzo",
-          "caption": "Le curve della roccia raccontano la direzione dei vortici."
+          "alt": "Escursionista in ambiente alpino",
+          "caption": "Calzature adatte e passo prudente."
         }
       ]
     },
-    "narration": "Gli Orridi di Uriezzo sono gole fossili della Valle Antigorio, create dalle acque di fusione che scorrevano sotto il Ghiacciaio del Toce durante l’ultima glaciazione. Sabbia, ghiaia e ciottoli trasportati ad alta energia incisero il granito, formando corridoi sinuosi, cavità e pareti levigate. Con il ritiro del ghiacciaio, avvenuto circa dodicimila anni fa, i torrenti cambiarono corso e lasciarono le gole asciutte e percorribili. L’Orrido Sud, detto Tomba d’Uriezzo, è il più spettacolare; il Nord-Est è più breve e stretto, mentre l’Ovest richiede maggiore esperienza. Gli accessi principali sono da Premia, Baceno e Verampio. Servono scarpe adatte e prudenza: il fondo può essere umido, alcune parti hanno scalette metalliche e in inverno il rischio di ghiaccio rende la visita sconsigliata."
+    "narration": "Gli Orridi di Uriezzo si trovano in Valle Antigorio, vicino a Baceno, Premia e Verampio. Sono gole scavate nel granito da torrenti che scorrevano sotto il Ghiacciaio del Toce durante l’ultima glaciazione, terminata circa dodicimila anni fa. Quando il ghiaccio si ritirò, i torrenti si prosciugarono e lasciarono un canyon fossile oggi percorribile a piedi. L’Orrido Sud, chiamato localmente Tomba d’Uriezzo, è il più spettacolare: misura circa duecento metri e raggiunge una profondità tra venti e trenta metri. L’Orrido Nord-Est è più corto e stretto; l’Orrido Ovest richiede maggiore esperienza. Il periodo migliore è la primavera o l’autunno. Servono scarpe con buona aderenza, perché il fondo può essere umido e sono presenti scalette metalliche. In inverno la visita è sconsigliata per il rischio di caduta di ghiaccio."
   },
   "marmitte": {
     "meta": {
-      "title": "Marmitte dei Giganti di Maiesso: storia e visita",
-      "description": "Guida completa alle Marmitte dei Giganti sul Toce a Maiesso: origine glaciale, erosione vorticosa, collegamento con gli Orridi e consigli di sicurezza."
+      "title": "Marmitte dei Giganti di Maiesso",
+      "description": "Guida alle Marmitte dei Giganti sul Toce: formazione glaciale, collegamento con gli Orridi, accesso e consigli di visita."
     },
-    "heroAlt": "Marmitte dei Giganti e rocce levigate lungo il fiume Toce a Maiesso",
+    "heroAlt": "Acqua alpina tra grandi rocce levigate, immagine dimostrativa",
     "eyebrow": "Maiesso · Fiume Toce",
     "title": "Marmitte dei Giganti",
-    "subtitle": "Grandi cavità circolari nel granito, scavate dall’acqua di fusione, dai vortici e dai sedimenti trasportati dal Toce.",
-    "introEyebrow": "Quando il fiume diventa scultore",
+    "subtitle": "Vortici antichi, ciottoli e acqua di fusione hanno trasformato il granito in forme quasi perfette.",
+    "introEyebrow": "La forza del fiume",
     "intro": [
-      "In località Maiesso il Toce attraversa un tratto di roccia compatta nel quale l’acqua ha aperto conche, cilindri e cavità arrotondate. Sono le Marmitte dei Giganti: forme spettacolari che sembrano recipienti scavati intenzionalmente, ma che derivano da processi naturali durati migliaia di anni.",
-      "Il loro nome appartiene all’immaginario popolare delle Alpi, dove cavità così grandi venivano attribuite a esseri giganteschi. La spiegazione geologica è altrettanto affascinante: acqua turbolenta, sabbia e ciottoli hanno ruotato in vortici persistenti, trasformando i sedimenti in utensili abrasivi e approfondendo progressivamente la roccia.",
-      "Le Marmitte sono la continuazione naturale della visita agli Orridi di Uriezzo. Uscendo dall’Orrido Sud e proseguendo verso il Ponte di Maiesso si passa dal canyon fossile, ormai privo del torrente originario, a un ambiente fluviale ancora attivo. In pochi minuti di cammino si osservano quindi due capitoli differenti della stessa storia glaciale."
+      "A Maiesso il Toce mostra il lavoro lento e potente dell’acqua. Nella roccia compaiono cavità emisferiche e cilindriche, levigate come grandi recipienti naturali: sono le Marmitte dei Giganti.",
+      "Il nome evoca leggende, ma la loro origine è geologica. Correnti vorticose cariche di sabbia e ciottoli hanno ruotato nello stesso punto, consumando il granito per millenni e lasciando superfici che sembrano scolpite a mano."
     ],
     "facts": [
       {
@@ -190,122 +201,74 @@
       {
         "icon": "route",
         "label": "Collegamento",
-        "value": "Ponte di Maiesso · Orrido Sud"
+        "value": "Dal Ponte di Maiesso e Orrido Sud"
       },
       {
         "icon": "difficulty",
-        "label": "Attenzione",
-        "value": "Rocce bagnate e corrente attiva"
+        "label": "Difficoltà",
+        "value": "Sentiero facile, rocce scivolose"
       },
       {
         "icon": "time",
-        "label": "Da Santa Lucia",
-        "value": "circa 1 h 10 A/R con gli Orridi"
+        "label": "Da Baceno",
+        "value": "circa 1 h 10 min A/R con gli Orridi"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "Come arrivare e collegare le due visite",
-        "body": [
-          "Il punto di osservazione più conosciuto si trova presso il Ponte di Maiesso, lungo il Toce. Dall’Oratorio di Santa Lucia e dagli accessi degli Orridi si segue il percorso verso l’Orrido Sud; una volta attraversata la gola si prosegue in discesa fino al ponte. L’itinerario permette di unire in una sola escursione il canyon fossile e le forme fluviali attive.",
-          "Da Baceno si può scendere lungo la mulattiera che parte vicino alla Chiesa di San Gaudenzio e continuare verso Verampio e Maiesso. Dal fondovalle di Verampio, invece, la pista segue il torrente Devero e il corso del Toce fino al ponte. Questo accesso rende evidente il legame tra il paesaggio dei corsi d’acqua attuali e quello modellato dal ghiacciaio.",
-          "Il tempo indicativo dall’Oratorio di Santa Lucia è di circa un’ora e dieci minuti tra andata e ritorno quando si includono due orridi e Maiesso, senza soste lunghe. Considera però più tempo per fotografie, osservazione e affollamento, e verifica sempre eventuali deviazioni o limitazioni segnalate sul posto."
-        ]
+        "title": "Come arrivare",
+        "body": "Le Marmitte si raggiungono in località Maiesso, lungo il Toce. Dal percorso degli Orridi si può proseguire oltre l’Orrido Sud verso il Ponte di Maiesso, collegando le due visite. Da Baceno, l’itinerario complessivo con andata e ritorno richiede indicativamente circa un’ora e dieci minuti, variabile in base alle soste."
       },
       "geology": {
-        "title": "Acqua, vortici e memoria del ghiacciaio",
-        "body": [
-          "Le marmitte si formarono soprattutto quando la fusione glaciale alimentava portate molto elevate. L’acqua accelerava nei passaggi obbligati del granito e generava vortici. Nei punti in cui la corrente iniziava a ruotare, sabbia e ciottoli rimanevano intrappolati e percorrevano ripetutamente traiettorie circolari.",
-          "L’abrasione non dipendeva soltanto dalla forza dell’acqua, ma anche dai frammenti di roccia trasportati. I ciottoli colpivano e levigavano il fondo; i granuli più fini consumavano le pareti. Con il tempo una piccola irregolarità diventava una cavità profonda, spesso cilindrica, con superfici lisce e scanalature che registrano il movimento della corrente.",
-          "Il paesaggio di Maiesso mostra la differenza tra l’azione generale del ghiacciaio, che ha ampliato e organizzato la valle, e il lavoro più preciso delle acque di fusione, capaci di scolpire dettagli centimetro dopo centimetro. Nelle vicinanze, la Centrale idroelettrica di Crego, progettata da Piero Portaluppi tra il 1917 e il 1926, aggiunge un capitolo moderno: l’uomo ha iniziato a utilizzare la stessa energia dell’acqua che aveva modellato la roccia."
-        ]
+        "title": "Storia e geologia",
+        "body": "Le acque di fusione del ghiacciaio scorrevano con grande energia. Sabbia e ciottoli catturati nei vortici agivano come utensili abrasivi, ruotando e scavando cavità sempre più profonde. Il risultato sono forme tondeggianti che documentano la dinamica del fiume e il passato glaciale della valle."
       },
       "visit": {
-        "title": "Osservazione e sicurezza lungo il Toce",
-        "body": [
-          "Le Marmitte si osservano da un ambiente fluviale attivo. Anche quando l’acqua sembra tranquilla, la portata può variare e il granito levigato diventa estremamente scivoloso. Rimani sui sentieri e sui punti di osservazione sicuri, senza scendere sulle rocce bagnate o entrare nelle cavità.",
-          "Usa scarpe con suola aderente, tieni i bambini vicini e non oltrepassare barriere o segnalazioni. Dopo piogge intense, temporali o rapido disgelo il livello del Toce può cambiare; in queste condizioni è prudente rinunciare o limitarsi ai punti ufficialmente accessibili.",
-          "Le ore con luce obliqua aiutano a leggere meglio la profondità delle cavità e le diverse tonalità del granito. Evita però di concentrare l’attenzione soltanto sulle fotografie: il terreno irregolare richiede sempre controllo del passo. Una visita lenta consente di distinguere superfici lisce, solchi, ciottoli intrappolati e il rapporto tra ponte, fiume e uscita dell’Orrido Sud."
-        ]
+        "title": "Consigli per la visita",
+        "body": "Resta sui passaggi sicuri e non avvicinarti alle rocce bagnate o al bordo del fiume: il granito levigato può essere molto scivoloso e la portata del Toce può cambiare. Usa scarpe da trekking, sorveglia i bambini e rinuncia in caso di piena, temporali o indicazioni locali di chiusura."
       }
     },
     "highlights": {
-      "eyebrow": "Leggere la roccia",
-      "title": "Cosa osservare a Maiesso",
+      "eyebrow": "Leggere le forme",
+      "title": "Cosa osservare sul posto",
       "items": [
-        "Le cavità emisferiche e cilindriche, nate dove i vortici hanno mantenuto in rotazione sabbia e ciottoli.",
-        "Le superfici levigate e le scanalature del granito, che registrano direzione e intensità dell’abrasione.",
-        "Il Ponte di Maiesso, punto di collegamento visivo e pedonale tra il Toce, le Marmitte e l’uscita dell’Orrido Sud.",
-        "La Centrale di Crego, testimonianza del modo in cui nel Novecento l’energia delle acque alpine è stata trasformata in elettricità."
+        "Le cavità tonde, alcune emisferiche e altre più cilindriche, scavate dai vortici carichi di sedimenti.",
+        "Le superfici lisce e scanalate del granito, traccia dell’abrasione ripetuta di sabbia e ciottoli.",
+        "Il rapporto tra le Marmitte, il Ponte di Maiesso e l’uscita dell’Orrido Sud lungo lo stesso itinerario.",
+        "La vicina Centrale Idroelettrica di Crego, progettata da Piero Portaluppi tra il 1917 e il 1926, come curiosità storico-industriale."
       ]
     },
     "gallery": {
-      "eyebrow": "Fotografie del luogo",
-      "title": "Acqua e granito a Maiesso",
-      "intro": "Le immagini mostrano le Marmitte reali lungo il Toce. Ogni fotografia rimanda alla pagina di attribuzione; Google Maps raccoglie inoltre contributi recenti dei visitatori.",
-      "sourceLabel": "Fonte e licenza",
-      "mapsPhotos": "Vedi altre foto su Google Maps",
+      "eyebrow": "Immagini dimostrative",
+      "title": "Acqua, granito e bosco",
+      "intro": "Le fotografie sono placeholder a tema fluviale e alpino: sostituiscile con immagini autorizzate di Maiesso.",
       "items": [
         {
-          "alt": "Marmitte dei Giganti nel granito lungo il Toce",
-          "caption": "Le cavità circolari emergono accanto alla corrente."
+          "alt": "Fiume alpino tra rocce",
+          "caption": "La corrente attraversa il granito levigato."
         },
         {
-          "alt": "Acqua del Toce tra rocce levigate a Maiesso",
-          "caption": "Il fiume continua a modellare e lucidare le superfici."
+          "alt": "Acqua e montagne in una valle alpina",
+          "caption": "Il Toce collega acqua, ghiaccio e paesaggio."
         },
         {
-          "alt": "Dettaglio delle Marmitte dei Giganti",
-          "caption": "Forme tonde prodotte dalla rotazione dei sedimenti."
+          "alt": "Lago alpino tra le montagne",
+          "caption": "Le forme della valle nascono dal passato glaciale."
         },
         {
-          "alt": "Ponte e rocce presso le Marmitte dei Giganti",
-          "caption": "Maiesso collega il percorso fluviale agli Orridi."
+          "alt": "Bosco fitto vicino a un corso d’acqua",
+          "caption": "Il sentiero attraversa un ambiente umido."
         },
         {
-          "alt": "Cavità profonde nelle rocce del Toce",
-          "caption": "Ogni depressione conserva la traccia di antichi vortici."
+          "alt": "Vegetazione verde su rocce",
+          "caption": "La vita colonizza anche le superfici più dure."
         },
         {
-          "alt": "Paesaggio fluviale delle Marmitte dei Giganti",
-          "caption": "Granito, acqua e bosco compongono un unico geosito."
+          "alt": "Formazioni rocciose naturali",
+          "caption": "Dettagli da osservare senza lasciare il percorso."
         }
       ]
     },
-    "narration": "Le Marmitte dei Giganti si trovano a Maiesso, lungo il fiume Toce, e sono collegate agli Orridi di Uriezzo dallo stesso sentiero. Sono cavità arrotondate e cilindriche scavate nel granito dalle acque di fusione glaciale. Nei vortici, sabbia e ciottoli rimanevano intrappolati e ruotavano come utensili abrasivi, levigando e approfondendo la roccia per migliaia di anni. Dal Ponte di Maiesso si osserva il rapporto tra il fiume attuale e l’uscita dell’Orrido Sud. Il granito bagnato è molto scivoloso e la portata del Toce può cambiare: bisogna restare sui punti sicuri, sorvegliare i bambini e rinunciare in caso di piena o temporali. Nelle vicinanze si trova la Centrale idroelettrica di Crego, progettata da Piero Portaluppi tra il 1917 e il 1926."
-  },
-  "assistant": {
-    "title": "Assistente del sentiero",
-    "subtitle": "Risponde solo su Orridi e Marmitte",
-    "open": "Apri assistente AI",
-    "close": "Chiudi assistente AI",
-    "welcome": "Ciao. Posso aiutarti con percorso, geologia, sicurezza e visita agli Orridi di Uriezzo e alle Marmitte dei Giganti.",
-    "placeholder": "Scrivi una domanda...",
-    "send": "Invia messaggio",
-    "sending": "Sto preparando la risposta...",
-    "error": "Si è verificato un errore. Riprova.",
-    "scopeNote": "L’assistente risponde esclusivamente su Orridi di Uriezzo e Marmitte dei Giganti.",
-    "backToTop": "Torna in cima",
-    "youLabel": "Tu",
-    "assistantLabel": "Assistente"
-  },
-  "share": {
-    "button": "Condividi il sito",
-    "title": "Condividi Orridi e Marmitte",
-    "description": "Scansiona il QR code con la fotocamera del telefono oppure condividi direttamente il link del sito.",
-    "close": "Chiudi finestra di condivisione",
-    "nativeShare": "Condividi",
-    "copy": "Copia link",
-    "copied": "Link copiato",
-    "qrAlt": "QR code per aprire il sito sugli Orridi di Uriezzo e le Marmitte dei Giganti"
-  },
-  "nearby": {
-    "eyebrow": "Servizi nei dintorni",
-    "title": "Dove mangiare e sostare in camper",
-    "intro": "Apri i risultati su Google Maps per vedere posizione, recensioni, orari e disponibilità aggiornati prima di partire.",
-    "restaurants": "Ristoranti e pizzerie",
-    "camperAreas": "Aree camper e parcheggi",
-    "openMaps": "Apri in Google Maps",
-    "liveNote": "Orari, apertura stagionale, accessibilità e disponibilità possono cambiare: controlla sempre la scheda Google Maps del luogo scelto."
+    "narration": "Le Marmitte dei Giganti si trovano a Maiesso, lungo il fiume Toce, e sono collegate agli Orridi di Uriezzo dallo stesso sentiero. Proseguendo oltre l’Orrido Sud si raggiunge il Ponte di Maiesso e quindi la zona delle cavità. Le marmitte sono forme emisferiche o cilindriche scavate nella roccia dalla forza delle acque di fusione del ghiacciaio. Sabbia e ciottoli trasportati dalla corrente restavano intrappolati nei vortici e agivano come strumenti abrasivi, consumando il granito per millenni. Da Baceno, il percorso di andata e ritorno che comprende gli Orridi e le Marmitte richiede indicativamente circa un’ora e dieci minuti, senza soste lunghe. Le rocce bagnate possono essere molto scivolose e la portata del Toce può variare. È importante restare sui passaggi sicuri, usare scarpe adatte e rinunciare alla visita in caso di piena o temporali. Nelle vicinanze si trova anche la Centrale Idroelettrica di Crego, progettata da Piero Portaluppi tra il 1917 e il 1926."
   }
 }

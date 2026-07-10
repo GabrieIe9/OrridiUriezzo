@@ -1,34 +1,25 @@
 # Validation report
 
-Validation completed on the final mobile, sharing, photography and nearby-services version.
+Validated on 2026-07-10.
 
-## Automated checks
+## Commands executed
 
-- `npm ci --no-audit --no-fund`: passed from a clean dependency directory.
-- `npm run lint`: passed.
-- `npm run build`: passed.
-- TypeScript production type-check: passed.
-- Static generation: 17 route outputs generated; localized home and detail pages generated for IT, EN, ES and DE.
-- Dynamic routes detected: `/api/chat` and `/api/tts`.
-- QR-specific page routes: absent.
-- `qrcode.react`: removed from dependencies and lockfile.
-- Translation object shape: identical in all four languages.
-- `npm audit`: zero known vulnerabilities.
-- Secret scan: supplied Gemini and ElevenLabs values are not present in the project.
+```bash
+npm install
+npm run lint
+npm run build
+npm audit
+```
 
-## Functional checks
+## Result
 
-- Header and footer contain no QR page link.
-- Homepage renders the Share control with the supplied `public/qrcode.png`.
-- The shared URL defaults to `https://orridiuriezzo.vercel.app/it`.
-- `NEXT_PUBLIC_SITE_URL` is normalized to its origin to prevent duplicated locale paths.
-- Gallery images point to real-location sources and include attribution links.
-- Google Maps photo, restaurant, pizzeria, parking and camper searches are present.
-- Long-form history, geology, access and safety content is available in four languages.
-- Gemini instructions remain server-side and restrict the assistant to the two attractions and visit-related services.
-- Light/dark mode, mobile safe areas, AI chat and back-to-top controls remain enabled.
-- Service-worker cache updated to `ossola-guide-v3` and includes the QR image.
+- ESLint: 0 errors, 0 warnings.
+- TypeScript: passed during `next build`.
+- Production build: passed.
+- Static output: 4 home pages, 8 attraction pages, 4 QR pages, sitemap and robots.
+- Serverless output: `/api/tts`.
+- Dependency audit: 0 known vulnerabilities.
+- HTTP smoke test: `/it`, `/en/orridi-uriezzo`, `/de/marmitte-dei-giganti`, `/it/qrcode` and `/sitemap.xml` returned HTTP 200.
+- TTS without `ELEVENLABS_API_KEY`: returned the expected HTTP 503 configuration error.
 
-## External services not called
-
-Live Gemini and ElevenLabs requests were not executed. Their API keys must be configured only in Vercel environment variables.
+The ElevenLabs call itself was not executed because no API key was provided. The endpoint and request body follow the official streaming Text-to-Speech API schema.

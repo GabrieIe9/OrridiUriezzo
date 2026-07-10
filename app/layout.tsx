@@ -1,21 +1,10 @@
-import type {Metadata, Viewport} from 'next';
+import type {Metadata} from 'next';
 import './globals.css';
-import {siteOrigin} from '@/lib/site-url';
 
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  viewportFit: 'cover',
-  colorScheme: 'light dark',
-  themeColor: [
-    {media: '(prefers-color-scheme: light)', color: '#f7f4ec'},
-    {media: '(prefers-color-scheme: dark)', color: '#0b1714'}
-  ]
-};
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.vercel.app';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteOrigin),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Orridi di Uriezzo & Marmitte dei Giganti',
     template: '%s | Val d’Ossola'

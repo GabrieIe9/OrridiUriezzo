@@ -4,7 +4,6 @@ export type GalleryImage = {
   src: string;
   altKey: string;
   captionKey: string;
-  sourceUrl: string;
 };
 
 type AttractionVisuals = {
@@ -12,97 +11,81 @@ type AttractionVisuals = {
   card: string;
   gallery: GalleryImage[];
   mapsUrl: string;
-  mapsPhotosUrl: string;
 };
 
-const commons = (filename: string) => `https://commons.wikimedia.org/wiki/File:${filename}`;
-
+// TODO: replace these royalty-free Unsplash placeholders with approved local photos.
 export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
   'orridi-uriezzo': {
-    hero: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Baceno_Orridi_di_Uriezzo_Orrido_01.jpg',
-    card: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Baceno_Orridi_di_Uriezzo_Orrido_09.jpg',
+    hero: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=85',
+    card: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Orridi+di+Uriezzo',
-    mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Orridi+di+Uriezzo+foto',
     gallery: [
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Baceno_Orridi_di_Uriezzo_01.jpg',
+        src: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.0.alt',
-        captionKey: 'gallery.items.0.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_01.jpg')
+        captionKey: 'gallery.items.0.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Baceno_Orridi_di_Uriezzo_02.jpg',
+        src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.1.alt',
-        captionKey: 'gallery.items.1.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_02.jpg')
+        captionKey: 'gallery.items.1.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Baceno_Orridi_di_Uriezzo_03.jpg',
+        src: 'https://images.unsplash.com/photo-1439853949127-fa647821eba0?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.2.alt',
-        captionKey: 'gallery.items.2.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_03.jpg')
+        captionKey: 'gallery.items.2.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Baceno_Orridi_di_Uriezzo_04.jpg',
+        src: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.3.alt',
-        captionKey: 'gallery.items.3.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_04.jpg')
+        captionKey: 'gallery.items.3.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Baceno_Orridi_di_Uriezzo_Orrido_01.jpg',
+        src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.4.alt',
-        captionKey: 'gallery.items.4.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Orrido_01.jpg')
+        captionKey: 'gallery.items.4.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Baceno_Orridi_di_Uriezzo_Orrido_09.jpg',
+        src: 'https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.5.alt',
-        captionKey: 'gallery.items.5.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Orrido_09.jpg')
+        captionKey: 'gallery.items.5.caption'
       }
     ]
   },
   'marmitte-dei-giganti': {
-    hero: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_01.jpg',
-    card: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_02.jpg',
+    hero: 'https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=2200&q=85',
+    card: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Marmitte+dei+Giganti+Maiesso',
-    mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Marmitte+dei+Giganti+Maiesso+foto',
     gallery: [
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_01.jpg',
+        src: 'https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.0.alt',
-        captionKey: 'gallery.items.0.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_01.jpg')
+        captionKey: 'gallery.items.0.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_02.jpg',
+        src: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.1.alt',
-        captionKey: 'gallery.items.1.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_02.jpg')
+        captionKey: 'gallery.items.1.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_03.jpg',
+        src: 'https://images.unsplash.com/photo-1439853949127-fa647821eba0?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.2.alt',
-        captionKey: 'gallery.items.2.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_03.jpg')
+        captionKey: 'gallery.items.2.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_04.jpg',
+        src: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.3.alt',
-        captionKey: 'gallery.items.3.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_04.jpg')
+        captionKey: 'gallery.items.3.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_05.jpg',
+        src: 'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.4.alt',
-        captionKey: 'gallery.items.4.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_05.jpg')
+        captionKey: 'gallery.items.4.caption'
       },
       {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_06.jpg',
+        src: 'https://images.unsplash.com/photo-1534269222346-5a896154c41d?auto=format&fit=crop&w=1600&q=80',
         altKey: 'gallery.items.5.alt',
-        captionKey: 'gallery.items.5.caption',
-        sourceUrl: commons('Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_06.jpg')
+        captionKey: 'gallery.items.5.caption'
       }
     ]
   }
