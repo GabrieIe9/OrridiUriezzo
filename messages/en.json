@@ -9,7 +9,8 @@
     "nav": {
       "home": "Home",
       "orridi": "Gorges",
-      "marmitte": "Potholes"
+      "marmitte": "Potholes",
+      "news": "News"
     },
     "footer": {
       "description": "An essential guide to reading the glacial landscape of Antigorio Valley, one step at a time.",
@@ -56,7 +57,11 @@
     "loading": "Preparing…",
     "pause": "Pause",
     "stop": "Stop",
-    "genericError": "The audio guide could not be loaded. Please try again shortly."
+    "genericError": "The audio guide could not be loaded. Please try again shortly.",
+    "chapterLabel": "Chapter",
+    "previousChapter": "Previous chapter",
+    "nextChapter": "Next chapter",
+    "cacheNote": "After its first generation, each chapter is stored and served from the shared cache."
   },
   "orridi": {
     "meta": {
@@ -190,6 +195,13 @@
           "alt": "Rock passage along the Uriezzo Gorges route"
         }
       }
+    },
+    "guide": {
+      "eyebrow": "Complete chapter guide",
+      "title": "Understand the place, step by step",
+      "description": "An extended guide to geology, history, paths, environment and safety, designed to turn a short stop into a careful reading of the landscape.",
+      "contentsLabel": "Chapter contents",
+      "backToContents": "Back to contents"
     }
   },
   "marmitte": {
@@ -324,6 +336,13 @@
           "alt": "The Crego hydroelectric power station building"
         }
       }
+    },
+    "guide": {
+      "eyebrow": "Complete chapter guide",
+      "title": "Understand the place, step by step",
+      "description": "An extended guide to geology, history, paths, environment and safety, designed to turn a short stop into a careful reading of the landscape.",
+      "contentsLabel": "Chapter contents",
+      "backToContents": "Back to contents"
     }
   },
   "assistant": {
@@ -361,5 +380,20 @@
     "liveNote": "Hours, seasonal opening, accessibility and availability may change. Always check the selected place on Google Maps.",
     "restaurantsMapTitle": "Restaurants and pizzerias on the map",
     "camperMapTitle": "Motorhome stops and parking on the map"
+  },
+  "news": {
+    "meta": {
+      "title": "News from the Uriezzo Gorges and Maiesso",
+      "description": "Weekly archive of local news about the Uriezzo Gorges and the Giants’ Potholes, with publication dates and sources."
+    },
+    "eyebrow": "Updates from the valley",
+    "title": "News and recent notices",
+    "intro": "Every week the site collects relevant updates published by local outlets and territorial sources. Articles are summarised, dated and linked to the original publication.",
+    "weekLabel": "Week",
+    "published": "Published",
+    "source": "Source",
+    "readOriginal": "Read the original source",
+    "empty": "No relevant news was found for this week. Previous archived weeks remain available in the menu.",
+    "updated": "Archive updated"
   }
 }

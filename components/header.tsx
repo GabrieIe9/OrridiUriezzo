@@ -24,6 +24,7 @@ export async function Header() {
           <Link href="/">{t('nav.home')}</Link>
           <Link href="/orridi-uriezzo">{t('nav.orridi')}</Link>
           <Link href="/marmitte-dei-giganti">{t('nav.marmitte')}</Link>
+          <Link href="/news">{t('nav.news')}</Link>
         </nav>
 
         <div className="header-actions">

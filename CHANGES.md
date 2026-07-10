@@ -1,12 +1,17 @@
-# Modifiche finali
+# Modifiche versione automatizzata
 
-- Rimossa la pagina QR e ogni collegamento QR dal menu e dal footer.
-- Inserito in homepage un pulsante Condividi con popup, QR fornito, Web Share API e copia link.
-- Aggiunte fotografie reali degli Orridi e delle Marmitte con attribuzione Wikimedia Commons.
-- Aggiunti collegamenti alle fotografie recenti su Google Maps.
-- Sostituiti i dati generici dei locali con ricerche Google Maps per ristoranti, pizzerie, aree camper e parcheggi.
-- Inserita Trattoria della Campagna come punto di interesse sul lato di Verampio.
-- Ampliati in quattro lingue i testi storici, geologici, pratici e di sicurezza.
-- Aggiornato il prompt Gemini per servizi di visita reali e rimossi riferimenti a contenuti dimostrativi.
-- Resa robusta la gestione di `NEXT_PUBLIC_SITE_URL`, anche quando contiene `/it`.
-- Conservati layout mobile, dark mode, torna-su, chat Gemini e credito Developer by Gabriele.
+- Aggiunta guida completa in 10 capitoli per ogni attrazione e lingua.
+- Estesi i contenuti a circa 3.500–5.000 parole per attrazione.
+- Trasformata l'audioguida in un player per capitoli.
+- Aggiunta cache permanente ElevenLabs su Vercel Blob con versionamento tramite hash.
+- Aggiunta ricerca automatica di fotografie tramite Wikimedia Commons API.
+- Rotazione fotografica ogni 14 giorni con attribuzione e controllo anti-duplicato globale.
+- Aggiunta sezione News in quattro lingue.
+- Aggiunto archivio settimanale fino a 52 settimane con selettore.
+- Aggiunti feed locali, Google News, deduplica, data, fonte, immagine e link originale.
+- Aggiunti riassunti e traduzioni Gemini senza ripubblicare integralmente gli articoli.
+- Aggiunta route cron protetta con `CRON_SECRET`.
+- Aggiunta pianificazione domenicale in `vercel.json`.
+- Aggiunta invalidazione automatica delle pagine dopo ogni aggiornamento.
+- Aggiunte dipendenze `@vercel/blob` e `fast-xml-parser`.
+- Conservati mobile layout, mappe, dark mode, QR, chat e footer Developer by Gabriele.

@@ -3,10 +3,12 @@ OrridiUriezzo/
 │   ├── [locale]/
 │   │   ├── marmitte-dei-giganti/page.tsx
 │   │   ├── orridi-uriezzo/page.tsx
+│   │   ├── news/page.tsx
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── api/
 │   │   ├── chat/route.ts
+│   │   ├── cron/refresh/route.ts
 │   │   └── tts/route.ts
 │   ├── globals.css
 │   ├── layout.tsx
@@ -22,17 +24,21 @@ OrridiUriezzo/
 │   ├── language-switcher.tsx
 │   ├── location-map.tsx
 │   ├── nearby-places.tsx
-│   ├── service-worker-register.tsx
+│   ├── news-archive.tsx
 │   ├── share-qr-button.tsx
 │   └── theme-toggle.tsx
 ├── data/
+│   ├── guides/{it,en,es,de}.json
 │   ├── attractions.ts
-│   └── nearby-places.json
-├── i18n/
-│   ├── navigation.ts
-│   ├── request.ts
-│   └── routing.ts
-├── lib/site-url.ts
+│   ├── nearby-places.json
+│   └── news-fallback.json
+├── lib/
+│   ├── blob-storage.ts
+│   ├── commons-images.ts
+│   ├── guides.ts
+│   ├── news.ts
+│   ├── site-url.ts
+│   └── visuals.ts
 ├── messages/{it,en,es,de}.json
 ├── public/
 │   ├── icon.svg
@@ -43,12 +49,13 @@ OrridiUriezzo/
 ├── .env.example
 ├── .gitignore
 ├── .npmrc
+├── AUTOMATION_SETUP.md
 ├── CHANGES.md
 ├── README.md
 ├── VALIDATION.md
-├── VERCEL_ENV_SETUP.md
 ├── next.config.ts
 ├── package.json
 ├── package-lock.json
 ├── proxy.ts
-└── tsconfig.json
+├── tsconfig.json
+└── vercel.json

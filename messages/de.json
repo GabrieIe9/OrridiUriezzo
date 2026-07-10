@@ -9,7 +9,8 @@
     "nav": {
       "home": "Start",
       "orridi": "Schluchten",
-      "marmitte": "Strudeltöpfe"
+      "marmitte": "Strudeltöpfe",
+      "news": "Neuigkeiten"
     },
     "footer": {
       "description": "Ein kompakter Wegweiser, um die Gletscherlandschaft des Antigorio-Tals Schritt für Schritt zu verstehen.",
@@ -56,7 +57,11 @@
     "loading": "Wird vorbereitet…",
     "pause": "Pause",
     "stop": "Stopp",
-    "genericError": "Der Audioguide konnte nicht geladen werden. Bitte versuche es gleich noch einmal."
+    "genericError": "Der Audioguide konnte nicht geladen werden. Bitte versuche es gleich noch einmal.",
+    "chapterLabel": "Kapitel",
+    "previousChapter": "Vorheriges Kapitel",
+    "nextChapter": "Nächstes Kapitel",
+    "cacheNote": "Nach der ersten Erzeugung wird jedes Kapitel gespeichert und aus dem gemeinsamen Cache abgespielt."
   },
   "orridi": {
     "meta": {
@@ -190,6 +195,13 @@
           "alt": "Felsdurchgang entlang der Route durch die Uriezzo-Schluchten"
         }
       }
+    },
+    "guide": {
+      "eyebrow": "Ausführlicher Kapitelführer",
+      "title": "Den Ort Schritt für Schritt verstehen",
+      "description": "Ein ausführlicher Führer zu Geologie, Geschichte, Wegen, Umwelt und Sicherheit, der den Besuch zu einer aufmerksamen Landschaftsinterpretation macht.",
+      "contentsLabel": "Kapitelübersicht",
+      "backToContents": "Zurück zur Übersicht"
     }
   },
   "marmitte": {
@@ -324,6 +336,13 @@
           "alt": "Gebäude des Wasserkraftwerks Crego"
         }
       }
+    },
+    "guide": {
+      "eyebrow": "Ausführlicher Kapitelführer",
+      "title": "Den Ort Schritt für Schritt verstehen",
+      "description": "Ein ausführlicher Führer zu Geologie, Geschichte, Wegen, Umwelt und Sicherheit, der den Besuch zu einer aufmerksamen Landschaftsinterpretation macht.",
+      "contentsLabel": "Kapitelübersicht",
+      "backToContents": "Zurück zur Übersicht"
     }
   },
   "assistant": {
@@ -361,5 +380,20 @@
     "liveNote": "Öffnungszeiten, saisonaler Betrieb, Zugänglichkeit und Verfügbarkeit können sich ändern. Prüfe immer den gewählten Ort in Google Maps.",
     "restaurantsMapTitle": "Restaurants und Pizzerien auf der Karte",
     "camperMapTitle": "Wohnmobilstellplätze und Parkplätze auf der Karte"
+  },
+  "news": {
+    "meta": {
+      "title": "Neuigkeiten aus Uriezzo und Maiesso",
+      "description": "Wöchentliches Archiv lokaler Meldungen zu den Uriezzo-Schluchten und den Strudeltöpfen mit Datum und Quelle."
+    },
+    "eyebrow": "Aktuelles aus dem Tal",
+    "title": "Neuigkeiten und aktuelle Hinweise",
+    "intro": "Jede Woche sammelt die Website relevante Meldungen lokaler Medien und regionaler Quellen. Die Artikel werden zusammengefasst, datiert und mit der Originalquelle verlinkt.",
+    "weekLabel": "Woche",
+    "published": "Veröffentlicht",
+    "source": "Quelle",
+    "readOriginal": "Originalquelle lesen",
+    "empty": "Für diese Woche wurden keine relevanten Meldungen gefunden. Frühere Wochen bleiben im Menü verfügbar.",
+    "updated": "Archiv aktualisiert"
   }
 }

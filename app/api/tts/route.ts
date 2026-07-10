@@ -1,26 +1,19 @@
 import {createHash} from 'node:crypto';
 import {mkdir, readFile, stat, writeFile} from 'node:fs/promises';
 import path from 'node:path';
-import it from '@/messages/it.json';
-import en from '@/messages/en.json';
-import es from '@/messages/es.json';
-import de from '@/messages/de.json';
+import {findPublicBlob, hasBlobStorage, writePublicBlob} from '@/lib/blob-storage';
+import {getGuide, getGuideChapter, type GuideLocale} from '@/lib/guides';
+import type {AttractionSlug} from '@/data/attractions';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
-type Locale = 'it' | 'en' | 'es' | 'de';
-type Slug = 'orridi-uriezzo' | 'marmitte-dei-giganti';
-
-type MessageShape = typeof it;
-
-const messages: Record<Locale, MessageShape> = {it, en, es, de};
-const allowedLocales = new Set<Locale>(['it', 'en', 'es', 'de']);
-const allowedSlugs = new Set<Slug>(['orridi-uriezzo', 'marmitte-dei-giganti']);
+const allowedLocales = new Set<GuideLocale>(['it', 'en', 'es', 'de']);
+const allowedSlugs = new Set<AttractionSlug>(['orridi-uriezzo', 'marmitte-dei-giganti']);
 const cacheDir = path.join('/tmp', 'ossola-tts-cache');
 const RATE_WINDOW_MS = 60_000;
-const RATE_LIMIT = 6;
+const RATE_LIMIT = 12;
 const rateBuckets = new Map<string, {count: number; resetAt: number}>();
 
 function getClientIp(request: Request) {
@@ -30,25 +23,18 @@ function getClientIp(request: Request) {
 function isRateLimited(ip: string) {
   const now = Date.now();
   const bucket = rateBuckets.get(ip);
-
   if (!bucket || bucket.resetAt <= now) {
     rateBuckets.set(ip, {count: 1, resetAt: now + RATE_WINDOW_MS});
     return false;
   }
-
   bucket.count += 1;
   return bucket.count > RATE_LIMIT;
 }
 
-function getNarration(locale: Locale, slug: Slug) {
-  const namespace = slug === 'orridi-uriezzo' ? 'orridi' : 'marmitte';
-  return messages[locale][namespace].narration;
-}
-
-function audioHeaders(cacheStatus: 'HIT' | 'MISS') {
+function audioHeaders(cacheStatus: 'BLOB' | 'TMP' | 'MISS') {
   return {
     'Content-Type': 'audio/mpeg',
-    'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000',
+    'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
     'X-TTS-Cache': cacheStatus,
     'X-Content-Type-Options': 'nosniff'
   };
@@ -67,9 +53,17 @@ export async function POST(request: Request) {
     return Response.json({error: 'Invalid JSON payload.'}, {status: 400});
   }
 
-  const {locale, slug} = (body || {}) as {locale?: string; slug?: string};
-  if (!locale || !allowedLocales.has(locale as Locale) || !slug || !allowedSlugs.has(slug as Slug)) {
+  const {locale, slug, chapterId} = (body || {}) as {locale?: string; slug?: string; chapterId?: string};
+  if (!locale || !allowedLocales.has(locale as GuideLocale) || !slug || !allowedSlugs.has(slug as AttractionSlug)) {
     return Response.json({error: 'Unsupported language or guide.'}, {status: 400});
+  }
+
+  const safeLocale = locale as GuideLocale;
+  const safeSlug = slug as AttractionSlug;
+  const fallbackChapter = getGuide(safeLocale, safeSlug).chapters[0];
+  const chapter = chapterId ? getGuideChapter(safeLocale, safeSlug, chapterId) : fallbackChapter;
+  if (!chapter) {
+    return Response.json({error: 'Unsupported guide chapter.'}, {status: 400});
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
@@ -77,21 +71,29 @@ export async function POST(request: Request) {
     return Response.json({error: 'Audio service is not configured.'}, {status: 503});
   }
 
-  const safeLocale = locale as Locale;
-  const safeSlug = slug as Slug;
-  const text = getNarration(safeLocale, safeSlug);
+  const text = `${chapter.title}. ${chapter.paragraphs.join('\n\n')}`;
   const voiceId = process.env.ELEVENLABS_VOICE_ID || 'JBFqnCBsd6RMkjVDRZzb';
-  const cacheKey = createHash('sha256')
-    .update(`${voiceId}:${safeLocale}:${safeSlug}:${text}`)
+  const modelId = process.env.ELEVENLABS_MODEL_ID || 'eleven_multilingual_v2';
+  const hash = createHash('sha256')
+    .update(`${voiceId}:${modelId}:${safeLocale}:${safeSlug}:${chapter.id}:${text}`)
     .digest('hex');
-  const cachePath = path.join(cacheDir, `${cacheKey}.mp3`);
+  const filename = `${chapter.id}-${hash.slice(0, 20)}.mp3`;
+  const blobPath = `orridi/audio/${safeLocale}/${safeSlug}/${filename}`;
+  const temporaryPath = path.join(cacheDir, filename);
+
+  if (hasBlobStorage()) {
+    const cached = await findPublicBlob(blobPath);
+    if (cached?.url) {
+      return Response.redirect(cached.url, 307);
+    }
+  }
 
   try {
-    await stat(cachePath);
-    const cachedAudio = await readFile(cachePath);
-    return new Response(cachedAudio, {headers: audioHeaders('HIT')});
+    await stat(temporaryPath);
+    const cachedAudio = await readFile(temporaryPath);
+    return new Response(cachedAudio, {headers: audioHeaders('TMP')});
   } catch {
-    // Cache miss. /tmp is intentionally best-effort on serverless runtimes.
+    // The temporary cache is best-effort and instance-local.
   }
 
   const controller = new AbortController();
@@ -99,7 +101,7 @@ export async function POST(request: Request) {
 
   try {
     const elevenResponse = await fetch(
-      `https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voiceId)}/stream?output_format=mp3_44100_128`,
+      `https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voiceId)}?output_format=mp3_44100_128`,
       {
         method: 'POST',
         headers: {
@@ -109,55 +111,41 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           text,
-          model_id: 'eleven_multilingual_v2',
+          model_id: modelId,
           voice_settings: {
             stability: 0.55,
             similarity_boost: 0.75,
-            style: 0.15,
+            style: 0.1,
             use_speaker_boost: true
           }
         }),
-        signal: controller.signal
+        signal: controller.signal,
+        cache: 'no-store'
       }
     );
 
-    if (!elevenResponse.ok || !elevenResponse.body) {
+    if (!elevenResponse.ok) {
       const detail = await elevenResponse.text().catch(() => '');
-      console.error('ElevenLabs TTS error', elevenResponse.status, detail.slice(0, 500));
+      console.error('ElevenLabs TTS error', elevenResponse.status, detail.slice(0, 800));
       return Response.json({error: 'The audio guide is temporarily unavailable.'}, {status: 502});
     }
 
-    await mkdir(cacheDir, {recursive: true});
-    const reader = elevenResponse.body.getReader();
-    const chunks: Uint8Array[] = [];
+    const audio = await elevenResponse.arrayBuffer();
+    if (!audio.byteLength) {
+      return Response.json({error: 'The audio guide is temporarily unavailable.'}, {status: 502});
+    }
 
-    const stream = new ReadableStream<Uint8Array>({
-      async pull(streamController) {
-        try {
-          const {done, value} = await reader.read();
-          if (done) {
-            const completeAudio = Buffer.concat(chunks.map((chunk) => Buffer.from(chunk)));
-            try {
-              await writeFile(cachePath, completeAudio);
-            } catch (error) {
-              console.error('Unable to persist temporary TTS cache', error);
-            }
-            streamController.close();
-            return;
-          }
-
-          chunks.push(value);
-          streamController.enqueue(value);
-        } catch (error) {
-          streamController.error(error);
-        }
-      },
-      cancel() {
-        void reader.cancel();
+    const stored = await writePublicBlob(blobPath, audio, 'audio/mpeg');
+    if (!stored) {
+      try {
+        await mkdir(cacheDir, {recursive: true});
+        await writeFile(temporaryPath, Buffer.from(audio));
+      } catch (error) {
+        console.error('Unable to persist temporary TTS cache', error);
       }
-    });
+    }
 
-    return new Response(stream, {headers: audioHeaders('MISS')});
+    return new Response(audio, {headers: audioHeaders('MISS')});
   } catch (error) {
     console.error('TTS proxy failure', error);
     const message = error instanceof Error && error.name === 'AbortError'

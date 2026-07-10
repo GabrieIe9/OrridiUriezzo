@@ -9,7 +9,8 @@
     "nav": {
       "home": "Home",
       "orridi": "Orridi",
-      "marmitte": "Marmitte"
+      "marmitte": "Marmitte",
+      "news": "News"
     },
     "footer": {
       "description": "Una guida essenziale per leggere il paesaggio glaciale della Valle Antigorio, passo dopo passo.",
@@ -56,7 +57,11 @@
     "loading": "Preparazione…",
     "pause": "Pausa",
     "stop": "Stop",
-    "genericError": "Impossibile caricare l’audioguida. Riprova tra poco."
+    "genericError": "Impossibile caricare l’audioguida. Riprova tra poco.",
+    "chapterLabel": "Capitolo",
+    "previousChapter": "Capitolo precedente",
+    "nextChapter": "Capitolo successivo",
+    "cacheNote": "Dopo la prima generazione, ogni capitolo viene conservato e riprodotto dalla cache."
   },
   "orridi": {
     "meta": {
@@ -190,6 +195,13 @@
           "alt": "Passaggio roccioso lungo il percorso degli Orridi di Uriezzo"
         }
       }
+    },
+    "guide": {
+      "eyebrow": "Guida completa a capitoli",
+      "title": "Conoscere il luogo, passo dopo passo",
+      "description": "Una guida estesa per leggere geologia, storia, sentieri, ambiente e sicurezza senza ridurre la visita a una semplice sosta fotografica.",
+      "contentsLabel": "Indice dei capitoli",
+      "backToContents": "Torna all’indice"
     }
   },
   "marmitte": {
@@ -324,6 +336,13 @@
           "alt": "Edificio della centrale idroelettrica di Crego"
         }
       }
+    },
+    "guide": {
+      "eyebrow": "Guida completa a capitoli",
+      "title": "Conoscere il luogo, passo dopo passo",
+      "description": "Una guida estesa per leggere geologia, storia, sentieri, ambiente e sicurezza senza ridurre la visita a una semplice sosta fotografica.",
+      "contentsLabel": "Indice dei capitoli",
+      "backToContents": "Torna all’indice"
     }
   },
   "assistant": {
@@ -361,5 +380,20 @@
     "liveNote": "Orari, apertura stagionale, accessibilità e disponibilità possono cambiare: controlla sempre la scheda Google Maps del luogo scelto.",
     "restaurantsMapTitle": "Ristoranti e pizzerie sulla mappa",
     "camperMapTitle": "Aree camper e parcheggi sulla mappa"
+  },
+  "news": {
+    "meta": {
+      "title": "News dagli Orridi di Uriezzo e da Maiesso",
+      "description": "Archivio settimanale di notizie locali sugli Orridi di Uriezzo e sulle Marmitte dei Giganti, con fonte e data."
+    },
+    "eyebrow": "Aggiornamenti dal territorio",
+    "title": "News e avvisi recenti",
+    "intro": "Ogni settimana il sito raccoglie le novità pubblicate dalle testate locali e dalle fonti del territorio. Gli articoli sono riassunti, datati e collegati alla fonte originale.",
+    "weekLabel": "Settimana",
+    "published": "Pubblicata",
+    "source": "Fonte",
+    "readOriginal": "Leggi la fonte originale",
+    "empty": "Nessuna notizia pertinente è stata trovata per questa settimana. Le settimane archiviate restano disponibili dal menu.",
+    "updated": "Archivio aggiornato"
   }
 }

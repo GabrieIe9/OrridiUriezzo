@@ -1,125 +1,148 @@
 # Orridi di Uriezzo & Marmitte dei Giganti
 
-Sito turistico multilingua, mobile-first e pronto per Vercel dedicato agli Orridi di Uriezzo e alle Marmitte dei Giganti di Maiesso, in Valle Antigorio.
+Sito turistico multilingua, mobile-first e pronto per Vercel dedicato agli Orridi di Uriezzo e alle Marmitte dei Giganti di Maiesso.
 
-## Funzionalità
+## Funzioni principali
 
-- Next.js App Router con TypeScript.
-- Lingue: italiano, inglese, spagnolo e tedesco.
-- Percorsi localizzati `/it`, `/en`, `/es`, `/de`.
-- Pagine complete per Orridi di Uriezzo e Marmitte dei Giganti.
-- Testi estesi su storia glaciale, geologia, accessi, ambiente e sicurezza.
-- Fotografie reali del luogo con collegamento alla pagina di attribuzione Wikimedia Commons.
-- Collegamenti Google Maps per posizione, fotografie recenti, ristoranti, pizzerie, parcheggi e aree camper.
-- Pulsante Condividi in homepage con il QR code fornito per la versione italiana.
-- Tema chiaro/scuro con preferenza salvata nel browser.
-- Assistente Gemini limitato server-side alle sole domande inerenti alle due attrazioni.
-- Audioguida ElevenLabs con chiave custodita lato server.
-- Pulsante mobile per tornare in cima.
-- Service worker con fallback offline e cache del QR code.
-- Footer con `Developer by Gabriele`.
+- Next.js App Router, TypeScript e `next-intl`.
+- Italiano, inglese, spagnolo e tedesco.
+- Guida editoriale in 10 capitoli per ogni attrazione e ogni lingua.
+- Circa 3.500–5.000 parole per attrazione, a seconda della lingua.
+- Audioguida ElevenLabs separata per capitolo.
+- Cache permanente degli MP3 su Vercel Blob, indicizzata tramite hash del testo, lingua, voce e modello.
+- Rotazione automatica delle fotografie ogni 14 giorni tramite Wikimedia Commons.
+- Selezione senza duplicati tra hero, card, galleria e punti della mappa.
+- Attribuzione autore, licenza e collegamento alla pagina originale di ogni fotografia.
+- Sezione News aggiornata ogni domenica da feed locali e Google News.
+- Archivio delle ultime 52 settimane con menu a tendina.
+- Titolo, fonte, data, immagine, riassunto originale e collegamento all'articolo completo.
+- Mappe Google incorporate, punti di interesse e ricerche aggiornate per ristoranti, parcheggi e aree camper.
+- Assistente Gemini limitato server-side alle domande inerenti agli Orridi e alle Marmitte.
+- QR di condivisione in homepage, dark mode, pulsante torna-su e interfaccia ottimizzata per smartphone.
+- Footer `Developer by Gabriele`.
+
+## Automazioni
+
+Il file `vercel.json` registra il cron:
+
+```text
+0 6 * * 0
+```
+
+La route `/api/cron/refresh` viene richiamata la domenica alle 06:00 UTC. Ogni esecuzione:
+
+1. legge i feed delle testate locali e la ricerca Google News;
+2. elimina duplicati e notizie fuori tema;
+3. crea riassunti e traduzioni nelle quattro lingue tramite Gemini, senza copiare integralmente gli articoli;
+4. salva o sostituisce la settimana corrente e conserva fino a 52 settimane;
+5. controlla l'età dell'archivio fotografico;
+6. se sono trascorsi almeno 13 giorni, cerca nuove fotografie su Wikimedia Commons;
+7. esclude immagini già utilizzate nella composizione corrente e, quando possibile, quelle mostrate nelle rotazioni recenti;
+8. salva news e selezione fotografica in Vercel Blob;
+9. invalida le pagine localizzate affinché mostrino subito i nuovi contenuti.
+
+Il processo è idempotente: più esecuzioni nella stessa settimana sostituiscono lo stesso archivio settimanale invece di duplicarlo.
+
+## Cache audioguide
+
+Il client invia solo:
+
+```json
+{"locale":"it","slug":"orridi-uriezzo","chapterId":"glaciazione"}
+```
+
+Il server recupera il testo dai file della guida e calcola un hash di:
+
+```text
+voce + modello + lingua + attrazione + capitolo + testo
+```
+
+- Se l'MP3 esiste su Vercel Blob, la route risponde con un redirect al file CDN.
+- Se non esiste, chiama ElevenLabs una sola volta, salva l'MP3 su Blob e lo restituisce.
+- Quando il testo o la voce cambiano, cambia l'hash e viene generata soltanto la nuova versione di quel capitolo.
+- Senza Blob, resta disponibile una cache temporanea `/tmp`, non condivisa tra tutte le istanze serverless.
 
 ## Installazione locale
 
 ```bash
 npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
-Aprire `http://localhost:3000`: l’app reindirizza automaticamente alla versione italiana.
+Aprire `http://localhost:3000`.
 
-## Variabili d’ambiente
-
-Copiare `.env.example` in `.env.local` e inserire chiavi nuove:
+## Variabili d'ambiente
 
 ```env
 GEMINI_API_KEY=chiave_gemini
 GEMINI_MODEL=gemini-2.5-flash
+
 ELEVENLABS_API_KEY=chiave_elevenlabs
 ELEVENLABS_VOICE_ID=JBFqnCBsd6RMkjVDRZzb
+ELEVENLABS_MODEL_ID=eleven_multilingual_v2
+
 NEXT_PUBLIC_SITE_URL=https://orridiuriezzo.vercel.app
 NEXT_PUBLIC_SHARE_URL=https://orridiuriezzo.vercel.app/it
+
+CRON_SECRET=stringa_casuale_di_almeno_16_caratteri
 ```
 
-Le chiavi Gemini ed ElevenLabs non devono mai essere inserite in file pubblicati su GitHub e non devono avere il prefisso `NEXT_PUBLIC_`.
+Le credenziali Blob non devono essere scritte manualmente nel repository. Collegando un Blob store al progetto, Vercel aggiunge `BLOB_STORE_ID` e fornisce automaticamente `VERCEL_OIDC_TOKEN` ai deployment.
 
-`NEXT_PUBLIC_SITE_URL` viene normalizzata automaticamente al solo dominio. Anche inserendo accidentalmente `/it`, sitemap e metadati non generano URL duplicati. `NEXT_PUBLIC_SHARE_URL` controlla invece il link mostrato nel popup di condivisione.
+Le chiavi Gemini ed ElevenLabs non devono avere il prefisso `NEXT_PUBLIC_` e non devono essere pubblicate su GitHub.
 
-## Deploy su Vercel
+## Configurazione Vercel richiesta una sola volta
 
-1. Collegare il repository GitHub a Vercel.
-2. Configurare le variabili d’ambiente indicate sopra in **Project → Settings → Environment Variables**.
-3. Lasciare il framework su **Next.js**.
-4. Usare come install command:
+Vedi [AUTOMATION_SETUP.md](./AUTOMATION_SETUP.md).
 
-```bash
-npm ci --no-audit --no-fund
+In sintesi:
+
+1. creare un Blob store pubblico;
+2. collegarlo al progetto e agli ambienti Production/Preview;
+3. aggiungere le variabili API e `CRON_SECRET`;
+4. eseguire un nuovo deployment.
+
+Dopo questa configurazione, fotografie, news e cache audio funzionano automaticamente.
+
+## Origine fotografie
+
+La ricerca automatica usa la MediaWiki API di Wikimedia Commons, richiedendo:
+
+- file nel namespace immagini;
+- URL in dimensione ottimizzata;
+- dimensioni e MIME type;
+- metadati estesi per autore e licenza.
+
+Il sito non copia fotografie da Google Immagini o Google Maps. Quelle piattaforme vengono usate solo come collegamenti esterni, mentre le immagini visualizzate automaticamente provengono da un archivio con pagine di attribuzione consultabili.
+
+## News e copyright
+
+La sezione non ripubblica articoli completi. Conserva soltanto metadati, una miniatura disponibile nei metadati editoriali, un riassunto originale e il link alla fonte. Il testo completo resta sul sito dell'editore.
+
+## File principali
+
+```text
+app/api/cron/refresh/route.ts   aggiornamento automatico
+app/api/tts/route.ts            generazione e cache audio
+app/[locale]/news/page.tsx      archivio news
+components/news-archive.tsx     selettore settimane
+components/audio-guide.tsx      player per capitoli
+lib/commons-images.ts           ricerca e rotazione fotografie
+lib/news.ts                     feed, deduplica e archivio
+lib/blob-storage.ts             accesso Vercel Blob
+lib/guides.ts                   caricamento guide
+lib/visuals.ts                  immagini dinamiche con fallback
+data/guides/*.json              capitoli nelle quattro lingue
+vercel.json                     pianificazione settimanale
 ```
 
-5. Usare come build command:
-
-```bash
-npm run build
-```
-
-6. Avviare un nuovo deploy dal commit più recente di `main`.
-
-## QR code e condivisione
-
-Il QR code è in `public/qrcode.png`. Non esiste più una pagina QR dedicata e il QR non compare nel menu. In homepage il pulsante **Condividi** apre una finestra con:
-
-- QR code scansionabile;
-- condivisione nativa del telefono quando supportata;
-- copia del link negli appunti.
-
-Per sostituire il codice è sufficiente rimpiazzare `public/qrcode.png` mantenendo lo stesso nome e formato.
-
-## Fotografie
-
-Gli URL delle fotografie si trovano in `data/attractions.ts`. Le immagini visualizzate provengono da Wikimedia Commons e ogni didascalia contiene il link alla pagina di attribuzione e licenza. Ogni galleria include inoltre un pulsante verso la ricerca fotografica dell’attrazione su Google Maps.
-
-Le fotografie caricate dagli utenti su Google Maps non vengono copiate o ripubblicate nel sito: questo evita hotlink non stabile e problemi di licenza. Il sito rimanda direttamente a Google Maps per visualizzarle nella loro fonte originale.
-
-## Ristoranti e aree camper
-
-I collegamenti sono definiti in `data/nearby-places.json` e vengono aperti come ricerche Google Maps. In questo modo orari, recensioni, aperture stagionali, disponibilità e indicazioni rimangono consultabili nella fonte aggiornata.
-
-La sezione comprende:
-
-- Trattoria della Campagna a Verampio;
-- ricerche di ristoranti e pizzerie a Baceno, Premia e Crodo;
-- ricerche di aree camper e parcheggi a Baceno, Premia, Crodo e Verampio.
-
-## Assistente Gemini
-
-La route `app/api/chat/route.ts`:
-
-- accetta solo quattro lingue supportate;
-- applica una verifica preventiva dell’argomento;
-- rifiuta le domande fuori tema prima di chiamare Gemini;
-- invia a Gemini un’istruzione di sistema non modificabile dal client;
-- limita lunghezza, cronologia, frequenza e durata delle richieste;
-- non espone la chiave API al browser.
-
-L’assistente può parlare soltanto di Orridi, Marmitte, geologia, storia, percorsi, sicurezza e servizi utili alla visita.
-
-## Audioguida ElevenLabs
-
-La route `app/api/tts/route.ts` accetta soltanto attrazioni e lingue predefinite, genera audio tramite ElevenLabs e utilizza una cache temporanea in `/tmp`. La cache è best-effort: nelle funzioni serverless può non essere condivisa tra tutte le istanze.
-
-## Aggiornare i contenuti
-
-- Traduzioni e testi: `messages/it.json`, `en.json`, `es.json`, `de.json`.
-- Fotografie e collegamenti alle mappe: `data/attractions.ts`.
-- Ristoranti, pizzerie e aree camper: `data/nearby-places.json`.
-- Stile mobile e dark mode: `app/globals.css`.
-- Prompt e protezioni Gemini: `app/api/chat/route.ts`.
-
-## Controlli
+## Verifiche
 
 ```bash
 npm run lint
 npm run build
+npm audit
 ```
 
-Non pubblicare mai `.env`, `.env.local`, `.next` o `node_modules`.
+Non pubblicare `.env`, `.env.local`, `.next` o `node_modules`.

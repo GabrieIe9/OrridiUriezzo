@@ -3,6 +3,8 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {AttractionPage} from '@/components/attraction-page';
 import type {AppLocale} from '@/i18n/routing';
 
+export const revalidate = 3600;
+
 export async function generateMetadata({params}: {params: Promise<{locale: AppLocale}>}): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'orridi'});

@@ -5,17 +5,19 @@ export type GalleryImage = {
   altKey: string;
   captionKey: string;
   sourceUrl: string;
+  author?: string;
+  license?: string;
 };
 
 export type MapPoint = {
   id: string;
-  image: string;
+  image?: string;
   mapsUrl: string;
   mapsPhotosUrl: string;
-  sourceUrl: string;
+  sourceUrl?: string;
 };
 
-type AttractionVisuals = {
+export type AttractionVisuals = {
   hero: string;
   card: string;
   gallery: GalleryImage[];

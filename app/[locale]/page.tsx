@@ -3,11 +3,13 @@ import Image from 'next/image';
 import {ArrowRight, Droplets, Mountain} from 'lucide-react';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
-import {attractionVisuals} from '@/data/attractions';
+import {getHomeCardImages} from '@/lib/visuals';
 import {FadeIn} from '@/components/fade-in';
 import {ShareQrButton} from '@/components/share-qr-button';
 import type {AppLocale} from '@/i18n/routing';
 import {italianShareUrl} from '@/lib/site-url';
+
+export const revalidate = 3600;
 
 export async function generateMetadata({params}: {params: Promise<{locale: AppLocale}>}): Promise<Metadata> {
   const {locale} = await params;
@@ -29,19 +31,20 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
   const t = await getTranslations('home');
   const share = await getTranslations('share');
   const shareUrl = italianShareUrl;
+  const cardImages = await getHomeCardImages();
 
   const cards = [
     {
       slug: 'orridi-uriezzo' as const,
       href: '/orridi-uriezzo' as const,
       icon: Mountain,
-      image: attractionVisuals['orridi-uriezzo'].card
+      image: cardImages['orridi-uriezzo']
     },
     {
       slug: 'marmitte-dei-giganti' as const,
       href: '/marmitte-dei-giganti' as const,
       icon: Droplets,
-      image: attractionVisuals['marmitte-dei-giganti'].card
+      image: cardImages['marmitte-dei-giganti']
     }
   ];
 

@@ -1,30 +1,39 @@
-# Configurazione API su Vercel
+# Configurazione Vercel
 
-Le chiavi API non sono incluse nel repository e non devono essere inserite in file pubblici.
+La guida completa è in `AUTOMATION_SETUP.md`.
 
-## Variabili richieste
+## Variabili manuali
 
-Aprire il progetto su Vercel e andare in:
-
-**Settings → Environment Variables**
-
-Aggiungere:
+Aggiungere in **Project → Settings → Environment Variables**:
 
 ```env
-GEMINI_API_KEY=incolla_la_chiave_gemini
+GEMINI_API_KEY=chiave_gemini
 GEMINI_MODEL=gemini-2.5-flash
-ELEVENLABS_API_KEY=incolla_la_chiave_elevenlabs
+ELEVENLABS_API_KEY=chiave_elevenlabs
 ELEVENLABS_VOICE_ID=JBFqnCBsd6RMkjVDRZzb
+ELEVENLABS_MODEL_ID=eleven_multilingual_v2
 NEXT_PUBLIC_SITE_URL=https://orridiuriezzo.vercel.app
 NEXT_PUBLIC_SHARE_URL=https://orridiuriezzo.vercel.app/it
+CRON_SECRET=stringa_casuale_di_almeno_16_caratteri
 ```
 
-Applicare le variabili almeno agli ambienti **Production** e **Preview**. Se si usa `vercel dev`, applicarle anche a **Development**.
+Applicare almeno a **Production** e **Preview**, quindi creare un nuovo deployment.
 
-Dopo il salvataggio eseguire un nuovo deployment dal commit più recente. Le variabili aggiunte dopo una build non vengono applicate retroattivamente ai deployment già conclusi.
+## Variabili Blob automatiche
 
-## Controllo rapido
+Creare un Blob store pubblico e collegarlo al progetto. Vercel aggiunge automaticamente:
 
-- Se la chat mostra “L’assistente AI non è ancora configurato”, manca `GEMINI_API_KEY` nel deployment in esecuzione.
-- Se l’audioguida mostra “Audio service is not configured”, manca `ELEVENLABS_API_KEY` nel deployment in esecuzione.
-- Le chiavi non devono avere il prefisso `NEXT_PUBLIC_`.
+```text
+BLOB_STORE_ID
+VERCEL_OIDC_TOKEN
+```
+
+Non inserire questi valori nel repository. Il token OIDC viene ruotato da Vercel.
+
+## Diagnostica
+
+- `Audio service is not configured`: manca `ELEVENLABS_API_KEY` nel deployment attivo.
+- `The audio guide is temporarily unavailable`: controllare i Runtime Logs per lo stato restituito da ElevenLabs.
+- `L’assistente AI non è ancora configurato`: manca `GEMINI_API_KEY`.
+- News vuote dopo la domenica: controllare il log di `/api/cron/refresh`, `CRON_SECRET` e il collegamento Blob.
+- Audio rigenerato a ogni visita: il Blob store non è collegato o non è accessibile dall'ambiente del deployment.
