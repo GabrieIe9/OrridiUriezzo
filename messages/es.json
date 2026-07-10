@@ -17,6 +17,10 @@
       "explore": "Explorar",
       "localLinks": "Lugares cercanos",
       "disclaimer": "Comprueba siempre el estado del sendero, el tiempo y la información local antes de la visita."
+    },
+    "theme": {
+      "switchToDark": "Activar modo oscuro",
+      "switchToLight": "Activar modo claro"
     }
   },
   "home": {
@@ -270,5 +274,20 @@
       ]
     },
     "narration": "Las Marmitas de los Gigantes se encuentran en Maiesso, junto al río Toce, y están conectadas con las Gargantas de Uriezzo por el mismo sendero. Al continuar más allá de la Garganta Sur se llega al Puente de Maiesso y después a la zona de las cavidades. Las marmitas son formas hemisféricas o cilíndricas excavadas en la roca por la fuerza de las aguas de deshielo del glaciar. La arena y los guijarros transportados por la corriente quedaban atrapados en remolinos y actuaban como herramientas abrasivas, desgastando el granito durante milenios. Desde Baceno, el recorrido de ida y vuelta que incluye las gargantas y las marmitas dura aproximadamente una hora y diez minutos, sin paradas largas. Las rocas mojadas pueden ser muy resbaladizas y el caudal del Toce puede variar. Es importante permanecer en los pasos seguros, llevar calzado adecuado y no visitar el lugar durante crecidas o tormentas. Cerca se encuentra también la central hidroeléctrica de Crego, proyectada por Piero Portaluppi entre 1917 y 1926."
+  },
+  "assistant": {
+    "title": "Asistente del sendero",
+    "subtitle": "Solo responde sobre los Orridi y las Marmitte",
+    "open": "Abrir asistente de IA",
+    "close": "Cerrar asistente de IA",
+    "welcome": "Hola. Puedo ayudarte con el recorrido, la geología, la seguridad y la visita a los Orridi di Uriezzo y las Marmitte dei Giganti.",
+    "placeholder": "Escribe una pregunta...",
+    "send": "Enviar mensaje",
+    "sending": "Preparando la respuesta...",
+    "error": "Se ha producido un error. Inténtalo de nuevo.",
+    "scopeNote": "El asistente responde únicamente sobre los Orridi di Uriezzo y las Marmitte dei Giganti.",
+    "backToTop": "Volver arriba",
+    "youLabel": "Tú",
+    "assistantLabel": "Asistente"
   }
 }

@@ -1,7 +1,19 @@
-import type {Metadata} from 'next';
+import type {Metadata, Viewport} from 'next';
 import './globals.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.vercel.app';
+
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  colorScheme: 'light dark',
+  themeColor: [
+    {media: '(prefers-color-scheme: light)', color: '#f7f4ec'},
+    {media: '(prefers-color-scheme: dark)', color: '#0b1714'}
+  ]
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

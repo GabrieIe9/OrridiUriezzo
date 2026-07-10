@@ -17,6 +17,10 @@
       "explore": "Entdecken",
       "localLinks": "Orte in der Nähe",
       "disclaimer": "Vor dem Besuch stets Wegzustand, Wetter und lokale Hinweise prüfen."
+    },
+    "theme": {
+      "switchToDark": "Dunkelmodus aktivieren",
+      "switchToLight": "Hellmodus aktivieren"
     }
   },
   "home": {
@@ -270,5 +274,20 @@
       ]
     },
     "narration": "Die Strudeltöpfe der Riesen liegen bei Maiesso am Fluss Toce und sind über denselben Weg mit den Uriezzo-Schluchten verbunden. Wer hinter der Südschlucht weitergeht, erreicht die Maiesso-Brücke und anschließend die Hohlformen. Diese halbkugeligen oder zylindrischen Formen wurden durch die Kraft des Gletscherschmelzwassers in den Fels geschnitten. Sand und Kies aus der Strömung verfingen sich in Wirbeln und wirkten wie Schleifwerkzeuge, die den Granit über Jahrtausende abtrugen. Ab Baceno dauert eine Hin- und Rücktour mit Schluchten und Strudeltöpfen ungefähr eine Stunde und zehn Minuten, ohne längere Pausen. Nasse Felsen können extrem rutschig sein, und der Wasserstand des Toce kann sich verändern. Bleibe auf sicheren Passagen, trage geeignete Schuhe und verzichte bei Hochwasser oder Gewitter auf den Besuch. In der Nähe steht außerdem das Wasserkraftwerk Crego, das Piero Portaluppi zwischen 1917 und 1926 entwarf."
+  },
+  "assistant": {
+    "title": "Weg-Assistent",
+    "subtitle": "Antwortet nur zu Schluchten und Strudeltöpfen",
+    "open": "KI-Assistent öffnen",
+    "close": "KI-Assistent schließen",
+    "welcome": "Hallo. Ich helfe bei Weg, Geologie, Sicherheit und Besuch der Orridi di Uriezzo und der Marmitte dei Giganti.",
+    "placeholder": "Eine Frage eingeben...",
+    "send": "Nachricht senden",
+    "sending": "Antwort wird vorbereitet...",
+    "error": "Ein Fehler ist aufgetreten. Bitte erneut versuchen.",
+    "scopeNote": "Der Assistent beantwortet ausschließlich Fragen zu den Orridi di Uriezzo und den Marmitte dei Giganti.",
+    "backToTop": "Nach oben",
+    "youLabel": "Du",
+    "assistantLabel": "Assistent"
   }
 }

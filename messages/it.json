@@ -17,6 +17,10 @@
       "explore": "Esplora",
       "localLinks": "Località vicine",
       "disclaimer": "Verifica sempre condizioni del sentiero, meteo e informazioni locali prima della visita."
+    },
+    "theme": {
+      "switchToDark": "Attiva modalità scura",
+      "switchToLight": "Attiva modalità chiara"
     }
   },
   "home": {
@@ -270,5 +274,20 @@
       ]
     },
     "narration": "Le Marmitte dei Giganti si trovano a Maiesso, lungo il fiume Toce, e sono collegate agli Orridi di Uriezzo dallo stesso sentiero. Proseguendo oltre l’Orrido Sud si raggiunge il Ponte di Maiesso e quindi la zona delle cavità. Le marmitte sono forme emisferiche o cilindriche scavate nella roccia dalla forza delle acque di fusione del ghiacciaio. Sabbia e ciottoli trasportati dalla corrente restavano intrappolati nei vortici e agivano come strumenti abrasivi, consumando il granito per millenni. Da Baceno, il percorso di andata e ritorno che comprende gli Orridi e le Marmitte richiede indicativamente circa un’ora e dieci minuti, senza soste lunghe. Le rocce bagnate possono essere molto scivolose e la portata del Toce può variare. È importante restare sui passaggi sicuri, usare scarpe adatte e rinunciare alla visita in caso di piena o temporali. Nelle vicinanze si trova anche la Centrale Idroelettrica di Crego, progettata da Piero Portaluppi tra il 1917 e il 1926."
+  },
+  "assistant": {
+    "title": "Assistente del sentiero",
+    "subtitle": "Risponde solo su Orridi e Marmitte",
+    "open": "Apri assistente AI",
+    "close": "Chiudi assistente AI",
+    "welcome": "Ciao. Posso aiutarti con percorso, geologia, sicurezza e visita agli Orridi di Uriezzo e alle Marmitte dei Giganti.",
+    "placeholder": "Scrivi una domanda...",
+    "send": "Invia messaggio",
+    "sending": "Sto preparando la risposta...",
+    "error": "Si è verificato un errore. Riprova.",
+    "scopeNote": "L’assistente risponde esclusivamente su Orridi di Uriezzo e Marmitte dei Giganti.",
+    "backToTop": "Torna in cima",
+    "youLabel": "Tu",
+    "assistantLabel": "Assistente"
   }
 }

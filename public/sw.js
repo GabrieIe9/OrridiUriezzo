@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ossola-guide-v1';
+const CACHE_NAME = 'ossola-guide-v2';
 const CORE_ROUTES = ['/it', '/en', '/es', '/de', '/offline.html', '/icon.svg'];
 
 self.addEventListener('install', (event) => {

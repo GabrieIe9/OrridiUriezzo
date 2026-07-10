@@ -1,6 +1,6 @@
 # Orridi di Uriezzo & Marmitte dei Giganti
 
-Sito turistico multilingua per la Valle Antigorio, costruito con Next.js App Router, TypeScript, `next-intl`, Tailwind CSS e una API route serverless per ElevenLabs Text-to-Speech.
+Sito turistico multilingua e mobile-first per la Valle Antigorio, costruito con Next.js App Router, TypeScript, `next-intl`, Tailwind CSS, ElevenLabs Text-to-Speech e un assistente visitatori basato su Gemini.
 
 ## Funzionalità
 
@@ -14,12 +14,16 @@ Sito turistico multilingua per la Valle Antigorio, costruito con Next.js App Rou
 - Elenco ristoranti gestito da `data/restaurants.json` con modale accessibile.
 - Pagina QR code con esportazione PNG ad alta risoluzione e SVG vettoriale.
 - Service worker leggero per cache progressiva delle pagine già visitate.
-- Sitemap, robots, manifest PWA, metadata SEO e layout responsive.
+- Sitemap, robots, manifest PWA, metadata SEO e layout mobile-first.
+- Modalità chiara/scura con preferenza persistente e rispetto del tema di sistema.
+- Pulsante mobile per tornare in cima.
+- Assistente Gemini limitato alle sole domande sugli Orridi di Uriezzo e sulle Marmitte dei Giganti.
 
 ## Requisiti
 
 - Node.js 20.9 o successivo.
 - Account ElevenLabs e relativa API key per l’audioguida.
+- Chiave Gemini API creata in Google AI Studio per l’assistente visitatori.
 - Account Vercel per il deploy.
 
 ## Installazione locale
@@ -37,12 +41,16 @@ Aprire `http://localhost:3000`. La root reindirizza automaticamente a `/it`.
 ```env
 ELEVENLABS_API_KEY=your_elevenlabs_api_key
 ELEVENLABS_VOICE_ID=JBFqnCBsd6RMkjVDRZzb
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash
 NEXT_PUBLIC_SITE_URL=https://your-project.vercel.app
 ```
 
 `ELEVENLABS_API_KEY` è obbligatoria per il TTS e non deve mai essere esposta con il prefisso `NEXT_PUBLIC_`.
 
 `ELEVENLABS_VOICE_ID` è opzionale. In sua assenza viene usato l’ID voce presente nell’esempio ufficiale ElevenLabs. Prima del lancio è consigliabile scegliere e testare una voce adatta alle quattro lingue.
+
+`GEMINI_API_KEY` è obbligatoria per la chat AI e deve restare server-side. `GEMINI_MODEL` è opzionale e usa `gemini-2.5-flash` come valore predefinito.
 
 `NEXT_PUBLIC_SITE_URL` alimenta URL canonici, sitemap e QR code. Impostarlo sull’indirizzo di produzione definitivo.
 
@@ -61,14 +69,26 @@ Sono presenti:
 
 La directory `/tmp` di Vercel è effimera e può essere riutilizzata solo dalla stessa istanza. Per una cache persistente tra istanze, sostituire il blocco filesystem in `app/api/tts/route.ts` con Vercel Blob, S3 o un altro object storage.
 
+
+## Assistente Gemini e limitazione dell’argomento
+
+La chat usa `/api/chat` come proxy server-side: la chiave Gemini non raggiunge mai il browser. La route applica due livelli di controllo:
+
+- filtro locale delle domande e del contesto conversazionale;
+- istruzione di sistema Gemini che vieta risposte estranee agli Orridi di Uriezzo e alle Marmitte dei Giganti.
+
+Sono inoltre presenti limite di lunghezza, cronologia ridotta, rate limit best-effort per IP, timeout e risposta senza cache. Le richieste fuori tema vengono respinte senza consumare una chiamata Gemini.
+
+L’assistente non deve essere considerato una fonte per condizioni in tempo reale, chiusure, meteo o sicurezza del sentiero. Per questi dati rimanda sempre a fonti turistiche e autorità locali.
+
 ## Deploy su Vercel
 
 ### Da dashboard
 
 1. Pubblicare il progetto su GitHub, GitLab o Bitbucket.
 2. Importare il repository in Vercel.
-3. Aggiungere `ELEVENLABS_API_KEY` e `NEXT_PUBLIC_SITE_URL` nelle Environment Variables.
-4. Facoltativamente aggiungere `ELEVENLABS_VOICE_ID`.
+3. Aggiungere `ELEVENLABS_API_KEY`, `GEMINI_API_KEY` e `NEXT_PUBLIC_SITE_URL` nelle Environment Variables.
+4. Facoltativamente aggiungere `ELEVENLABS_VOICE_ID` e `GEMINI_MODEL`.
 5. Avviare il deploy. Vercel rileva Next.js senza configurazione aggiuntiva.
 
 ### Da CLI
@@ -77,6 +97,7 @@ La directory `/tmp` di Vercel è effimera e può essere riutilizzata solo dalla 
 npm i -g vercel
 vercel
 vercel env add ELEVENLABS_API_KEY
+vercel env add GEMINI_API_KEY
 vercel env add NEXT_PUBLIC_SITE_URL
 vercel --prod
 ```
@@ -165,7 +186,9 @@ app/
 │   ├── orridi-uriezzo/page.tsx
 │   ├── marmitte-dei-giganti/page.tsx
 │   └── qrcode/page.tsx
-├── api/tts/route.ts
+├── api/
+│   ├── chat/route.ts
+│   └── tts/route.ts
 ├── globals.css
 ├── layout.tsx
 ├── robots.ts
@@ -174,6 +197,7 @@ components/
 ├── attraction-page.tsx
 ├── audio-guide.tsx
 ├── fade-in.tsx
+├── floating-tools.tsx
 ├── footer.tsx
 ├── header.tsx
 ├── language-switcher.tsx

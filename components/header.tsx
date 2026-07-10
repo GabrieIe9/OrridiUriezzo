@@ -2,6 +2,7 @@ import {Mountain, QrCode} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
 import {LanguageSwitcher} from './language-switcher';
+import {ThemeToggle} from './theme-toggle';
 
 export async function Header() {
   const t = await getTranslations('common');
@@ -29,7 +30,13 @@ export async function Header() {
           </Link>
         </nav>
 
-        <LanguageSwitcher ariaLabel={t('languageLabel')} />
+        <div className="header-actions">
+          <LanguageSwitcher ariaLabel={t('languageLabel')} />
+          <ThemeToggle
+            switchToDark={t('theme.switchToDark')}
+            switchToLight={t('theme.switchToLight')}
+          />
+        </div>
       </div>
     </header>
   );
