@@ -1,0 +1,11 @@
+{
+  "name": "Orridi di Uriezzo & Marmitte dei Giganti",
+  "short_name": "Orridi & Marmitte",
+  "start_url": "/it",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#173f35",
+  "icons": [
+    {"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
