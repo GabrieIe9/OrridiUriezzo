@@ -27,7 +27,6 @@ export async function Footer() {
           <div className="footer-links">
             <Link href="/orridi-uriezzo">{t('nav.orridi')}</Link>
             <Link href="/marmitte-dei-giganti">{t('nav.marmitte')}</Link>
-            <Link href="/qrcode">{t('nav.qrcode')}</Link>
           </div>
         </div>
 

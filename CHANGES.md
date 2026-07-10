@@ -1,12 +1,12 @@
-# Modifiche mobile e AI
+# Modifiche finali
 
-- Layout mobile-first affinato per schermi piccoli e safe area.
-- Pulsante SVG chiaro/scuro in alto a destra.
-- Preferenza tema persistente in `localStorage` e tema di sistema al primo accesso.
-- Pulsante flottante per tornare in cima.
-- Chat Gemini mobile in basso a destra.
-- Proxy Gemini server-side in `app/api/chat/route.ts`.
-- Filtro fuori tema prima della chiamata API e system instruction limitata a Orridi e Marmitte.
-- Rate limit, timeout, limiti di lunghezza e cronologia ridotta.
-- Credito `Developer by Gabriele` nel footer.
-- Cache service worker aggiornata a `ossola-guide-v2`.
+- Rimossa la pagina QR e ogni collegamento QR dal menu e dal footer.
+- Inserito in homepage un pulsante Condividi con popup, QR fornito, Web Share API e copia link.
+- Aggiunte fotografie reali degli Orridi e delle Marmitte con attribuzione Wikimedia Commons.
+- Aggiunti collegamenti alle fotografie recenti su Google Maps.
+- Sostituiti i dati generici dei locali con ricerche Google Maps per ristoranti, pizzerie, aree camper e parcheggi.
+- Inserita Trattoria della Campagna come punto di interesse sul lato di Verampio.
+- Ampliati in quattro lingue i testi storici, geologici, pratici e di sicurezza.
+- Aggiornato il prompt Gemini per servizi di visita reali e rimossi riferimenti a contenuti dimostrativi.
+- Resa robusta la gestione di `NEXT_PUBLIC_SITE_URL`, anche quando contiene `/it`.
+- Conservati layout mobile, dark mode, torna-su, chat Gemini e credito Developer by Gabriele.

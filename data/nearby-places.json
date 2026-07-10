@@ -1,0 +1,90 @@
+{
+  "restaurants": [
+    {
+      "id": "trattoria-della-campagna",
+      "name": "Trattoria della Campagna",
+      "locality": "Verampio, Crodo",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+della+Campagna+Verampio+Crodo",
+      "description": {
+        "it": "Locale sul versante di Verampio, vicino al punto da cui parte uno degli itinerari tradizionali verso Maiesso e l’Orrido Sud.",
+        "en": "A restaurant on the Verampio side, close to the starting point of one of the traditional routes to Maiesso and the South Gorge.",
+        "es": "Local en la vertiente de Verampio, cerca del inicio de uno de los itinerarios tradicionales hacia Maiesso y el Orrido Sur.",
+        "de": "Ein Lokal auf der Verampio-Seite, nahe dem Ausgangspunkt eines traditionellen Weges nach Maiesso und zur Südschlucht."
+      }
+    },
+    {
+      "id": "restaurants-baceno",
+      "name": "Ristoranti e pizzerie a Baceno",
+      "locality": "Baceno",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ristoranti+pizzerie+Baceno+VB",
+      "description": {
+        "it": "Ricerca aggiornata su Google Maps per confrontare locali, recensioni, orari e indicazioni stradali nel centro di Baceno.",
+        "en": "An up-to-date Google Maps search to compare restaurants, reviews, opening hours and directions in central Baceno.",
+        "es": "Búsqueda actualizada en Google Maps para comparar locales, reseñas, horarios e indicaciones en el centro de Baceno.",
+        "de": "Aktuelle Google-Maps-Suche zum Vergleich von Lokalen, Bewertungen, Öffnungszeiten und Routen im Zentrum von Baceno."
+      }
+    },
+    {
+      "id": "restaurants-premia",
+      "name": "Ristoranti e pizzerie a Premia",
+      "locality": "Premia",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ristoranti+pizzerie+Premia+VB",
+      "description": {
+        "it": "Ricerca su Google Maps per i locali lungo l’alta Valle Antigorio e nell’abitato di Premia.",
+        "en": "Google Maps search for places to eat in upper Antigorio Valley and the village of Premia.",
+        "es": "Búsqueda en Google Maps de locales en la parte alta del valle Antigorio y en Premia.",
+        "de": "Google-Maps-Suche nach Einkehrmöglichkeiten im oberen Antigorio-Tal und im Ort Premia."
+      }
+    },
+    {
+      "id": "restaurants-crodo",
+      "name": "Ristoranti e pizzerie a Crodo",
+      "locality": "Crodo",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ristoranti+pizzerie+Crodo+VB",
+      "description": {
+        "it": "Ricerca aggiornata per ampliare la scelta nei dintorni di Verampio e lungo la strada verso Domodossola.",
+        "en": "An up-to-date search offering more options around Verampio and along the road toward Domodossola.",
+        "es": "Búsqueda actualizada para ampliar la oferta en los alrededores de Verampio y hacia Domodossola.",
+        "de": "Aktuelle Suche mit weiteren Möglichkeiten rund um Verampio und entlang der Straße Richtung Domodossola."
+      }
+    }
+  ],
+  "camperAreas": [
+    {
+      "id": "camper-baceno",
+      "name": "Aree camper e parcheggi a Baceno",
+      "locality": "Baceno",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=area+camper+parcheggio+Baceno+VB",
+      "description": {
+        "it": "Risultati Google Maps per aree di sosta, parcheggi e servizi utili vicino all’accesso da Baceno.",
+        "en": "Google Maps results for motorhome stops, parking and useful services near the Baceno access.",
+        "es": "Resultados de Google Maps para áreas de autocaravanas, aparcamientos y servicios cerca del acceso de Baceno.",
+        "de": "Google-Maps-Ergebnisse für Wohnmobilstellplätze, Parkplätze und Dienste nahe dem Zugang von Baceno."
+      }
+    },
+    {
+      "id": "camper-premia",
+      "name": "Aree camper e parcheggi a Premia",
+      "locality": "Premia",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=area+camper+parcheggio+Premia+VB",
+      "description": {
+        "it": "Ricerca aggiornata per soste camper e parcheggi sul lato di Premia e lungo la strada per Uriezzo.",
+        "en": "An up-to-date search for motorhome stops and parking on the Premia side and along the road to Uriezzo.",
+        "es": "Búsqueda actualizada de áreas de autocaravanas y aparcamientos en Premia y en la carretera a Uriezzo.",
+        "de": "Aktuelle Suche nach Wohnmobilstellplätzen und Parkplätzen auf der Premia-Seite und an der Straße nach Uriezzo."
+      }
+    },
+    {
+      "id": "camper-crodo",
+      "name": "Aree camper e parcheggi a Crodo",
+      "locality": "Crodo e Verampio",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=area+camper+parcheggio+Crodo+Verampio+VB",
+      "description": {
+        "it": "Risultati Google Maps per chi raggiunge il sentiero dal fondovalle e desidera verificare servizi e disponibilità aggiornati.",
+        "en": "Google Maps results for visitors arriving from the valley floor who need current availability and service information.",
+        "es": "Resultados de Google Maps para quienes llegan desde el fondo del valle y desean comprobar servicios y disponibilidad.",
+        "de": "Google-Maps-Ergebnisse für die Anreise vom Talboden mit aktuellen Angaben zu Verfügbarkeit und Services."
+      }
+    }
+  ]
+}

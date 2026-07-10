@@ -1,7 +1,6 @@
 import type {Metadata, Viewport} from 'next';
 import './globals.css';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.vercel.app';
+import {siteOrigin} from '@/lib/site-url';
 
 
 export const viewport: Viewport = {
@@ -16,7 +15,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteOrigin),
   title: {
     default: 'Orridi di Uriezzo & Marmitte dei Giganti',
     template: '%s | Val d’Ossola'

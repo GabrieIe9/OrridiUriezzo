@@ -9,8 +9,7 @@
     "nav": {
       "home": "Start",
       "orridi": "Schluchten",
-      "marmitte": "Strudeltöpfe",
-      "qrcode": "QR-Code"
+      "marmitte": "Strudeltöpfe"
     },
     "footer": {
       "description": "Ein kompakter Wegweiser, um die Gletscherlandschaft des Antigorio-Tals Schritt für Schritt zu verstehen.",
@@ -40,13 +39,13 @@
         "title": "Uriezzo-Schluchten",
         "subtitle": "Gehe durch das fossile Bett subglazialer Bäche, zwischen engen Wänden, Moos und senkrechtem Licht.",
         "location": "Baceno · Premia · Verampio",
-        "alt": "Berglandschaft und Felsschlucht, Beispielbild"
+        "alt": "Geschwungene Wände und enger Durchgang in den Uriezzo-Schluchten"
       },
       "marmitte-dei-giganti": {
         "title": "Strudeltöpfe der Riesen",
         "subtitle": "Sieh die vom Toce geglätteten Hohlformen, in denen Wasser und Geröll den Fels über Jahrtausende bearbeiteten.",
         "location": "Maiesso · Fluss Toce",
-        "alt": "Alpenfluss zwischen geglätteten Felsen, Beispielbild"
+        "alt": "Strudeltöpfe und geglättete Felsen am Toce bei Maiesso"
       }
     }
   },
@@ -59,55 +58,26 @@
     "stop": "Stopp",
     "genericError": "Der Audioguide konnte nicht geladen werden. Bitte versuche es gleich noch einmal."
   },
-  "restaurants": {
-    "eyebrow": "Nach der Wanderung",
-    "title": "Essen in der Umgebung",
-    "intro": "Eine Datenstruktur für später geprüfte Lokale in Baceno, Premia, Verampio und Crodo.",
-    "placeholderWarning": "Die angezeigten Betriebe sind Beispiele. Namen, Öffnungszeiten, Entfernungen und Kontaktdaten müssen vor der Veröffentlichung geprüft werden.",
-    "close": "Dialog schließen",
-    "demoBadge": "Beispieldaten",
-    "address": "Adresse",
-    "distance": "Entfernung",
-    "hours": "Öffnungszeiten",
-    "phone": "Telefon",
-    "phoneMissing": "Noch einzutragen",
-    "openMaps": "Google-Maps-Suche öffnen"
-  },
-  "qrcode": {
-    "meta": {
-      "title": "Druckbarer QR-Code",
-      "description": "Erzeuge und lade den QR-Code der Website als PNG oder SVG für Informationstafeln herunter."
-    },
-    "eyebrow": "Für Tafeln und Beschilderung",
-    "title": "Hochauflösender QR-Code",
-    "intro": "Trage die endgültige Vercel-Produktionsadresse ein, prüfe die Vorschau und lade das passende Druckformat herunter.",
-    "imageTitle": "QR-Code der Website Schluchten und Strudeltöpfe",
-    "urlLabel": "Zieladresse",
-    "urlHelp": "Nutze die Produktionsadresse, nicht eine temporäre Vercel-Vorschau-URL.",
-    "downloadPng": "PNG herunterladen",
-    "downloadSvg": "SVG herunterladen",
-    "printTitle": "Druckhinweis",
-    "printText": "Für Außentafeln ist SVG vorzuziehen. Halte einen freien Rand um den Code ein und teste die Lesbarkeit vor der Produktion aus mehreren Entfernungen."
-  },
   "orridi": {
     "meta": {
-      "title": "Uriezzo-Schluchten",
-      "description": "Führer zu den Uriezzo-Schluchten: Gletschergeologie, Zugänge von Premia, Baceno und Verampio, Sicherheit und Besuchstipps."
+      "title": "Uriezzo-Schluchten: Geschichte, Geologie und Besuch",
+      "description": "Ausführlicher Führer zu den Uriezzo-Schluchten: glaziale Entstehung, Wege, Zugänge von Baceno, Premia und Verampio, Sicherheit und echte Fotos."
     },
-    "heroAlt": "Tiefe alpine Schlucht zwischen Felswänden, Beispielbild",
-    "eyebrow": "Antigorio-Tal · VCO",
+    "heroAlt": "Geschwungene Wände und enger Durchgang in den Uriezzo-Schluchten",
+    "eyebrow": "Antigorio-Tal · Piemont",
     "title": "Uriezzo-Schluchten",
-    "subtitle": "Ein Canyon ohne Fluss, in dem der Gletscher Granitkorridore, Schatten und Stille hinterließ.",
-    "introEyebrow": "Mitten in der Landschaft",
+    "subtitle": "Ein altes Netz subglazialer Bäche, heute eine begehbare fossile Schlucht zwischen geglättetem Granit, Moos und senkrechtem Licht.",
+    "introEyebrow": "Im Gedächtnis des Eises",
     "intro": [
-      "Wer die Schluchten betritt, geht dort, wo einst Bäche unter dem Toce-Gletscher flossen. Heute füllt kein Wasser mehr diese Gänge; geglättete Wände, überraschende Kurven und ein schmaler Streifen Himmel begleiten den Weg.",
-      "Feuchtigkeit nährt Moose und Farne, während Licht von oben einfällt und den Fels unterschiedlich färbt. Die Schluchten werden gelegentlich als “Grand Canyon des Piemont” bezeichnet, wirken jedoch viel intimer und erschließen sich am besten zu Fuß."
+      "Wer die Uriezzo-Schluchten betritt, geht durch eine Landschaft, die nicht mehr zum heutigen Gewässernetz des Tals gehört. Die Gänge sind fast trocken, doch ihre Wände bewahren Form und Kraft der Bäche, die einst unter und am Rand des großen Toce-Gletschers flossen. So entstand eine stille Welt aus engen Korridoren, runden Kammern, Nischen, Rillen und plötzlichen Lichtschächten.",
+      "Der Komplex liegt im Antigorio-Tal zwischen Baceno, Premia und Verampio. Die Südschlucht, örtlich „Grab von Uriezzo“ genannt, ist die monumentalste; die Nordostschlucht ist kürzer und enger; die Westschlucht besitzt anspruchsvollere Passagen. Vallaccia, die vierte Schlucht, ist schwer zugänglich und nicht für einen normalen Besuch geeignet.",
+      "Die Schluchten sind mehr als eine geologische Besonderheit. Sie zeigen die Beziehung zwischen Wasser, Stein und alpinen Gemeinschaften: Die Zugänge folgen alten Saumwegen, verwilderten Terrassen und Verbindungen zwischen Weilern. Stille, Feuchtigkeit und Pflanzen an den Wänden machen den Weg zu einer Nahaufnahme der Naturgeschichte des Ossola-Tals."
     ],
     "facts": [
       {
         "icon": "location",
         "label": "Gebiet",
-        "value": "Baceno, Premia und Verampio"
+        "value": "Baceno · Premia · Verampio"
       },
       {
         "icon": "route",
@@ -116,85 +86,100 @@
       },
       {
         "icon": "difficulty",
-        "label": "Schwierigkeit",
-        "value": "Leichte Wanderung, feuchter Boden"
+        "label": "Weg",
+        "value": "Wanderweg, Boden oft feucht"
       },
       {
         "icon": "time",
-        "label": "Beste Zeit",
-        "value": "Frühling und Herbst"
+        "label": "Richtzeit",
+        "value": "35 Min.; 1 Std. 10 mit Maiesso"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "Anreise",
-        "body": "Die wichtigsten Zugänge liegen bei Premia, Baceno und Verampio. Premia ist häufig am bequemsten. Von Baceno kann man nahe der Kirche San Gaudenzio parken und den Schildern sowie gelben Pfeilen zu Fuß folgen. Beachte immer auch die aktuelle Beschilderung vor Ort, da der Mobilfunkempfang schwanken kann."
+        "title": "Anreise und Orientierung",
+        "body": [
+          "Der direkteste und meist empfohlene Zugang liegt auf der Premia-Seite. Die Straße Richtung Crego und Uriezzo führt zum Oratorium Santa Lucia; von dort folgt man zu Fuß den Wanderschildern und gelben Pfeilen. Zuerst erreicht man die Nordostschlucht, zur Südschlucht geht es weiter bergab bis zum markierten Eingang.",
+          "Von Baceno beginnt der Weg nahe der monumentalen Kirche San Gaudenzio. Ein teils gepflasterter, teils in den Fels geschnittener Saumweg steigt nach Verampio ab. An der markierten Abzweigung führt der Pfad durch terrassierten Wald zur Piste neben der Südschlucht. Die Route ist reizvoll, benötigt aber mehr Zeit und Höhenmeter.",
+          "Vom Talboden in Verampio kann man nahe der Trattoria della Campagna starten und der Piste über den Devero-Bach, am Toce entlang und bis zur Maiesso-Brücke folgen. Dort liegen die Strudeltöpfe; anschließend ist die Südschlucht erreichbar. Zeiten hängen von Zugang, Pausen und Bedingungen ab."
+        ]
       },
       "geology": {
-        "title": "Geschichte und Geologie",
-        "body": "Während der letzten Eiszeit, die vor rund 12.000 Jahren endete, flossen subglaziale Bäche unter dem Toce-Gletscher. Wasser, Druck und scheuerndes Geröll schnitten in den Granit. Nach dem Rückzug des Eises trockneten die Bäche aus und hinterließen begehbare fossile Schluchten."
+        "title": "Glaziale Geschichte und Entstehung",
+        "body": [
+          "Während der letzten großen Eiszeit, die vor rund zwölftausend Jahren endete, füllte der Toce-Gletscher das Antigorio-Tal. Unter und neben dem Eis strömte Schmelzwasser unter hohem Druck und führte Sand, Kies und Geröll mit, das den Granit wie eine natürliche Feile bearbeitete.",
+          "Das Wasser schnitt keinen geraden Kanal. Wirbel, Gefällestufen und Richtungswechsel erweiterten vorhandene Klüfte und schufen runde Kammern, gewundene Gänge und wellige Wände. Nischen, die heute handgearbeitet wirken, entstanden durch lange Erosion: Jedes mitgeführte Korn half beim Glätten, Erweitern und Vertiefen.",
+          "Als das Klima milder wurde, zog sich der Gletscher zurück und das Gewässernetz änderte sich. Die Bäche verließen diese Einschnitte und hinterließen fossile Schluchten ohne den Wasserlauf, der sie geschaffen hatte. Deshalb kann man heute Formen von innen betrachten, die in einer aktiven Schlucht unter der Strömung verborgen wären."
+        ]
       },
       "visit": {
-        "title": "Hinweise für den Besuch",
-        "body": "Trage Schuhe mit gutem Profil: Der Boden kann nass sein und einige Abschnitte besitzen Metallleitern. Flip-Flops und Winterbesuche sind ungeeignet, da herabfallendes Eis gefährlich werden kann. Frühling und Herbst sind meist angenehm; Wildkirschen können ab Ende März blühen."
+        "title": "Umwelt, Jahreszeiten und Sicherheit",
+        "body": [
+          "Im Inneren herrscht ein anderes Mikroklima als im umliegenden Wald. Licht fällt vor allem von oben ein, die Feuchtigkeit bleibt hoch, und Moose sowie Farne besiedeln die schattigen Wände. Nach Regen leuchten die Farben stärker, doch Boden und Metallstufen können rutschig sein.",
+          "Frühling und Herbst sind meist besonders angenehm. Von Ende März bis Mai öffnet sich die Landschaft nach dem Winter und wilde Kirschbäume können blühen; im Herbst kontrastieren warme Waldtöne mit grauem Granit. Im Winter wird wegen Eis und möglichem Steinschlag vom Besuch abgeraten.",
+          "Trage Wanderschuhe mit gutem Profil, nimm auch im Sommer eine warme Schicht mit und beaufsichtige Kinder in engen oder gesicherten Abschnitten. Bei Gewitter, Starkregen, Eis oder Sperrungen nicht eintreten. Westschlucht und Vallaccia sind keine einfachen Spazierwege und erfordern passende Erfahrung."
+        ]
       }
     },
     "highlights": {
-      "eyebrow": "Drei Hauptwege",
-      "title": "Jede Schlucht hat ihren eigenen Charakter",
+      "eyebrow": "Vier Einschnitte, vier Charaktere",
+      "title": "Das System der Schluchten lesen",
       "items": [
-        "Südschlucht, örtlich “Tomba d’Uriezzo” genannt: die eindrucksvollste, etwa 200 Meter lang und bis zu 20–30 Meter tief.",
-        "Nordostschlucht: rund 100 Meter lang, enger und geschlossener, mit ungefähr 10 Meter hohen Wänden.",
-        "Westschlucht: weniger monumental und eher für erfahrene Wandernde; an einigen Stellen hilft ein Seil.",
-        "Vallaccia: eine vierte, schwer zugängliche Schlucht, die für einen normalen touristischen Besuch nicht empfohlen wird."
+        "Südschlucht oder „Grab von Uriezzo“: der eindrucksvollste Abschnitt, etwa 200 Meter lang und bis zu 20–30 Meter tief.",
+        "Nordostschlucht: rund 100 Meter, eng und geschlossen, mit aus nächster Nähe sichtbaren Glättungsspuren.",
+        "Westschlucht: weniger monumental, aber anspruchsvoller; einige Passagen verlangen Aufmerksamkeit und sind mit Seil versehen.",
+        "Vallaccia: die vierte Schlucht, schwer erreichbar und ohne entsprechende Erfahrung nicht zu empfehlen."
       ]
     },
     "gallery": {
-      "eyebrow": "Beispielbilder",
-      "title": "Fels, Schatten und Vegetation",
-      "intro": "Die Bilder sind alpine Platzhalter. Vor der Veröffentlichung sollten sie durch autorisierte Aufnahmen des Ortes ersetzt werden.",
+      "eyebrow": "Fotos vom Ort",
+      "title": "Granit, Schatten und Vegetation",
+      "intro": "Die Bilder zeigen die tatsächlichen Uriezzo-Schluchten. Jedes Foto verlinkt zur Attributionsseite; aktuelle Besucherfotos sind außerdem in Google Maps zu sehen.",
+      "sourceLabel": "Quelle und Lizenz",
+      "mapsPhotos": "Weitere Fotos in Google Maps",
       "items": [
         {
-          "alt": "Felswände einer alpinen Schlucht",
-          "caption": "Vom Wasser geformte Felskorridore."
+          "alt": "Felsiger Eingang zu den Uriezzo-Schluchten",
+          "caption": "Annäherung an die Einschnitte im Granit."
         },
         {
-          "alt": "Grüner, feuchter Wald",
-          "caption": "Moose und Farne gedeihen im Halbdunkel."
+          "alt": "Geglättete Wände in einer Uriezzo-Schlucht",
+          "caption": "Wellige Flächen, von subglazialen Bächen geformt."
         },
         {
-          "alt": "Alpensee und Berge",
-          "caption": "Die Gletscherlandschaft des Tals."
+          "alt": "Weg zwischen den Wänden von Uriezzo",
+          "caption": "Der Pfad folgt dem fossilen Bett des alten Bachs."
         },
         {
-          "alt": "Fluss zwischen Bergen und Wald",
-          "caption": "Wasser formt das Gebiet bis heute."
+          "alt": "Vegetation und Fels in Uriezzo",
+          "caption": "Moose und Farne gedeihen in der feuchten Schlucht."
         },
         {
-          "alt": "Aussichtsreicher Bergweg",
-          "caption": "Zugänge und Verbindungen werden zu Fuß begangen."
+          "alt": "Enger Durchgang in einer Uriezzo-Schlucht",
+          "caption": "Senkrechtes Licht betont Nischen und Rillen."
         },
         {
-          "alt": "Wanderer in alpiner Umgebung",
-          "caption": "Geeignetes Schuhwerk und vorsichtiges Tempo."
+          "alt": "Geschwungener Canyon von Uriezzo",
+          "caption": "Felskurven bewahren die Bewegung der Wirbel."
         }
       ]
     },
-    "narration": "Die Uriezzo-Schluchten liegen im Antigorio-Tal nahe Baceno, Premia und Verampio. Sie wurden während der letzten Eiszeit von Bächen in den Granit geschnitten, die unter dem Toce-Gletscher flossen. Diese Eiszeit endete vor etwa zwölftausend Jahren. Als sich das Eis zurückzog, trockneten die Bäche aus und hinterließen einen fossilen Canyon, der heute zu Fuß erkundet werden kann. Die Südschlucht, örtlich Tomba d’Uriezzo genannt, ist die eindrucksvollste. Sie ist ungefähr zweihundert Meter lang und zwanzig bis dreißig Meter tief. Die Nordostschlucht ist kürzer und enger, während die Westschlucht mehr Erfahrung verlangt. Frühling und Herbst sind die besten Jahreszeiten. Schuhe mit gutem Profil sind wichtig, da der Boden feucht sein kann und Metallleitern vorhanden sind. Im Winter wird wegen möglicher Eisabbrüche von einem Besuch abgeraten."
+    "narration": "Die Uriezzo-Schluchten sind fossile Canyons im Antigorio-Tal. Sie entstanden durch Schmelzwasser, das während der letzten Eiszeit unter dem Toce-Gletscher floss. Sand, Kies und Geröll schnitten gewundene Korridore, Kammern und geglättete Wände in den Granit. Als sich der Gletscher vor etwa zwölftausend Jahren zurückzog, änderten die Bäche ihren Lauf und ließen die Schluchten trocken und begehbar zurück. Die Südschlucht ist am eindrucksvollsten; die Nordostschlucht ist kürzer und enger, die Westschlucht verlangt mehr Erfahrung. Zugänge bestehen von Premia, Baceno und Verampio. Gute Schuhe und Vorsicht sind nötig, da der Boden feucht sein kann, Metallstufen vorhanden sind und Wintereis einen Besuch gefährlich macht."
   },
   "marmitte": {
     "meta": {
-      "title": "Strudeltöpfe der Riesen bei Maiesso",
-      "description": "Führer zu den Strudeltöpfen am Toce: glaziale Entstehung, Verbindung zu den Schluchten, Zugang und Besuchshinweise."
+      "title": "Strudeltöpfe von Maiesso: Geschichte und Besuch",
+      "description": "Ausführlicher Führer zu den Strudeltöpfen am Toce: glazialer Ursprung, Wirbelerosion, Verbindung mit den Schluchten und Sicherheit."
     },
-    "heroAlt": "Alpenwasser zwischen großen geglätteten Felsen, Beispielbild",
+    "heroAlt": "Strudeltöpfe und geglättete Felsen am Toce bei Maiesso",
     "eyebrow": "Maiesso · Fluss Toce",
     "title": "Strudeltöpfe der Riesen",
-    "subtitle": "Alte Wirbel, Geröll und Schmelzwasser verwandelten Granit in beinahe vollkommene Formen.",
-    "introEyebrow": "Die Kraft des Flusses",
+    "subtitle": "Große runde Hohlformen im Granit, ausgehöhlt von Schmelzwasser, Wirbeln und Sedimenten des Toce.",
+    "introEyebrow": "Wenn der Fluss zum Bildhauer wird",
     "intro": [
-      "Bei Maiesso zeigt der Toce die langsame und mächtige Arbeit des Wassers. Im Fels erscheinen halbkugelige und zylindrische Hohlformen, geglättet wie riesige natürliche Gefäße: die Strudeltöpfe der Riesen.",
-      "Der Name klingt nach Legenden, doch ihre Entstehung ist geologisch. Wirbelnde Strömungen voller Sand und Kies drehten sich immer wieder an denselben Stellen, schliffen den Granit über Jahrtausende und hinterließen fast handgeformt wirkende Flächen."
+      "Bei Maiesso durchquert der Toce kompakten Fels, in den das Wasser Schalen, Zylinder und runde Vertiefungen geschnitten hat. Es sind die Strudeltöpfe der Riesen: spektakuläre Formen, die wie bewusst gemeißelte Gefäße wirken, aber durch natürliche Prozesse über Jahrtausende entstanden.",
+      "Der Name gehört zur alpinen Vorstellungswelt, in der solche großen Hohlformen Riesen zugeschrieben wurden. Die geologische Erklärung ist ebenso faszinierend: Turbulentes Wasser, Sand und Geröll rotierten in beständigen Wirbeln, verwandelten Sedimente in Schleifwerkzeuge und vertieften den Granit schrittweise.",
+      "Die Strudeltöpfe setzen den Besuch der Uriezzo-Schluchten natürlich fort. Vom Ausgang der Südschlucht führt der Weg zur Maiesso-Brücke und damit vom trockenen fossilen Canyon in eine aktive Flusslandschaft. Auf kurzer Strecke werden zwei unterschiedliche Kapitel derselben Eiszeitgeschichte sichtbar."
     ],
     "facts": [
       {
@@ -205,75 +190,89 @@
       {
         "icon": "route",
         "label": "Verbindung",
-        "value": "Maiesso-Brücke und Südschlucht"
+        "value": "Maiesso-Brücke · Südschlucht"
       },
       {
         "icon": "difficulty",
-        "label": "Schwierigkeit",
-        "value": "Leichter Weg, rutschige Felsen"
+        "label": "Achtung",
+        "value": "Nasser Fels und aktive Strömung"
       },
       {
         "icon": "time",
-        "label": "Ab Baceno",
-        "value": "ca. 1 h 10 min hin und zurück mit Schluchten"
+        "label": "Ab Santa Lucia",
+        "value": "ca. 1 Std. 10 hin/zurück mit Schluchten"
       }
     ],
     "sections": {
       "arrival": {
-        "title": "Anreise",
-        "body": "Die Strudeltöpfe liegen bei Maiesso am Toce. Vom Schluchtenweg geht es hinter der Südschlucht weiter zur Maiesso-Brücke, sodass beide Ziele verbunden werden können. Ab Baceno dauert die gesamte Hin- und Rücktour ungefähr eine Stunde und zehn Minuten, abhängig von Pausen und Tempo."
+        "title": "Anreise und Kombination beider Ziele",
+        "body": [
+          "Der bekannteste Aussichtspunkt liegt an der Maiesso-Brücke über dem Toce. Vom Oratorium Santa Lucia und den Zugängen der Schluchten folgt man der Route zur Südschlucht; nach deren Durchquerung geht es bergab zur Brücke. So lassen sich fossiler Canyon und aktive Flussformen auf einer Wanderung verbinden.",
+          "Von Baceno führt der Saumweg bei San Gaudenzio hinab nach Verampio und weiter nach Maiesso. Vom Verampio-Talboden folgt die Piste dem Devero-Bach und dem Toce bis zur Brücke. Dabei wird die Beziehung zwischen heutigen Gewässern und der vom Eis geformten Landschaft besonders deutlich.",
+          "Die Richtzeit ab Santa Lucia beträgt für zwei Schluchten und Maiesso etwa eine Stunde und zehn Minuten hin und zurück, ohne lange Pausen. Plane mehr Zeit für Fotos, Beobachtung und Andrang ein und beachte Hinweise zu Umleitungen oder Einschränkungen."
+        ]
       },
       "geology": {
-        "title": "Geschichte und Geologie",
-        "body": "Das Schmelzwasser des Gletschers floss mit großer Kraft. Sand und Kies, die in Wirbeln festgehalten wurden, wirkten wie Schleifwerkzeuge und gruben immer tiefere Hohlformen. Die Rundungen dokumentieren die Dynamik des Flusses und die glaziale Vergangenheit des Tals."
+        "title": "Wasser, Wirbel und glaziales Gedächtnis",
+        "body": [
+          "Die Strudeltöpfe entwickelten sich besonders bei sehr großen Schmelzwassermengen. Das Wasser beschleunigte in engen Granitpassagen und bildete Wirbel. Wo die Strömung zu rotieren begann, blieben Sand und Geröll gefangen und bewegten sich immer wieder auf Kreisbahnen.",
+          "Die Erosion hing nicht nur von der Kraft des Wassers ab, sondern auch von den mitgeführten Felsstücken. Geröll schlug und polierte den Boden, feinere Körner schliffen die Wände. Mit der Zeit wurde aus einer kleinen Unebenheit eine tiefe, oft zylindrische Hohlform mit glatten Flächen und Rillen.",
+          "Maiesso zeigt den Unterschied zwischen der großräumigen Arbeit des Gletschers, der das Tal weitete und ordnete, und der präzisen Arbeit des Schmelzwassers. Die nahe Kraftstation Crego, von Piero Portaluppi zwischen 1917 und 1926 entworfen, ergänzt ein modernes Kapitel über die Nutzung derselben Wasserenergie."
+        ]
       },
       "visit": {
-        "title": "Hinweise für den Besuch",
-        "body": "Bleibe auf sicheren Passagen und halte Abstand zu nassen Felsen und zum Flussrand. Geglätteter Granit kann extrem rutschig sein, und der Wasserstand des Toce kann sich ändern. Trage Wanderschuhe, beaufsichtige Kinder und kehre bei Hochwasser, Gewitter oder lokalen Sperrungen um."
+        "title": "Beobachtung und Sicherheit am Toce",
+        "body": [
+          "Die Strudeltöpfe liegen in einer aktiven Flusslandschaft. Auch bei ruhig wirkendem Wasser kann sich die Menge ändern, und geglätteter Granit ist extrem rutschig. Bleibe auf sicheren Wegen und Aussichtspunkten; betrete keine nassen Felsen und steige nicht in die Hohlformen.",
+          "Trage Schuhe mit griffiger Sohle, halte Kinder in der Nähe und überschreite keine Absperrungen. Nach Starkregen, Gewitter oder rascher Schneeschmelze kann der Toce steigen; dann sollte man umkehren oder nur offiziell zugängliche Punkte nutzen.",
+          "Schräges Licht macht Tiefe und Farbtöne des Granits besser sichtbar. Konzentriere dich dennoch nicht nur auf Fotos: Der unebene Boden verlangt Aufmerksamkeit. Bei langsamem Besuch erkennt man glatte Flächen, Rillen, eingeschlossenes Geröll und die Beziehung zwischen Brücke, Fluss und Ausgang der Südschlucht."
+        ]
       }
     },
     "highlights": {
-      "eyebrow": "Formen lesen",
-      "title": "Worauf vor Ort zu achten ist",
+      "eyebrow": "Den Fels lesen",
+      "title": "Was in Maiesso zu sehen ist",
       "items": [
-        "Runde Hohlformen, teils halbkugelig, teils zylindrisch, die von sedimentreichen Wirbeln ausgearbeitet wurden.",
-        "Glatte und gerillte Granitflächen als Spuren der wiederholten Reibung durch Sand und Kies.",
-        "Der Zusammenhang zwischen den Strudeltöpfen, der Maiesso-Brücke und dem Ausgang der Südschlucht auf derselben Route.",
-        "Das nahe Wasserkraftwerk Crego, das Piero Portaluppi zwischen 1917 und 1926 entwarf, als industriegeschichtlicher Zusatz."
+        "Halbkugelige und zylindrische Hohlformen, wo Wirbel Sand und Geröll in Rotation hielten.",
+        "Geglättete Flächen und Rillen im Granit, die Richtung und Stärke der Erosion zeigen.",
+        "Die Maiesso-Brücke als Sicht- und Wegverbindung zwischen Toce, Strudeltöpfen und Südschlucht.",
+        "Das Kraftwerk Crego als Zeugnis der Nutzung alpiner Wasserenergie im 20. Jahrhundert."
       ]
     },
     "gallery": {
-      "eyebrow": "Beispielbilder",
-      "title": "Wasser, Granit und Wald",
-      "intro": "Die Fluss- und Alpenfotos sind Platzhalter. Ersetze sie durch autorisierte Aufnahmen aus Maiesso.",
+      "eyebrow": "Fotos vom Ort",
+      "title": "Wasser und Granit in Maiesso",
+      "intro": "Die Bilder zeigen die tatsächlichen Strudeltöpfe am Toce. Jedes Foto verlinkt zur Attributionsseite; Google Maps bietet zusätzlich aktuelle Besucherfotos.",
+      "sourceLabel": "Quelle und Lizenz",
+      "mapsPhotos": "Weitere Fotos in Google Maps",
       "items": [
         {
-          "alt": "Alpenfluss zwischen Felsen",
-          "caption": "Die Strömung zieht über geglätteten Granit."
+          "alt": "Strudeltöpfe im Granit am Toce",
+          "caption": "Runde Hohlformen liegen direkt neben der Strömung."
         },
         {
-          "alt": "Wasser und Berge in einem Alpental",
-          "caption": "Der Toce verbindet Wasser, Eis und Landschaft."
+          "alt": "Toce-Wasser zwischen geglätteten Felsen in Maiesso",
+          "caption": "Der Fluss formt und poliert die Oberflächen weiter."
         },
         {
-          "alt": "Alpensee zwischen Bergen",
-          "caption": "Die Formen des Tals stammen aus seiner Gletscherzeit."
+          "alt": "Detail der Strudeltöpfe",
+          "caption": "Runde Formen durch rotierende Sedimente."
         },
         {
-          "alt": "Dichter Wald nahe einem Wasserlauf",
-          "caption": "Der Weg führt durch eine feuchte Umgebung."
+          "alt": "Brücke und Felsen bei den Strudeltöpfen",
+          "caption": "Maiesso verbindet Flussweg und Schluchten."
         },
         {
-          "alt": "Grüne Vegetation auf Felsen",
-          "caption": "Leben besiedelt selbst harte Oberflächen."
+          "alt": "Tiefe Hohlformen in den Felsen des Toce",
+          "caption": "Jede Vertiefung bewahrt die Spur alter Wirbel."
         },
         {
-          "alt": "Natürliche Felsformationen",
-          "caption": "Details beobachten, ohne den Weg zu verlassen."
+          "alt": "Flusslandschaft an den Strudeltöpfen",
+          "caption": "Granit, Wasser und Wald bilden einen Geostandort."
         }
       ]
     },
-    "narration": "Die Strudeltöpfe der Riesen liegen bei Maiesso am Fluss Toce und sind über denselben Weg mit den Uriezzo-Schluchten verbunden. Wer hinter der Südschlucht weitergeht, erreicht die Maiesso-Brücke und anschließend die Hohlformen. Diese halbkugeligen oder zylindrischen Formen wurden durch die Kraft des Gletscherschmelzwassers in den Fels geschnitten. Sand und Kies aus der Strömung verfingen sich in Wirbeln und wirkten wie Schleifwerkzeuge, die den Granit über Jahrtausende abtrugen. Ab Baceno dauert eine Hin- und Rücktour mit Schluchten und Strudeltöpfen ungefähr eine Stunde und zehn Minuten, ohne längere Pausen. Nasse Felsen können extrem rutschig sein, und der Wasserstand des Toce kann sich verändern. Bleibe auf sicheren Passagen, trage geeignete Schuhe und verzichte bei Hochwasser oder Gewitter auf den Besuch. In der Nähe steht außerdem das Wasserkraftwerk Crego, das Piero Portaluppi zwischen 1917 und 1926 entwarf."
+    "narration": "Die Strudeltöpfe der Riesen liegen bei Maiesso am Toce und sind über denselben Weg mit den Uriezzo-Schluchten verbunden. Runde und zylindrische Hohlformen wurden von glazialem Schmelzwasser in den Granit geschnitten. Sand und Geröll, die in Wirbeln gefangen waren, rotierten wie Schleifwerkzeuge und vertieften den Fels über Jahrtausende. Von der Maiesso-Brücke erkennt man den Zusammenhang zwischen dem heutigen Fluss und dem Ausgang der Südschlucht. Nasser Granit ist sehr rutschig und der Toce kann rasch anschwellen: Bleibe an sicheren Punkten, beaufsichtige Kinder und verzichte bei Hochwasser oder Gewitter. In der Nähe steht das Kraftwerk Crego, das Piero Portaluppi zwischen 1917 und 1926 entwarf."
   },
   "assistant": {
     "title": "Weg-Assistent",
@@ -289,5 +288,24 @@
     "backToTop": "Nach oben",
     "youLabel": "Du",
     "assistantLabel": "Assistent"
+  },
+  "share": {
+    "button": "Website teilen",
+    "title": "Schluchten und Strudeltöpfe teilen",
+    "description": "Scanne den QR-Code mit der Handykamera oder teile den Link zur Website direkt.",
+    "close": "Teilen-Fenster schließen",
+    "nativeShare": "Teilen",
+    "copy": "Link kopieren",
+    "copied": "Link kopiert",
+    "qrAlt": "QR-Code zum Öffnen der Website über die Uriezzo-Schluchten und Strudeltöpfe"
+  },
+  "nearby": {
+    "eyebrow": "Angebote in der Nähe",
+    "title": "Essen und Wohnmobilstellplätze",
+    "intro": "Öffne die Google-Maps-Ergebnisse, um Lage, Bewertungen, Öffnungszeiten und aktuelle Verfügbarkeit vor der Abfahrt zu prüfen.",
+    "restaurants": "Restaurants und Pizzerien",
+    "camperAreas": "Wohnmobilstellplätze und Parkplätze",
+    "openMaps": "In Google Maps öffnen",
+    "liveNote": "Öffnungszeiten, saisonaler Betrieb, Zugänglichkeit und Verfügbarkeit können sich ändern. Prüfe immer den gewählten Ort in Google Maps."
   }
 }
