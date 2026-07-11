@@ -51,9 +51,7 @@
     },
     "quickActions": {
       "title": "Elige cómo empezar",
-      "intro": "Tres herramientas para organizar la visita de inmediato.",
-      "plan": "Organizar la visita",
-      "planText": "Crea una ruta según el tiempo, el grupo y el acceso.",
+      "intro": "Dos herramientas para orientarte durante la visita.",
       "map": "Abrir los mapas",
       "mapText": "Consulta accesos, miradores y servicios útiles.",
       "audio": "Escuchar la guía",
@@ -86,7 +84,6 @@
     "forward": "Avanzar 15 segundos",
     "speed": "Velocidad",
     "playbackError": "El navegador no ha podido iniciar la reproducción.",
-    "download": "Descargar MP3",
     "autoNext": "Reproducir el capítulo siguiente"
   },
   "orridi": {
@@ -460,82 +457,5 @@
     "readOriginal": "Leer la fuente original",
     "empty": "No se encontraron noticias pertinentes esta semana. Las semanas archivadas siguen disponibles en el menú.",
     "updated": "Archivo actualizado"
-  },
-  "planner": {
-    "eyebrow": "Planifica la visita",
-    "title": "Crea tu itinerario",
-    "intro": "Indica el tiempo, el grupo y el punto de partida. El sitio propone una ruta prudente, pero siempre hay que comprobar el tiempo y la señalización local.",
-    "time": {
-      "label": "Tiempo disponible",
-      "45": "Hasta 45 minutos",
-      "90": "Aproximadamente 1–2 horas",
-      "180": "Media jornada"
-    },
-    "group": {
-      "label": "Con quién viajas",
-      "adult": "Adultos, ritmo tranquilo",
-      "family": "Familia con niños",
-      "experienced": "Senderistas expertos"
-    },
-    "access": {
-      "label": "Punto de partida",
-      "premia": "Premia · Santa Lucia",
-      "baceno": "Baceno · San Gaudenzio",
-      "verampio": "Verampio · fondo del valle"
-    },
-    "scope": {
-      "label": "Qué quieres visitar",
-      "single": "Un solo lugar",
-      "both": "Orridi y Marmitte"
-    },
-    "resultLabel": "Itinerario recomendado",
-    "openDirections": "Abrir indicaciones",
-    "results": {
-      "quick": {
-        "title": "Visita esencial",
-        "description": "Con poco tiempo, céntrate en un punto principal y conserva margen para el regreso.",
-        "steps": [
-          "Elige el acceso más directo y comprueba el aparcamiento.",
-          "Visita el punto principal sin añadir desvíos secundarios.",
-          "Regresa dentro del límite y evita hielo o lluvia intensa."
-        ]
-      },
-      "family": {
-        "title": "Ruta familiar prudente",
-        "description": "Un itinerario corto con paradas frecuentes y atención al suelo mojado, las escaleras y el agua.",
-        "steps": [
-          "Prefiere Santa Lucia o un tramo sencillo desde el valle.",
-          "Mantén a los niños cerca en pasos estrechos y rocas mojadas.",
-          "Termina la visita si el terreno resbala o el grupo está cansado."
-        ]
-      },
-      "complete": {
-        "title": "Ruta completa Orridi + Marmitte",
-        "description": "Con media jornada puedes unir el cañón fósil con las formas fluviales de Maiesso.",
-        "steps": [
-          "Parte de Premia o Verampio según la logística.",
-          "Cruza el Orrido Sur siguiendo la señalización oficial.",
-          "Continúa al Puente de Maiesso y observa las marmitas desde una distancia segura."
-        ]
-      },
-      "adventure": {
-        "title": "Ruta ampliada para senderistas",
-        "description": "Dedica más tiempo al sistema de gargantas, tratando los tramos menos frecuentados como terreno de montaña.",
-        "steps": [
-          "Comprueba cierres y estado de los tramos equipados.",
-          "No trates el Orrido Oeste o Vallaccia como paseos turísticos.",
-          "Lleva calzado adecuado, agua y luz suficiente para volver."
-        ]
-      },
-      "classic": {
-        "title": "Visita clásica equilibrada",
-        "description": "Una ruta tranquila que incluye el punto principal y al menos un mirador.",
-        "steps": [
-          "Llega al acceso elegido y consulta las señales locales.",
-          "Recorre el tramo principal con la guía por capítulos.",
-          "Añade Maiesso solo si el tiempo, el clima y el grupo lo permiten."
-        ]
-      }
-    }
   }
 }

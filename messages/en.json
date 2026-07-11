@@ -51,9 +51,7 @@
     },
     "quickActions": {
       "title": "Choose how to begin",
-      "intro": "Three tools to organise your visit immediately.",
-      "plan": "Plan the visit",
-      "planText": "Build a route based on time, group and starting point.",
+      "intro": "Two tools to help you find your way during the visit.",
       "map": "Open the maps",
       "mapText": "View access points, viewpoints and useful services.",
       "audio": "Listen to the guide",
@@ -86,7 +84,6 @@
     "forward": "Skip forward 15 seconds",
     "speed": "Speed",
     "playbackError": "The browser could not start audio playback.",
-    "download": "Download MP3",
     "autoNext": "Play the next chapter"
   },
   "orridi": {
@@ -460,82 +457,5 @@
     "readOriginal": "Read the original source",
     "empty": "No relevant news was found for this week. Previous archived weeks remain available in the menu.",
     "updated": "Archive updated"
-  },
-  "planner": {
-    "eyebrow": "Plan your visit",
-    "title": "Build your itinerary",
-    "intro": "Choose your available time, group and starting point. The site suggests a cautious route, but weather and on-site signs must always be checked.",
-    "time": {
-      "label": "Available time",
-      "45": "Up to 45 minutes",
-      "90": "About 1–2 hours",
-      "180": "Half a day"
-    },
-    "group": {
-      "label": "Your group",
-      "adult": "Adults, relaxed pace",
-      "family": "Family with children",
-      "experienced": "Experienced hikers"
-    },
-    "access": {
-      "label": "Starting point",
-      "premia": "Premia · Santa Lucia",
-      "baceno": "Baceno · San Gaudenzio",
-      "verampio": "Verampio · valley floor"
-    },
-    "scope": {
-      "label": "What to visit",
-      "single": "One attraction",
-      "both": "Gorges and potholes"
-    },
-    "resultLabel": "Suggested itinerary",
-    "openDirections": "Open driving directions",
-    "results": {
-      "quick": {
-        "title": "Essential visit",
-        "description": "With limited time, focus on one main landmark and keep a safe margin for the return.",
-        "steps": [
-          "Use the most direct access and check parking first.",
-          "Visit the main landmark without adding secondary detours.",
-          "Turn back within your time limit and avoid ice or heavy rain."
-        ]
-      },
-      "family": {
-        "title": "Cautious family route",
-        "description": "A shorter route with frequent stops and particular care around wet ground, steps and flowing water.",
-        "steps": [
-          "Prefer Santa Lucia or an easy section from the valley floor.",
-          "Keep children close in narrow passages and on wet rock.",
-          "End the visit if the surface becomes slippery or the group is tired."
-        ]
-      },
-      "complete": {
-        "title": "Complete Gorges + Potholes route",
-        "description": "With half a day, connect the fossil canyon with the active river forms at Maiesso and allow time for stops.",
-        "steps": [
-          "Start from Premia or Verampio according to your logistics.",
-          "Cross the South Gorge following official signs.",
-          "Continue to Maiesso Bridge and view the potholes from a safe distance."
-        ]
-      },
-      "adventure": {
-        "title": "Extended route for hikers",
-        "description": "Spend longer reading the gorge system, while treating the less visited sections as genuine hiking terrain.",
-        "steps": [
-          "Check closures and the condition of assisted sections.",
-          "Do not treat the West Gorge or Vallaccia as ordinary tourist walks.",
-          "Carry suitable footwear, water and enough daylight for the return."
-        ]
-      },
-      "classic": {
-        "title": "Classic balanced visit",
-        "description": "A well-paced route covering the main feature and at least one viewpoint.",
-        "steps": [
-          "Reach your chosen access and read the local signs.",
-          "Explore the main section using the chapter guide.",
-          "Add Maiesso only when weather, time and group conditions allow it."
-        ]
-      }
-    }
   }
 }

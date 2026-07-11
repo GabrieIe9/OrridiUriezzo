@@ -1,3 +1,12 @@
+# Ultime correzioni
+
+- Rimossa integralmente la scheda del pianificatore della visita e la relativa scorciatoia in homepage.
+- Rimosso il download MP3 dall’audioguida.
+- Corretta la centratura delle icone SVG nei riquadri dell’audio e delle location vicine.
+- Allineata la richiesta TTS all’esempio minimo ufficiale ElevenLabs.
+- Aggiunti trim delle variabili, retry sicuro su voce/modello predefiniti e messaggi distinti per 401, 403, 404, 422, 429 e timeout.
+- La cache audio continua a usare Vercel Blob, con fallback temporaneo locale.
+
 # Modifiche versione automatizzata
 
 - Aggiunta guida completa in 10 capitoli per ogni attrazione e lingua.
@@ -18,7 +27,6 @@
 
 ## Migliorie esperienza visita e lettura
 
-- Aggiunto pianificatore interattivo con tempo disponibile, tipologia di gruppo, accesso e itinerario desiderato.
 - Aggiunte scorciatoie operative in homepage per pianificazione, mappe e audioguida.
 - Sostituito l'indice statico delle guide con un navigatore sticky dotato di avanzamento, tempo stimato e ripresa della lettura salvata nel browser.
 - Trasformate le mappe delle attrazioni in esploratori filtrabili per attrazioni, accessi e punti panoramici.

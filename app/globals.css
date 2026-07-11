@@ -3422,126 +3422,7 @@ html[data-theme='dark'] .audio-timeline input[type='range']::-moz-range-thumb {
   }
 }
 
-/* Visit planner, reading progress and filterable maps */
-.visit-planner-section {
-  padding-top: 0;
-}
-
-.visit-planner-card {
-  padding: clamp(24px, 4vw, 46px);
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 100% 0%, rgba(109, 154, 163, 0.18), transparent 23rem),
-    linear-gradient(145deg, #f8f4eb, #ffffff);
-  border: 1px solid rgba(23, 63, 53, 0.13);
-  border-radius: 30px;
-  box-shadow: 0 22px 58px rgba(16, 45, 39, 0.09);
-}
-
-.visit-planner-intro {
-  max-width: 760px;
-}
-
-.visit-planner-intro .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.visit-planner-intro h2 {
-  margin: 10px 0 14px;
-  color: var(--forest-950);
-  font-size: clamp(2rem, 4.6vw, 3.5rem);
-}
-
-.visit-planner-intro p {
-  color: var(--stone-700);
-  line-height: 1.7;
-}
-
-.planner-controls {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.planner-controls label {
-  display: grid;
-  gap: 8px;
-}
-
-.planner-controls label > span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--forest-800);
-  font-size: 0.75rem;
-  font-weight: 850;
-}
-
-.planner-controls select {
-  width: 100%;
-  min-height: 52px;
-  padding: 10px 38px 10px 13px;
-  color: var(--forest-950);
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(23, 63, 53, 0.16);
-  border-radius: 14px;
-  font: inherit;
-  font-size: 0.88rem;
-}
-
-.planner-result {
-  margin-top: 22px;
-  padding: clamp(20px, 3vw, 30px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
-  gap: 24px 38px;
-  align-items: start;
-  color: #fff;
-  background: linear-gradient(135deg, #173f35, #275c4d);
-  border-radius: 22px;
-}
-
-.planner-result-heading > span {
-  color: #a9d0c2;
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.planner-result h3 {
-  margin: 8px 0 10px;
-  color: #fff;
-  font-size: clamp(1.45rem, 2.8vw, 2rem);
-}
-
-.planner-result p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.76);
-  line-height: 1.65;
-}
-
-.planner-result ol {
-  margin: 0;
-  padding-left: 22px;
-  color: rgba(255, 255, 255, 0.86);
-  line-height: 1.55;
-}
-
-.planner-result li + li {
-  margin-top: 9px;
-}
-
-.planner-result .button {
-  width: fit-content;
-  grid-column: 1 / -1;
-  color: var(--forest-950);
-  background: #fff;
-}
-
+/* Reading progress and filterable maps */
 .guide-layout {
   margin-top: 38px;
   display: grid;
@@ -3917,7 +3798,6 @@ html[data-theme='dark'] .audio-timeline input[type='range']::-moz-range-thumb {
   border-top: 1px solid rgba(23, 63, 53, 0.09);
 }
 
-html[data-theme='dark'] .visit-planner-card,
 html[data-theme='dark'] .guide-reading-tools {
   color: #edf5f0;
   background:
@@ -3927,14 +3807,12 @@ html[data-theme='dark'] .guide-reading-tools {
   box-shadow: 0 22px 58px rgba(0, 0, 0, 0.25);
 }
 
-html[data-theme='dark'] .visit-planner-intro h2,
 html[data-theme='dark'] .guide-reading-summary strong,
 html[data-theme='dark'] .guide-reader-nav button.is-active,
 html[data-theme='dark'] .location-card-compact .location-card-body strong {
   color: #f2f8f4;
 }
 
-html[data-theme='dark'] .visit-planner-intro p,
 html[data-theme='dark'] .guide-reading-summary small,
 html[data-theme='dark'] .guide-progress-label,
 html[data-theme='dark'] .guide-reading-stats,
@@ -3945,11 +3823,7 @@ html[data-theme='dark'] .nearby-card-interactive small {
   color: #afc0b7;
 }
 
-html[data-theme='dark'] .planner-controls label > span {
-  color: #c8d9d0;
-}
 
-html[data-theme='dark'] .planner-controls select,
 html[data-theme='dark'] .guide-mobile-select select,
 html[data-theme='dark'] .map-filter-bar button {
   color: #edf5f0;
@@ -3962,9 +3836,6 @@ html[data-theme='dark'] .map-filter-bar button.is-active {
 }
 
 @media (max-width: 1050px) {
-  .planner-controls {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
   .guide-layout {
     grid-template-columns: 235px minmax(0, 1fr);
@@ -3990,13 +3861,6 @@ html[data-theme='dark'] .map-filter-bar button.is-active {
 }
 
 @media (max-width: 780px) {
-  .planner-result {
-    grid-template-columns: 1fr;
-  }
-
-  .planner-result .button {
-    grid-column: auto;
-  }
 
   .guide-layout {
     grid-template-columns: 1fr;
@@ -4039,18 +3903,6 @@ html[data-theme='dark'] .map-filter-bar button.is-active {
 }
 
 @media (max-width: 560px) {
-  .visit-planner-card {
-    padding: 20px 16px;
-    border-radius: 22px;
-  }
-
-  .planner-controls {
-    grid-template-columns: 1fr;
-  }
-
-  .planner-result {
-    padding: 20px 17px;
-  }
 
   .map-filter-bar {
     flex-wrap: nowrap;
@@ -4082,7 +3934,6 @@ html[data-theme='dark'] .map-filter-bar button.is-active {
 }
 
 @media print {
-  .visit-planner-section,
   .guide-reading-tools,
   .map-filter-bar {
     display: none !important;
@@ -4112,7 +3963,7 @@ html[data-theme='dark'] .map-filter-bar button.is-active {
 
 .home-quick-actions-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -4253,4 +4104,27 @@ html[data-theme='dark'] .audio-auto-next {
 
 html[data-theme='dark'] .gallery-updated-at {
   color: #91a69b;
+}
+
+
+/* Keep SVG glyphs optically centred inside their icon tiles. */
+.audio-guide-copy .audio-icon {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.audio-guide-copy .audio-icon svg,
+.nearby-card .nearby-card-icon svg {
+  display: block;
+  margin: auto;
+  flex: 0 0 auto;
+}
+
+.nearby-card .nearby-card-icon {
+  margin-top: 0;
+  display: grid;
+  place-items: center;
+  align-self: start;
+  line-height: 0;
 }

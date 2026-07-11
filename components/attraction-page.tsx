@@ -10,7 +10,6 @@ import {FadeIn} from './fade-in';
 import {NearbyPlaces} from './nearby-places';
 import {LocationMap} from './location-map';
 import {GuideReadingTools} from './guide-reading-tools';
-import {VisitPlanner} from './visit-planner';
 
 type Fact = {
   icon: 'route' | 'time' | 'difficulty' | 'location';
@@ -104,7 +103,6 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
         </div>
       </section>
 
-      <VisitPlanner slug={slug} />
 
       <section id={`audio-${slug}`} className="section audio-section">
         <div className="shell">

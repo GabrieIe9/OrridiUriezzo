@@ -61,6 +61,5 @@ OrridiUriezzo/
 └── vercel.json
 
 components/guide-reading-tools.tsx
-components/visit-planner.tsx
 components/location-map-explorer.tsx
 components/nearby-places-explorer.tsx

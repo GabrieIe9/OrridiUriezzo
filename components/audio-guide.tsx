@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
-  Download,
   Gauge,
   LoaderCircle,
   Pause,
@@ -231,16 +230,6 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
     }
   }
 
-  async function downloadChapter() {
-    const url = await loadAudio();
-    if (!url || !selectedChapter) return;
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = `${slug}-${selectedChapter.id}-${locale}.mp3`;
-    document.body.appendChild(anchor);
-    anchor.click();
-    anchor.remove();
-  }
 
   async function handleEnded() {
     setPlaying(false);
@@ -388,10 +377,6 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             </button>
 
             <div className="audio-secondary-options">
-              <button type="button" onClick={downloadChapter} disabled={loading} className="audio-stop-control">
-                <Download size={15} aria-hidden="true" />
-                {t('download')}
-              </button>
               <label className="audio-auto-next">
                 <input type="checkbox" checked={autoAdvance} onChange={(event) => setAutoAdvance(event.target.checked)} />
                 <span>{t('autoNext')}</span>

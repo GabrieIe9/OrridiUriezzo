@@ -51,9 +51,7 @@
     },
     "quickActions": {
       "title": "So kannst du beginnen",
-      "intro": "Drei Werkzeuge für die schnelle Besuchsplanung.",
-      "plan": "Besuch planen",
-      "planText": "Erstelle eine Route nach Zeit, Gruppe und Zugang.",
+      "intro": "Zwei Werkzeuge zur schnellen Orientierung während des Besuchs.",
       "map": "Karten öffnen",
       "mapText": "Zugänge, Aussichtspunkte und Angebote anzeigen.",
       "audio": "Audioguide anhören",
@@ -86,7 +84,6 @@
     "forward": "15 Sekunden vor",
     "speed": "Tempo",
     "playbackError": "Der Browser konnte die Audiowiedergabe nicht starten.",
-    "download": "MP3 herunterladen",
     "autoNext": "Nächstes Kapitel abspielen"
   },
   "orridi": {
@@ -460,82 +457,5 @@
     "readOriginal": "Originalquelle lesen",
     "empty": "Für diese Woche wurden keine relevanten Meldungen gefunden. Frühere Wochen bleiben im Menü verfügbar.",
     "updated": "Archiv aktualisiert"
-  },
-  "planner": {
-    "eyebrow": "Besuch planen",
-    "title": "Stelle deine Route zusammen",
-    "intro": "Wähle Zeit, Gruppe und Ausgangspunkt. Die Website schlägt eine vorsichtige Route vor; Wetter und Hinweise vor Ort müssen immer geprüft werden.",
-    "time": {
-      "label": "Verfügbare Zeit",
-      "45": "Bis 45 Minuten",
-      "90": "Etwa 1–2 Stunden",
-      "180": "Ein halber Tag"
-    },
-    "group": {
-      "label": "Deine Gruppe",
-      "adult": "Erwachsene, ruhiges Tempo",
-      "family": "Familie mit Kindern",
-      "experienced": "Erfahrene Wandernde"
-    },
-    "access": {
-      "label": "Ausgangspunkt",
-      "premia": "Premia · Santa Lucia",
-      "baceno": "Baceno · San Gaudenzio",
-      "verampio": "Verampio · Talboden"
-    },
-    "scope": {
-      "label": "Was möchtest du sehen",
-      "single": "Ein Ziel",
-      "both": "Schluchten und Strudeltöpfe"
-    },
-    "resultLabel": "Empfohlene Route",
-    "openDirections": "Anfahrt öffnen",
-    "results": {
-      "quick": {
-        "title": "Kompakter Besuch",
-        "description": "Bei wenig Zeit sollte ein Hauptpunkt im Mittelpunkt stehen, mit ausreichender Reserve für den Rückweg.",
-        "steps": [
-          "Wähle den direktesten Zugang und prüfe den Parkplatz.",
-          "Besuche den Hauptpunkt ohne zusätzliche Nebenwege.",
-          "Kehre rechtzeitig um und meide Eis oder starken Regen."
-        ]
-      },
-      "family": {
-        "title": "Vorsichtige Familienroute",
-        "description": "Eine kurze Route mit häufigen Pausen und besonderer Vorsicht auf nassem Boden, Stufen und am Wasser.",
-        "steps": [
-          "Bevorzuge Santa Lucia oder einen einfachen Abschnitt vom Talboden.",
-          "Halte Kinder in engen Passagen und auf nassem Fels nahe bei dir.",
-          "Beende den Besuch bei Rutschgefahr oder Müdigkeit."
-        ]
-      },
-      "complete": {
-        "title": "Komplette Route Schluchten + Strudeltöpfe",
-        "description": "Mit einem halben Tag lassen sich die fossile Schlucht und die aktiven Flussformen von Maiesso verbinden.",
-        "steps": [
-          "Starte je nach Logistik in Premia oder Verampio.",
-          "Durchquere die Südschlucht entlang der offiziellen Markierungen.",
-          "Gehe weiter zur Brücke von Maiesso und bleibe auf Abstand zur Strömung."
-        ]
-      },
-      "adventure": {
-        "title": "Erweiterte Wanderroute",
-        "description": "Nimm dir mehr Zeit für das Schluchtensystem und behandle wenig besuchte Abschnitte als echtes Wandergelände.",
-        "steps": [
-          "Prüfe Sperrungen und den Zustand gesicherter Passagen.",
-          "Westschlucht und Vallaccia sind keine gewöhnlichen Spazierwege.",
-          "Nimm geeignete Schuhe, Wasser und genug Tageslicht mit."
-        ]
-      },
-      "classic": {
-        "title": "Klassischer ausgewogener Besuch",
-        "description": "Eine ruhige Route mit dem Hauptabschnitt und mindestens einem Aussichtspunkt.",
-        "steps": [
-          "Erreiche den gewählten Zugang und beachte die Hinweise vor Ort.",
-          "Erkunde den Hauptabschnitt mit dem Kapitelführer.",
-          "Ergänze Maiesso nur bei genügend Zeit, gutem Wetter und passender Gruppenkondition."
-        ]
-      }
-    }
   }
 }

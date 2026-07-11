@@ -51,9 +51,7 @@
     },
     "quickActions": {
       "title": "Scegli come iniziare",
-      "intro": "Tre strumenti per organizzare subito la visita.",
-      "plan": "Organizza la visita",
-      "planText": "Crea un itinerario in base a tempo, gruppo e accesso.",
+      "intro": "Due strumenti per orientarti subito durante la visita.",
       "map": "Apri le mappe",
       "mapText": "Consulta accessi, punti panoramici e servizi utili.",
       "audio": "Ascolta la guida",
@@ -86,7 +84,6 @@
     "forward": "Avanza di 15 secondi",
     "speed": "Velocità",
     "playbackError": "Il browser non è riuscito ad avviare la riproduzione.",
-    "download": "Scarica MP3",
     "autoNext": "Riproduci il capitolo successivo"
   },
   "orridi": {
@@ -460,82 +457,5 @@
     "readOriginal": "Leggi la fonte originale",
     "empty": "Nessuna notizia pertinente è stata trovata per questa settimana. Le settimane archiviate restano disponibili dal menu.",
     "updated": "Archivio aggiornato"
-  },
-  "planner": {
-    "eyebrow": "Pianifica la visita",
-    "title": "Costruisci il tuo itinerario",
-    "intro": "Indica tempo, compagnia e punto di partenza: il sito propone un percorso prudente e adatto alla tua visita. Controlla sempre meteo e segnaletica sul posto.",
-    "time": {
-      "label": "Tempo disponibile",
-      "45": "Fino a 45 minuti",
-      "90": "Circa 1–2 ore",
-      "180": "Mezza giornata"
-    },
-    "group": {
-      "label": "Con chi viaggi",
-      "adult": "Adulti, passo tranquillo",
-      "family": "Famiglia con bambini",
-      "experienced": "Escursionisti esperti"
-    },
-    "access": {
-      "label": "Punto di partenza",
-      "premia": "Premia · Santa Lucia",
-      "baceno": "Baceno · San Gaudenzio",
-      "verampio": "Verampio · fondovalle"
-    },
-    "scope": {
-      "label": "Cosa vuoi vedere",
-      "single": "Un solo luogo",
-      "both": "Orridi e Marmitte"
-    },
-    "resultLabel": "Itinerario consigliato",
-    "openDirections": "Apri le indicazioni stradali",
-    "results": {
-      "quick": {
-        "title": "Visita essenziale",
-        "description": "Con poco tempo conviene concentrarsi su un solo punto principale, evitando deviazioni e mantenendo un margine per il rientro.",
-        "steps": [
-          "Scegli l’accesso più diretto e verifica il parcheggio.",
-          "Visita il punto principale senza aggiungere tratti secondari.",
-          "Rientra prima del limite di tempo e non entrare con fondo ghiacciato o forte pioggia."
-        ]
-      },
-      "family": {
-        "title": "Percorso famiglia prudente",
-        "description": "Un itinerario breve, con soste frequenti e attenzione ai tratti umidi, alle scale e alla vicinanza dell’acqua.",
-        "steps": [
-          "Preferisci l’accesso da Santa Lucia o un tratto semplice dal fondovalle.",
-          "Mantieni i bambini vicini nei passaggi stretti e sulle rocce bagnate.",
-          "Interrompi la visita se il fondo diventa scivoloso o il gruppo è stanco."
-        ]
-      },
-      "complete": {
-        "title": "Itinerario completo Orridi + Marmitte",
-        "description": "Con mezza giornata puoi collegare il canyon fossile alle forme fluviali di Maiesso, prevedendo soste fotografiche e tempo di sicurezza.",
-        "steps": [
-          "Parti da Premia o Verampio in base alla logistica.",
-          "Attraversa l’Orrido Sud seguendo la segnaletica ufficiale.",
-          "Prosegui verso il Ponte di Maiesso e osserva le Marmitte senza avvicinarti alla corrente."
-        ]
-      },
-      "adventure": {
-        "title": "Percorso esteso per escursionisti",
-        "description": "Puoi dedicare più tempo alla lettura del sistema degli Orridi, ma i tratti meno frequentati richiedono esperienza e condizioni favorevoli.",
-        "steps": [
-          "Verifica eventuali chiusure e lo stato dei tratti attrezzati.",
-          "Non considerare Orrido Ovest e Vallaccia come semplici passeggiate turistiche.",
-          "Porta calzature adeguate, acqua e un margine di luce per il rientro."
-        ]
-      },
-      "classic": {
-        "title": "Visita classica e completa",
-        "description": "Un percorso equilibrato per conoscere il luogo con calma, includendo il tratto principale e almeno un punto panoramico.",
-        "steps": [
-          "Raggiungi l’accesso scelto e consulta la segnaletica locale.",
-          "Dedica tempo al tratto principale, usando la guida a capitoli.",
-          "Aggiungi Maiesso solo se meteo, tempo e condizioni del gruppo lo consentono."
-        ]
-      }
-    }
   }
 }

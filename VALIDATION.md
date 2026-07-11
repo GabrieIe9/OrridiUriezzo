@@ -23,7 +23,6 @@ La build ha generato 21 pagine e le route dinamiche:
 
 - quattro lingue: italiano, inglese, spagnolo e tedesco;
 - guide da 10 capitoli per entrambe le attrazioni;
-- pianificatore della visita;
 - navigatore della lettura e salvataggio locale;
 - audioguida per capitolo con cache Blob, download e ripresa locale;
 - mappe filtrabili e servizi vicini;
@@ -45,3 +44,13 @@ La build ha generato 21 pagine e le route dinamiche:
 ## Dipendenze esterne non eseguite nel test
 
 Le chiamate reali a Wikimedia Commons, feed RSS, Gemini, ElevenLabs e Vercel Blob richiedono rete e credenziali del deployment. La build e il rendering usano i fallback locali quando tali servizi non sono configurati.
+
+## Correzioni verificate
+
+- componente `VisitPlanner` rimosso;
+- download MP3 rimosso dal player;
+- icone SVG centrate con selettori CSS specifici;
+- route TTS compilata con gestione dettagliata degli errori ElevenLabs;
+- `npm run lint`: superato;
+- `npm run build`: superato;
+- 21 pagine generate.
