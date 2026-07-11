@@ -48,6 +48,16 @@
         "location": "Maiesso · Río Toce",
         "alt": "Marmitas de los Gigantes y rocas pulidas junto al Toce en Maiesso"
       }
+    },
+    "quickActions": {
+      "title": "Elige cómo empezar",
+      "intro": "Tres herramientas para organizar la visita de inmediato.",
+      "plan": "Organizar la visita",
+      "planText": "Crea una ruta según el tiempo, el grupo y el acceso.",
+      "map": "Abrir los mapas",
+      "mapText": "Consulta accesos, miradores y servicios útiles.",
+      "audio": "Escuchar la guía",
+      "audioText": "Reproduce los capítulos y continúa desde la posición guardada."
     }
   },
   "audio": {
@@ -61,7 +71,23 @@
     "chapterLabel": "Capítulo",
     "previousChapter": "Capítulo anterior",
     "nextChapter": "Capítulo siguiente",
-    "cacheNote": "Tras la primera generación, cada capítulo se conserva y se reproduce desde la caché compartida."
+    "cacheNote": "Tras la primera generación, cada capítulo se conserva y se reproduce desde la caché compartida.",
+    "eyebrow": "Relato sonoro",
+    "chapterCounter": "Capítulo {current} de {total}",
+    "statusIdle": "Selecciona y escucha",
+    "statusPreparing": "Preparando audio",
+    "statusPlaying": "En reproducción",
+    "statusCached": "Listo desde la caché",
+    "statusGenerated": "Generado y guardado",
+    "statusReady": "Audio listo",
+    "seek": "Posición del audio",
+    "controlsLabel": "Controles de la audioguía",
+    "rewind": "Retroceder 15 segundos",
+    "forward": "Avanzar 15 segundos",
+    "speed": "Velocidad",
+    "playbackError": "El navegador no ha podido iniciar la reproducción.",
+    "download": "Descargar MP3",
+    "autoNext": "Reproducir el capítulo siguiente"
   },
   "orridi": {
     "meta": {
@@ -167,7 +193,8 @@
           "alt": "Cañón sinuoso de Uriezzo",
           "caption": "Las curvas conservan la huella de los remolinos."
         }
-      ]
+      ],
+      "updatedAt": "Fotografías actualizadas automáticamente el {date}."
     },
     "narration": "Las Gargantas de Uriezzo son cañones fósiles del valle Antigorio, creados por aguas de fusión que corrían bajo el glaciar del Toce durante la última glaciación. Arena, grava y guijarros excavaron corredores sinuosos, cámaras y paredes pulidas en el granito. Cuando el glaciar retrocedió hace unos doce mil años, los torrentes cambiaron de curso y dejaron las gargantas secas y transitables. La Garganta Sur es la más espectacular; la Nordeste es más corta y estrecha, mientras que la Oeste requiere más experiencia. Los accesos principales son Premia, Baceno y Verampio. Se necesita buen calzado y prudencia porque el suelo puede estar húmedo, hay escaleras metálicas y el hielo invernal hace desaconsejable la visita.",
     "map": {
@@ -194,14 +221,31 @@
           "description": "Desde la iglesia monumental desciende el antiguo camino hacia Verampio, que enlaza con el sendero del Orrido Sur.",
           "alt": "Paso rocoso en la ruta de los Orridi di Uriezzo"
         }
-      }
+      },
+      "filters": {
+        "all": "Todos",
+        "attraction": "Atracciones",
+        "access": "Accesos",
+        "viewpoint": "Miradores"
+      },
+      "selectPoint": "Filtra y selecciona un lugar en el mapa"
     },
     "guide": {
       "eyebrow": "Guía completa por capítulos",
       "title": "Comprender el lugar paso a paso",
       "description": "Una guía extensa sobre geología, historia, senderos, ambiente y seguridad para convertir la visita en una lectura atenta del paisaje.",
       "contentsLabel": "Índice de capítulos",
-      "backToContents": "Volver al índice"
+      "backToContents": "Volver al índice",
+      "reader": {
+        "title": "Tu lectura",
+        "progress": "Progreso",
+        "currentChapter": "Capítulo actual",
+        "estimatedTime": "Tiempo estimado",
+        "minutes": "min de lectura",
+        "resume": "Continuar donde lo dejaste",
+        "completed": "Guía completada",
+        "chapters": "capítulos"
+      }
     }
   },
   "marmitte": {
@@ -308,7 +352,8 @@
           "alt": "Paisaje fluvial de las Marmitas",
           "caption": "Granito, agua y bosque forman un único geositio."
         }
-      ]
+      ],
+      "updatedAt": "Fotografías actualizadas automáticamente el {date}."
     },
     "narration": "Las Marmitas de los Gigantes se encuentran en Maiesso, junto al río Toce, y comparten sendero con las Gargantas de Uriezzo. Son cavidades redondeadas y cilíndricas excavadas en el granito por aguas de fusión glaciar. Arena y guijarros atrapados en remolinos giraban como herramientas abrasivas y pulieron la roca durante miles de años. Desde el puente de Maiesso se observa la relación entre el río actual y la salida de la Garganta Sur. El granito mojado es muy resbaladizo y el Toce puede cambiar de caudal: hay que permanecer en puntos seguros, vigilar a los niños y renunciar con crecidas o tormentas. Cerca se encuentra la central hidroeléctrica de Crego, diseñada por Piero Portaluppi entre 1917 y 1926.",
     "map": {
@@ -335,14 +380,31 @@
           "description": "Una interesante etapa de patrimonio industrial, proyectada por Piero Portaluppi a comienzos del siglo XX.",
           "alt": "Edificio de la central hidroeléctrica de Crego"
         }
-      }
+      },
+      "filters": {
+        "all": "Todos",
+        "attraction": "Atracciones",
+        "access": "Accesos",
+        "viewpoint": "Miradores"
+      },
+      "selectPoint": "Filtra y selecciona un lugar en el mapa"
     },
     "guide": {
       "eyebrow": "Guía completa por capítulos",
       "title": "Comprender el lugar paso a paso",
       "description": "Una guía extensa sobre geología, historia, senderos, ambiente y seguridad para convertir la visita en una lectura atenta del paisaje.",
       "contentsLabel": "Índice de capítulos",
-      "backToContents": "Volver al índice"
+      "backToContents": "Volver al índice",
+      "reader": {
+        "title": "Tu lectura",
+        "progress": "Progreso",
+        "currentChapter": "Capítulo actual",
+        "estimatedTime": "Tiempo estimado",
+        "minutes": "min de lectura",
+        "resume": "Continuar donde lo dejaste",
+        "completed": "Guía completada",
+        "chapters": "capítulos"
+      }
     }
   },
   "assistant": {
@@ -379,7 +441,10 @@
     "openMaps": "Abrir en Google Maps",
     "liveNote": "Los horarios, la apertura estacional, la accesibilidad y la disponibilidad pueden cambiar. Comprueba siempre la ficha en Google Maps.",
     "restaurantsMapTitle": "Restaurantes y pizzerías en el mapa",
-    "camperMapTitle": "Áreas de autocaravanas y aparcamientos en el mapa"
+    "camperMapTitle": "Áreas de autocaravanas y aparcamientos en el mapa",
+    "filters": {
+      "all": "Todos los servicios"
+    }
   },
   "news": {
     "meta": {
@@ -395,5 +460,82 @@
     "readOriginal": "Leer la fuente original",
     "empty": "No se encontraron noticias pertinentes esta semana. Las semanas archivadas siguen disponibles en el menú.",
     "updated": "Archivo actualizado"
+  },
+  "planner": {
+    "eyebrow": "Planifica la visita",
+    "title": "Crea tu itinerario",
+    "intro": "Indica el tiempo, el grupo y el punto de partida. El sitio propone una ruta prudente, pero siempre hay que comprobar el tiempo y la señalización local.",
+    "time": {
+      "label": "Tiempo disponible",
+      "45": "Hasta 45 minutos",
+      "90": "Aproximadamente 1–2 horas",
+      "180": "Media jornada"
+    },
+    "group": {
+      "label": "Con quién viajas",
+      "adult": "Adultos, ritmo tranquilo",
+      "family": "Familia con niños",
+      "experienced": "Senderistas expertos"
+    },
+    "access": {
+      "label": "Punto de partida",
+      "premia": "Premia · Santa Lucia",
+      "baceno": "Baceno · San Gaudenzio",
+      "verampio": "Verampio · fondo del valle"
+    },
+    "scope": {
+      "label": "Qué quieres visitar",
+      "single": "Un solo lugar",
+      "both": "Orridi y Marmitte"
+    },
+    "resultLabel": "Itinerario recomendado",
+    "openDirections": "Abrir indicaciones",
+    "results": {
+      "quick": {
+        "title": "Visita esencial",
+        "description": "Con poco tiempo, céntrate en un punto principal y conserva margen para el regreso.",
+        "steps": [
+          "Elige el acceso más directo y comprueba el aparcamiento.",
+          "Visita el punto principal sin añadir desvíos secundarios.",
+          "Regresa dentro del límite y evita hielo o lluvia intensa."
+        ]
+      },
+      "family": {
+        "title": "Ruta familiar prudente",
+        "description": "Un itinerario corto con paradas frecuentes y atención al suelo mojado, las escaleras y el agua.",
+        "steps": [
+          "Prefiere Santa Lucia o un tramo sencillo desde el valle.",
+          "Mantén a los niños cerca en pasos estrechos y rocas mojadas.",
+          "Termina la visita si el terreno resbala o el grupo está cansado."
+        ]
+      },
+      "complete": {
+        "title": "Ruta completa Orridi + Marmitte",
+        "description": "Con media jornada puedes unir el cañón fósil con las formas fluviales de Maiesso.",
+        "steps": [
+          "Parte de Premia o Verampio según la logística.",
+          "Cruza el Orrido Sur siguiendo la señalización oficial.",
+          "Continúa al Puente de Maiesso y observa las marmitas desde una distancia segura."
+        ]
+      },
+      "adventure": {
+        "title": "Ruta ampliada para senderistas",
+        "description": "Dedica más tiempo al sistema de gargantas, tratando los tramos menos frecuentados como terreno de montaña.",
+        "steps": [
+          "Comprueba cierres y estado de los tramos equipados.",
+          "No trates el Orrido Oeste o Vallaccia como paseos turísticos.",
+          "Lleva calzado adecuado, agua y luz suficiente para volver."
+        ]
+      },
+      "classic": {
+        "title": "Visita clásica equilibrada",
+        "description": "Una ruta tranquila que incluye el punto principal y al menos un mirador.",
+        "steps": [
+          "Llega al acceso elegido y consulta las señales locales.",
+          "Recorre el tramo principal con la guía por capítulos.",
+          "Añade Maiesso solo si el tiempo, el clima y el grupo lo permiten."
+        ]
+      }
+    }
   }
 }

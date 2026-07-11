@@ -1,14 +1,36 @@
-import {Caravan, ExternalLink, MapPin, UtensilsCrossed} from 'lucide-react';
 import {getLocale, getTranslations} from 'next-intl/server';
 import places from '@/data/nearby-places.json';
 import type {AppLocale} from '@/i18n/routing';
+import {NearbyPlacesExplorer, type NearbyExplorerPlace} from './nearby-places-explorer';
 
-const restaurantsEmbed = 'https://www.google.com/maps?q=ristoranti%20pizzerie%20vicino%20Orridi%20di%20Uriezzo&z=11&output=embed';
-const camperEmbed = 'https://www.google.com/maps?q=area%20camper%20vicino%20Orridi%20di%20Uriezzo&z=11&output=embed';
+function embedFor(query: string) {
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=13&output=embed`;
+}
 
 export async function NearbyPlaces() {
   const locale = await getLocale() as AppLocale;
   const t = await getTranslations('nearby');
+
+  const explorerPlaces: NearbyExplorerPlace[] = [
+    ...places.restaurants.map((place) => ({
+      id: place.id,
+      name: place.name,
+      locality: place.locality,
+      description: place.description[locale],
+      mapsUrl: place.mapsUrl,
+      embedUrl: embedFor(`${place.name} ${place.locality}`),
+      category: 'restaurant' as const
+    })),
+    ...places.camperAreas.map((place) => ({
+      id: place.id,
+      name: place.name,
+      locality: place.locality,
+      description: place.description[locale],
+      mapsUrl: place.mapsUrl,
+      embedUrl: embedFor(`${place.name} ${place.locality}`),
+      category: 'camper' as const
+    }))
+  ];
 
   return (
     <section className="section nearby-section" aria-labelledby="nearby-title">
@@ -19,74 +41,15 @@ export async function NearbyPlaces() {
           <p>{t('intro')}</p>
         </div>
 
-        <div className="nearby-map-grid">
-          <article className="nearby-map-card">
-            <div className="nearby-map-card-heading">
-              <UtensilsCrossed size={20} aria-hidden="true" />
-              <h3>{t('restaurantsMapTitle')}</h3>
-            </div>
-            <iframe
-              src={restaurantsEmbed}
-              title={t('restaurantsMapTitle')}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </article>
-          <article className="nearby-map-card">
-            <div className="nearby-map-card-heading">
-              <Caravan size={20} aria-hidden="true" />
-              <h3>{t('camperMapTitle')}</h3>
-            </div>
-            <iframe
-              src={camperEmbed}
-              title={t('camperMapTitle')}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </article>
-        </div>
-
-        <div className="nearby-groups">
-          <div className="nearby-group">
-            <div className="nearby-group-heading">
-              <span aria-hidden="true"><UtensilsCrossed size={21} /></span>
-              <h3>{t('restaurants')}</h3>
-            </div>
-            <div className="nearby-grid">
-              {places.restaurants.map((place) => (
-                <a className="nearby-card" href={place.mapsUrl} target="_blank" rel="noreferrer" key={place.id}>
-                  <div>
-                    <strong>{place.name}</strong>
-                    <span><MapPin size={14} aria-hidden="true" /> {place.locality}</span>
-                    <p>{place.description[locale]}</p>
-                  </div>
-                  <span className="nearby-open">{t('openMaps')} <ExternalLink size={15} aria-hidden="true" /></span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="nearby-group">
-            <div className="nearby-group-heading">
-              <span aria-hidden="true"><Caravan size={21} /></span>
-              <h3>{t('camperAreas')}</h3>
-            </div>
-            <div className="nearby-grid">
-              {places.camperAreas.map((place) => (
-                <a className="nearby-card" href={place.mapsUrl} target="_blank" rel="noreferrer" key={place.id}>
-                  <div>
-                    <strong>{place.name}</strong>
-                    <span><MapPin size={14} aria-hidden="true" /> {place.locality}</span>
-                    <p>{place.description[locale]}</p>
-                  </div>
-                  <span className="nearby-open">{t('openMaps')} <ExternalLink size={15} aria-hidden="true" /></span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+        <NearbyPlacesExplorer
+          places={explorerPlaces}
+          labels={{
+            all: t('filters.all'),
+            restaurants: t('restaurants'),
+            camper: t('camperAreas'),
+            openMaps: t('openMaps')
+          }}
+        />
 
         <p className="nearby-note">{t('liveNote')}</p>
       </div>

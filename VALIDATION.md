@@ -2,56 +2,46 @@
 
 Data di validazione: 11 luglio 2026.
 
-## Comandi eseguiti
+## Comandi eseguiti sulla versione aggiornata
 
 ```text
-npm ci --no-audit --no-fund: superato su copia pulita
-npm run lint: superato senza warning
+npm run lint: superato senza errori
 npm run build: superato
-npm audit --omit=dev --audit-level=high: 0 vulnerabilità
+TypeScript: superato durante la build
+Rendering HTTP locale della pagina italiana: stato 200
 ```
 
-## Build Next.js
+La build ha generato 21 pagine e le route dinamiche:
 
-- 21 pagine generate.
-- 4 homepage localizzate.
-- 8 pagine guida localizzate.
-- 4 pagine news localizzate.
-- API dinamiche: `/api/chat`, `/api/tts`, `/api/cron/refresh`.
-- ISR: 1 ora sulle pagine aggiornate da Blob.
-- Invalidazione immediata dopo gli aggiornamenti cron.
+```text
+/api/chat
+/api/tts
+/api/cron/refresh
+```
 
-## Lunghezza guide
+## Funzioni verificate dalla compilazione
 
-| Lingua | Orridi | Marmitte |
-|---|---:|---:|
-| Italiano | 4909 parole | 4309 parole |
-| Inglese | 3748 parole | 3501 parole |
-| Spagnolo | 4505 parole | 4250 parole |
-| Tedesco | 3867 parole | 3654 parole |
+- quattro lingue: italiano, inglese, spagnolo e tedesco;
+- guide da 10 capitoli per entrambe le attrazioni;
+- pianificatore della visita;
+- navigatore della lettura e salvataggio locale;
+- audioguida per capitolo con cache Blob, download e ripresa locale;
+- mappe filtrabili e servizi vicini;
+- news settimanali e archivio storico;
+- rotazione fotografie con copia persistente su Vercel Blob;
+- dati strutturati `TouristAttraction` e `BreadcrumbList`.
 
-Ogni guida contiene 10 capitoli. La generazione audio avviene per singolo capitolo.
+## Integrità e sicurezza
 
-## Sicurezza e integrità
+- nessuna chiave Gemini o ElevenLabs inclusa nel progetto;
+- `.env` e `.env.local` esclusi da Git;
+- nessun URL del registro npm interno OpenAI nel lockfile;
+- `.npmrc` usa `https://registry.npmjs.org/`;
+- cron protetto da `CRON_SECRET`;
+- Gemini ed ElevenLabs sono chiamati esclusivamente lato server;
+- il testo inviato al TTS può provenire soltanto dai capitoli locali autorizzati;
+- fotografie accompagnate da fonte, autore e licenza quando disponibili.
 
-- Nessuna chiave Gemini o ElevenLabs inclusa nel progetto.
-- `.env` e `.env.local` esclusi da Git.
-- Nessun URL del registro npm interno OpenAI nel lockfile.
-- `.npmrc` usa `https://registry.npmjs.org/`.
-- Cron protetto da `CRON_SECRET`.
-- Gemini e ElevenLabs chiamati esclusivamente lato server.
-- Input TTS limitato a lingue, attrazioni e capitoli presenti nei file locali.
-- News senza ripubblicazione integrale: riassunto originale e link alla fonte.
+## Dipendenze esterne non eseguite nel test
 
-## Automazioni
-
-- Rotazione immagini prevista ogni 14 giorni.
-- Nessun ID immagine duplicato nella selezione automatica globale.
-- Rotazione atomica: se non viene trovata una composizione completa, resta attiva quella precedente.
-- News archiviate per settimana, fino a 52 settimane.
-- URL già archiviati esclusi dalle settimane successive.
-- MP3 identificati da hash e conservati su Vercel Blob.
-
-## Limiti del test locale
-
-Le chiamate reali a Wikimedia Commons, feed RSS, Gemini, ElevenLabs e Vercel Blob non sono state eseguite durante la build perché l'ambiente di validazione non contiene le credenziali Vercel/API e non garantisce accesso DNS esterno. Le route gestiscono gli errori delle singole fonti e mantengono i contenuti precedenti o i fallback locali.
+Le chiamate reali a Wikimedia Commons, feed RSS, Gemini, ElevenLabs e Vercel Blob richiedono rete e credenziali del deployment. La build e il rendering usano i fallback locali quando tali servizi non sono configurati.

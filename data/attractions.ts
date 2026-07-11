@@ -15,9 +15,12 @@ export type MapPoint = {
   mapsUrl: string;
   mapsPhotosUrl: string;
   sourceUrl?: string;
+  embedUrl: string;
+  category: 'attraction' | 'access' | 'viewpoint';
 };
 
 export type AttractionVisuals = {
+  updatedAt?: string;
   hero: string;
   card: string;
   gallery: GalleryImage[];
@@ -39,6 +42,8 @@ export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
     mapPoints: [
       {
         id: 'orrido-sud',
+        category: 'attraction',
+        embedUrl: 'https://www.google.com/maps?q=Orrido+Sud+Uriezzo&z=16&output=embed',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Orridi_di_Uriezzo_S%C3%BCd_09.jpg/1280px-Orridi_di_Uriezzo_S%C3%BCd_09.jpg',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Orrido+Sud+Uriezzo',
         mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Orrido+Sud+Uriezzo+foto',
@@ -46,6 +51,8 @@ export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
       },
       {
         id: 'santa-lucia',
+        category: 'access',
+        embedUrl: 'https://www.google.com/maps?q=Oratorio+di+Santa+Lucia+Uriezzo+Premia&z=16&output=embed',
         image: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Baceno_Orridi_di_Uriezzo_01.jpg',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Oratorio+di+Santa+Lucia+Uriezzo+Premia',
         mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Oratorio+di+Santa+Lucia+Uriezzo+Premia+foto',
@@ -53,6 +60,8 @@ export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
       },
       {
         id: 'baceno-access',
+        category: 'access',
+        embedUrl: 'https://www.google.com/maps?q=Chiesa+Monumentale+San+Gaudenzio+Baceno&z=16&output=embed',
         image: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Baceno_Orridi_di_Uriezzo_Orrido_09.jpg',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Chiesa+Monumentale+San+Gaudenzio+Baceno',
         mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Chiesa+Monumentale+San+Gaudenzio+Baceno+foto',
@@ -107,6 +116,8 @@ export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
     mapPoints: [
       {
         id: 'marmitte',
+        category: 'attraction',
+        embedUrl: 'https://www.google.com/maps?q=Marmitte+dei+Giganti+Maiesso&z=17&output=embed',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Orridi_di_Uriezzo_Marmitte_01.jpg/1024px-Orridi_di_Uriezzo_Marmitte_01.jpg',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Marmitte+dei+Giganti+Maiesso',
         mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Marmitte+dei+Giganti+Maiesso+foto',
@@ -114,6 +125,8 @@ export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
       },
       {
         id: 'maiesso-bridge',
+        category: 'viewpoint',
+        embedUrl: 'https://www.google.com/maps?q=Ponte+di+Maiesso&z=17&output=embed',
         image: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Baceno_Orridi_di_Uriezzo_Marmitte_dei_Giganti_02.jpg',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Ponte+di+Maiesso',
         mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Ponte+di+Maiesso+foto',
@@ -121,6 +134,8 @@ export const attractionVisuals: Record<AttractionSlug, AttractionVisuals> = {
       },
       {
         id: 'crego',
+        category: 'viewpoint',
+        embedUrl: 'https://www.google.com/maps?q=Centrale+idroelettrica+di+Crego&z=16&output=embed',
         image: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Centrale_idroelettrica_di_Crego.jpg',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Centrale+idroelettrica+di+Crego',
         mapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Centrale+idroelettrica+di+Crego+foto',

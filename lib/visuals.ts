@@ -30,6 +30,7 @@ export async function getAttractionVisuals(slug: AttractionSlug): Promise<Attrac
 
   return {
     ...fallback,
+    updatedAt: archive?.updatedAt,
     hero: remote.hero.src,
     card: remote.card.src,
     gallery: remote.gallery.slice(0, 6).map((image, index) => ({

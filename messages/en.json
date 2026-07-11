@@ -48,6 +48,16 @@
         "location": "Maiesso · Toce River",
         "alt": "Giant’s Potholes and polished rocks along the Toce River at Maiesso"
       }
+    },
+    "quickActions": {
+      "title": "Choose how to begin",
+      "intro": "Three tools to organise your visit immediately.",
+      "plan": "Plan the visit",
+      "planText": "Build a route based on time, group and starting point.",
+      "map": "Open the maps",
+      "mapText": "View access points, viewpoints and useful services.",
+      "audio": "Listen to the guide",
+      "audioText": "Play audio chapters and resume from your saved position."
     }
   },
   "audio": {
@@ -61,7 +71,23 @@
     "chapterLabel": "Chapter",
     "previousChapter": "Previous chapter",
     "nextChapter": "Next chapter",
-    "cacheNote": "After its first generation, each chapter is stored and served from the shared cache."
+    "cacheNote": "After its first generation, each chapter is stored and served from the shared cache.",
+    "eyebrow": "Audio story",
+    "chapterCounter": "Chapter {current} of {total}",
+    "statusIdle": "Select and listen",
+    "statusPreparing": "Preparing audio",
+    "statusPlaying": "Now playing",
+    "statusCached": "Ready from cache",
+    "statusGenerated": "Generated and saved",
+    "statusReady": "Audio ready",
+    "seek": "Audio position",
+    "controlsLabel": "Audio guide controls",
+    "rewind": "Rewind 15 seconds",
+    "forward": "Skip forward 15 seconds",
+    "speed": "Speed",
+    "playbackError": "The browser could not start audio playback.",
+    "download": "Download MP3",
+    "autoNext": "Play the next chapter"
   },
   "orridi": {
     "meta": {
@@ -167,7 +193,8 @@
           "alt": "Sinuous canyon in the Uriezzo Gorges",
           "caption": "Curves in the rock preserve the motion of whirlpools."
         }
-      ]
+      ],
+      "updatedAt": "Photographs automatically refreshed on {date}."
     },
     "narration": "The Uriezzo Gorges are fossil canyons in Antigorio Valley, created by meltwater flowing beneath the Toce Glacier during the last glaciation. Sand, gravel and pebbles carried at high energy cut winding corridors, chambers and polished walls into the granite. When the glacier retreated around twelve thousand years ago, the streams changed course and left the gorges dry enough to explore. The South Gorge, known as the Tomb of Uriezzo, is the most spectacular; the North-East Gorge is shorter and narrower, while the West Gorge requires greater experience. Main access points are Premia, Baceno and Verampio. Good footwear and caution are essential because the floor may be damp, metal steps are present and winter ice makes visits inadvisable.",
     "map": {
@@ -194,14 +221,31 @@
           "description": "A mule track descends from the monumental church toward Verampio and joins the trail leading to the South Gorge.",
           "alt": "Rock passage along the Uriezzo Gorges route"
         }
-      }
+      },
+      "filters": {
+        "all": "All",
+        "attraction": "Attractions",
+        "access": "Access points",
+        "viewpoint": "Viewpoints"
+      },
+      "selectPoint": "Filter and select a place on the map"
     },
     "guide": {
       "eyebrow": "Complete chapter guide",
       "title": "Understand the place, step by step",
       "description": "An extended guide to geology, history, paths, environment and safety, designed to turn a short stop into a careful reading of the landscape.",
       "contentsLabel": "Chapter contents",
-      "backToContents": "Back to contents"
+      "backToContents": "Back to contents",
+      "reader": {
+        "title": "Your reading",
+        "progress": "Progress",
+        "currentChapter": "Current chapter",
+        "estimatedTime": "Estimated time",
+        "minutes": "min read",
+        "resume": "Continue where you left off",
+        "completed": "Guide completed",
+        "chapters": "chapters"
+      }
     }
   },
   "marmitte": {
@@ -308,7 +352,8 @@
           "alt": "River landscape at the Giant’s Potholes",
           "caption": "Granite, water and woodland form a single geosite."
         }
-      ]
+      ],
+      "updatedAt": "Photographs automatically refreshed on {date}."
     },
     "narration": "The Giant’s Potholes lie at Maiesso along the Toce River and share a trail with the Uriezzo Gorges. These rounded and cylindrical hollows were carved into granite by glacial meltwater. Sand and pebbles trapped in eddies rotated like abrasive tools, polishing and deepening the rock for thousands of years. From Maiesso Bridge you can see the relationship between the present river and the exit of the South Gorge. Wet granite is very slippery and the Toce can change quickly, so remain at safe viewpoints, supervise children and turn back during floods or thunderstorms. Nearby stands the Crego hydroelectric station, designed by Piero Portaluppi between 1917 and 1926.",
     "map": {
@@ -335,14 +380,31 @@
           "description": "A nearby industrial-history landmark designed by Piero Portaluppi in the early twentieth century.",
           "alt": "The Crego hydroelectric power station building"
         }
-      }
+      },
+      "filters": {
+        "all": "All",
+        "attraction": "Attractions",
+        "access": "Access points",
+        "viewpoint": "Viewpoints"
+      },
+      "selectPoint": "Filter and select a place on the map"
     },
     "guide": {
       "eyebrow": "Complete chapter guide",
       "title": "Understand the place, step by step",
       "description": "An extended guide to geology, history, paths, environment and safety, designed to turn a short stop into a careful reading of the landscape.",
       "contentsLabel": "Chapter contents",
-      "backToContents": "Back to contents"
+      "backToContents": "Back to contents",
+      "reader": {
+        "title": "Your reading",
+        "progress": "Progress",
+        "currentChapter": "Current chapter",
+        "estimatedTime": "Estimated time",
+        "minutes": "min read",
+        "resume": "Continue where you left off",
+        "completed": "Guide completed",
+        "chapters": "chapters"
+      }
     }
   },
   "assistant": {
@@ -379,7 +441,10 @@
     "openMaps": "Open in Google Maps",
     "liveNote": "Hours, seasonal opening, accessibility and availability may change. Always check the selected place on Google Maps.",
     "restaurantsMapTitle": "Restaurants and pizzerias on the map",
-    "camperMapTitle": "Motorhome stops and parking on the map"
+    "camperMapTitle": "Motorhome stops and parking on the map",
+    "filters": {
+      "all": "All services"
+    }
   },
   "news": {
     "meta": {
@@ -395,5 +460,82 @@
     "readOriginal": "Read the original source",
     "empty": "No relevant news was found for this week. Previous archived weeks remain available in the menu.",
     "updated": "Archive updated"
+  },
+  "planner": {
+    "eyebrow": "Plan your visit",
+    "title": "Build your itinerary",
+    "intro": "Choose your available time, group and starting point. The site suggests a cautious route, but weather and on-site signs must always be checked.",
+    "time": {
+      "label": "Available time",
+      "45": "Up to 45 minutes",
+      "90": "About 1–2 hours",
+      "180": "Half a day"
+    },
+    "group": {
+      "label": "Your group",
+      "adult": "Adults, relaxed pace",
+      "family": "Family with children",
+      "experienced": "Experienced hikers"
+    },
+    "access": {
+      "label": "Starting point",
+      "premia": "Premia · Santa Lucia",
+      "baceno": "Baceno · San Gaudenzio",
+      "verampio": "Verampio · valley floor"
+    },
+    "scope": {
+      "label": "What to visit",
+      "single": "One attraction",
+      "both": "Gorges and potholes"
+    },
+    "resultLabel": "Suggested itinerary",
+    "openDirections": "Open driving directions",
+    "results": {
+      "quick": {
+        "title": "Essential visit",
+        "description": "With limited time, focus on one main landmark and keep a safe margin for the return.",
+        "steps": [
+          "Use the most direct access and check parking first.",
+          "Visit the main landmark without adding secondary detours.",
+          "Turn back within your time limit and avoid ice or heavy rain."
+        ]
+      },
+      "family": {
+        "title": "Cautious family route",
+        "description": "A shorter route with frequent stops and particular care around wet ground, steps and flowing water.",
+        "steps": [
+          "Prefer Santa Lucia or an easy section from the valley floor.",
+          "Keep children close in narrow passages and on wet rock.",
+          "End the visit if the surface becomes slippery or the group is tired."
+        ]
+      },
+      "complete": {
+        "title": "Complete Gorges + Potholes route",
+        "description": "With half a day, connect the fossil canyon with the active river forms at Maiesso and allow time for stops.",
+        "steps": [
+          "Start from Premia or Verampio according to your logistics.",
+          "Cross the South Gorge following official signs.",
+          "Continue to Maiesso Bridge and view the potholes from a safe distance."
+        ]
+      },
+      "adventure": {
+        "title": "Extended route for hikers",
+        "description": "Spend longer reading the gorge system, while treating the less visited sections as genuine hiking terrain.",
+        "steps": [
+          "Check closures and the condition of assisted sections.",
+          "Do not treat the West Gorge or Vallaccia as ordinary tourist walks.",
+          "Carry suitable footwear, water and enough daylight for the return."
+        ]
+      },
+      "classic": {
+        "title": "Classic balanced visit",
+        "description": "A well-paced route covering the main feature and at least one viewpoint.",
+        "steps": [
+          "Reach your chosen access and read the local signs.",
+          "Explore the main section using the chapter guide.",
+          "Add Maiesso only when weather, time and group conditions allow it."
+        ]
+      }
+    }
   }
 }

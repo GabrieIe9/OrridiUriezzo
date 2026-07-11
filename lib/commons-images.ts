@@ -1,4 +1,4 @@
-import {readPublicJson, writePublicJson} from './blob-storage';
+import {findPublicBlob, hasBlobStorage, readPublicJson, writePublicBlob, writePublicJson} from './blob-storage';
 import type {AttractionSlug} from '@/data/attractions';
 
 const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
@@ -75,6 +75,64 @@ const slots: Record<AttractionSlug, Slot[]> = {
     {key: 'map-crego', query: 'Crego Premia Piemonte'}
   ]
 };
+
+
+
+function extensionFor(contentType: string, sourceUrl: string) {
+  if (contentType.includes('png')) return 'png';
+  if (contentType.includes('webp')) return 'webp';
+  if (contentType.includes('avif')) return 'avif';
+  if (contentType.includes('gif')) return 'gif';
+  const fromUrl = sourceUrl.match(/\.([a-z0-9]{3,4})(?:\?|$)/i)?.[1]?.toLowerCase();
+  return fromUrl && ['jpg', 'jpeg', 'png', 'webp', 'avif', 'gif'].includes(fromUrl) ? fromUrl : 'jpg';
+}
+
+async function mirrorImageToBlob(image: RemoteImage): Promise<RemoteImage> {
+  if (!hasBlobStorage()) return image;
+
+  try {
+    const pathname = `orridi/media/images/${image.id}.${extensionFor('', image.src)}`;
+    const existing = await findPublicBlob(pathname);
+    if (existing?.url) return {...image, src: existing.url};
+
+    const response = await fetch(image.src, {
+      headers: {
+        'User-Agent': 'OrridiUriezzoGuide/1.0 (https://orridiuriezzo.vercel.app; licensed image mirror)'
+      },
+      signal: AbortSignal.timeout(25_000),
+      cache: 'no-store'
+    });
+    if (!response.ok) throw new Error(`Image download ${response.status}`);
+
+    const contentType = response.headers.get('content-type') || 'image/jpeg';
+    if (!contentType.startsWith('image/')) throw new Error(`Unexpected content type ${contentType}`);
+    const body = await response.arrayBuffer();
+    if (!body.byteLength) throw new Error('Empty image response');
+    const stored = await writePublicBlob(pathname, body, contentType, 31_536_000);
+    return stored?.url ? {...image, src: stored.url} : image;
+  } catch (error) {
+    console.error(`Unable to mirror Commons image ${image.id}`, error);
+    return image;
+  }
+}
+
+async function mirrorVisualSet(visuals: AttractionRemoteVisuals): Promise<AttractionRemoteVisuals> {
+  const entries = [
+    visuals.hero,
+    visuals.card,
+    ...visuals.gallery,
+    ...Object.values(visuals.mapPoints)
+  ];
+  const mirrored = await Promise.all(entries.map(mirrorImageToBlob));
+  let cursor = 0;
+  const hero = mirrored[cursor++];
+  const card = mirrored[cursor++];
+  const gallery = mirrored.slice(cursor, cursor + visuals.gallery.length);
+  cursor += visuals.gallery.length;
+  const pointKeys = Object.keys(visuals.mapPoints);
+  const mapPoints = Object.fromEntries(pointKeys.map((key) => [key, mirrored[cursor++]]));
+  return {hero, card, gallery, mapPoints};
+}
 
 function cleanHtml(value?: string) {
   return (value || '')
@@ -225,7 +283,8 @@ export async function refreshCommonsVisuals(force = false) {
       throw new Error(`Not enough Commons images found for ${slug}`);
     }
 
-    attractions[slug] = {hero, card, gallery, mapPoints};
+    const visualSet = {hero, card, gallery, mapPoints};
+    attractions[slug] = await mirrorVisualSet(visualSet);
     newHistory.push(hero.id, card.id, ...gallery.map((image) => image.id), ...Object.values(mapPoints).map((image) => image.id));
   }
 

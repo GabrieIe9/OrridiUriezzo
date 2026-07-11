@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import Image from 'next/image';
-import {ArrowRight, Droplets, Mountain} from 'lucide-react';
+import {ArrowRight, Droplets, Headphones, MapPinned, Mountain, Route} from 'lucide-react';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
 import {getHomeCardImages} from '@/lib/visuals';
@@ -56,6 +56,34 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
           <h1>{t('title')}</h1>
           <p>{t('intro')}</p>
         </FadeIn>
+      </section>
+
+
+      <section className="home-quick-actions shell" aria-labelledby="home-quick-actions-title">
+        <div className="home-quick-actions-heading">
+          <span className="eyebrow">{t('quickActions.intro')}</span>
+          <h2 id="home-quick-actions-title">{t('quickActions.title')}</h2>
+        </div>
+        <div className="home-quick-actions-grid">
+          <Link href="/orridi-uriezzo#visit-planner-orridi-uriezzo" className="home-quick-action">
+            <span aria-hidden="true"><Route size={22} /></span>
+            <strong>{t('quickActions.plan')}</strong>
+            <p>{t('quickActions.planText')}</p>
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+          <Link href="/orridi-uriezzo#map-orridi-uriezzo" className="home-quick-action">
+            <span aria-hidden="true"><MapPinned size={22} /></span>
+            <strong>{t('quickActions.map')}</strong>
+            <p>{t('quickActions.mapText')}</p>
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+          <Link href="/orridi-uriezzo#audio-orridi-uriezzo" className="home-quick-action">
+            <span aria-hidden="true"><Headphones size={22} /></span>
+            <strong>{t('quickActions.audio')}</strong>
+            <p>{t('quickActions.audioText')}</p>
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
       </section>
 
       <section className="attraction-selector shell" aria-label={t('selectorAria')}>

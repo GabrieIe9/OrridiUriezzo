@@ -48,6 +48,16 @@
         "location": "Maiesso · Fiume Toce",
         "alt": "Marmitte dei Giganti e rocce levigate lungo il fiume Toce a Maiesso"
       }
+    },
+    "quickActions": {
+      "title": "Scegli come iniziare",
+      "intro": "Tre strumenti per organizzare subito la visita.",
+      "plan": "Organizza la visita",
+      "planText": "Crea un itinerario in base a tempo, gruppo e accesso.",
+      "map": "Apri le mappe",
+      "mapText": "Consulta accessi, punti panoramici e servizi utili.",
+      "audio": "Ascolta la guida",
+      "audioText": "Avvia i capitoli audio e riprendi dal punto salvato."
     }
   },
   "audio": {
@@ -61,7 +71,23 @@
     "chapterLabel": "Capitolo",
     "previousChapter": "Capitolo precedente",
     "nextChapter": "Capitolo successivo",
-    "cacheNote": "Dopo la prima generazione, ogni capitolo viene conservato e riprodotto dalla cache."
+    "cacheNote": "Dopo la prima generazione, ogni capitolo viene conservato e riprodotto dalla cache.",
+    "eyebrow": "Guida sonora",
+    "chapterCounter": "Capitolo {current} di {total}",
+    "statusIdle": "Seleziona e ascolta",
+    "statusPreparing": "Preparazione audio",
+    "statusPlaying": "In riproduzione",
+    "statusCached": "Pronto dalla cache",
+    "statusGenerated": "Generato e salvato",
+    "statusReady": "Audio pronto",
+    "seek": "Posizione nell’audio",
+    "controlsLabel": "Controlli audioguida",
+    "rewind": "Torna indietro di 15 secondi",
+    "forward": "Avanza di 15 secondi",
+    "speed": "Velocità",
+    "playbackError": "Il browser non è riuscito ad avviare la riproduzione.",
+    "download": "Scarica MP3",
+    "autoNext": "Riproduci il capitolo successivo"
   },
   "orridi": {
     "meta": {
@@ -167,7 +193,8 @@
           "alt": "Canyon sinuoso dell’Orrido di Uriezzo",
           "caption": "Le curve della roccia raccontano la direzione dei vortici."
         }
-      ]
+      ],
+      "updatedAt": "Fotografie aggiornate automaticamente il {date}."
     },
     "narration": "Gli Orridi di Uriezzo sono gole fossili della Valle Antigorio, create dalle acque di fusione che scorrevano sotto il Ghiacciaio del Toce durante l’ultima glaciazione. Sabbia, ghiaia e ciottoli trasportati ad alta energia incisero il granito, formando corridoi sinuosi, cavità e pareti levigate. Con il ritiro del ghiacciaio, avvenuto circa dodicimila anni fa, i torrenti cambiarono corso e lasciarono le gole asciutte e percorribili. L’Orrido Sud, detto Tomba d’Uriezzo, è il più spettacolare; il Nord-Est è più breve e stretto, mentre l’Ovest richiede maggiore esperienza. Gli accessi principali sono da Premia, Baceno e Verampio. Servono scarpe adatte e prudenza: il fondo può essere umido, alcune parti hanno scalette metalliche e in inverno il rischio di ghiaccio rende la visita sconsigliata.",
     "map": {
@@ -194,14 +221,31 @@
           "description": "Dalla chiesa monumentale parte la mulattiera che scende verso Verampio e si collega al sentiero dell’Orrido Sud.",
           "alt": "Passaggio roccioso lungo il percorso degli Orridi di Uriezzo"
         }
-      }
+      },
+      "filters": {
+        "all": "Tutti",
+        "attraction": "Attrazioni",
+        "access": "Accessi",
+        "viewpoint": "Punti panoramici"
+      },
+      "selectPoint": "Filtra e seleziona un punto sulla mappa"
     },
     "guide": {
       "eyebrow": "Guida completa a capitoli",
       "title": "Conoscere il luogo, passo dopo passo",
       "description": "Una guida estesa per leggere geologia, storia, sentieri, ambiente e sicurezza senza ridurre la visita a una semplice sosta fotografica.",
       "contentsLabel": "Indice dei capitoli",
-      "backToContents": "Torna all’indice"
+      "backToContents": "Torna all’indice",
+      "reader": {
+        "title": "La tua lettura",
+        "progress": "Avanzamento",
+        "currentChapter": "Capitolo attuale",
+        "estimatedTime": "Tempo stimato",
+        "minutes": "min di lettura",
+        "resume": "Continua da dove eri rimasto",
+        "completed": "Guida completata",
+        "chapters": "capitoli"
+      }
     }
   },
   "marmitte": {
@@ -308,7 +352,8 @@
           "alt": "Paesaggio fluviale delle Marmitte dei Giganti",
           "caption": "Granito, acqua e bosco compongono un unico geosito."
         }
-      ]
+      ],
+      "updatedAt": "Fotografie aggiornate automaticamente il {date}."
     },
     "narration": "Le Marmitte dei Giganti si trovano a Maiesso, lungo il fiume Toce, e sono collegate agli Orridi di Uriezzo dallo stesso sentiero. Sono cavità arrotondate e cilindriche scavate nel granito dalle acque di fusione glaciale. Nei vortici, sabbia e ciottoli rimanevano intrappolati e ruotavano come utensili abrasivi, levigando e approfondendo la roccia per migliaia di anni. Dal Ponte di Maiesso si osserva il rapporto tra il fiume attuale e l’uscita dell’Orrido Sud. Il granito bagnato è molto scivoloso e la portata del Toce può cambiare: bisogna restare sui punti sicuri, sorvegliare i bambini e rinunciare in caso di piena o temporali. Nelle vicinanze si trova la Centrale idroelettrica di Crego, progettata da Piero Portaluppi tra il 1917 e il 1926.",
     "map": {
@@ -335,14 +380,31 @@
           "description": "Un’interessante tappa storico-industriale nei dintorni, progettata da Piero Portaluppi nel primo Novecento.",
           "alt": "Edificio della centrale idroelettrica di Crego"
         }
-      }
+      },
+      "filters": {
+        "all": "Tutti",
+        "attraction": "Attrazioni",
+        "access": "Accessi",
+        "viewpoint": "Punti panoramici"
+      },
+      "selectPoint": "Filtra e seleziona un punto sulla mappa"
     },
     "guide": {
       "eyebrow": "Guida completa a capitoli",
       "title": "Conoscere il luogo, passo dopo passo",
       "description": "Una guida estesa per leggere geologia, storia, sentieri, ambiente e sicurezza senza ridurre la visita a una semplice sosta fotografica.",
       "contentsLabel": "Indice dei capitoli",
-      "backToContents": "Torna all’indice"
+      "backToContents": "Torna all’indice",
+      "reader": {
+        "title": "La tua lettura",
+        "progress": "Avanzamento",
+        "currentChapter": "Capitolo attuale",
+        "estimatedTime": "Tempo stimato",
+        "minutes": "min di lettura",
+        "resume": "Continua da dove eri rimasto",
+        "completed": "Guida completata",
+        "chapters": "capitoli"
+      }
     }
   },
   "assistant": {
@@ -379,7 +441,10 @@
     "openMaps": "Apri in Google Maps",
     "liveNote": "Orari, apertura stagionale, accessibilità e disponibilità possono cambiare: controlla sempre la scheda Google Maps del luogo scelto.",
     "restaurantsMapTitle": "Ristoranti e pizzerie sulla mappa",
-    "camperMapTitle": "Aree camper e parcheggi sulla mappa"
+    "camperMapTitle": "Aree camper e parcheggi sulla mappa",
+    "filters": {
+      "all": "Tutti i servizi"
+    }
   },
   "news": {
     "meta": {
@@ -395,5 +460,82 @@
     "readOriginal": "Leggi la fonte originale",
     "empty": "Nessuna notizia pertinente è stata trovata per questa settimana. Le settimane archiviate restano disponibili dal menu.",
     "updated": "Archivio aggiornato"
+  },
+  "planner": {
+    "eyebrow": "Pianifica la visita",
+    "title": "Costruisci il tuo itinerario",
+    "intro": "Indica tempo, compagnia e punto di partenza: il sito propone un percorso prudente e adatto alla tua visita. Controlla sempre meteo e segnaletica sul posto.",
+    "time": {
+      "label": "Tempo disponibile",
+      "45": "Fino a 45 minuti",
+      "90": "Circa 1–2 ore",
+      "180": "Mezza giornata"
+    },
+    "group": {
+      "label": "Con chi viaggi",
+      "adult": "Adulti, passo tranquillo",
+      "family": "Famiglia con bambini",
+      "experienced": "Escursionisti esperti"
+    },
+    "access": {
+      "label": "Punto di partenza",
+      "premia": "Premia · Santa Lucia",
+      "baceno": "Baceno · San Gaudenzio",
+      "verampio": "Verampio · fondovalle"
+    },
+    "scope": {
+      "label": "Cosa vuoi vedere",
+      "single": "Un solo luogo",
+      "both": "Orridi e Marmitte"
+    },
+    "resultLabel": "Itinerario consigliato",
+    "openDirections": "Apri le indicazioni stradali",
+    "results": {
+      "quick": {
+        "title": "Visita essenziale",
+        "description": "Con poco tempo conviene concentrarsi su un solo punto principale, evitando deviazioni e mantenendo un margine per il rientro.",
+        "steps": [
+          "Scegli l’accesso più diretto e verifica il parcheggio.",
+          "Visita il punto principale senza aggiungere tratti secondari.",
+          "Rientra prima del limite di tempo e non entrare con fondo ghiacciato o forte pioggia."
+        ]
+      },
+      "family": {
+        "title": "Percorso famiglia prudente",
+        "description": "Un itinerario breve, con soste frequenti e attenzione ai tratti umidi, alle scale e alla vicinanza dell’acqua.",
+        "steps": [
+          "Preferisci l’accesso da Santa Lucia o un tratto semplice dal fondovalle.",
+          "Mantieni i bambini vicini nei passaggi stretti e sulle rocce bagnate.",
+          "Interrompi la visita se il fondo diventa scivoloso o il gruppo è stanco."
+        ]
+      },
+      "complete": {
+        "title": "Itinerario completo Orridi + Marmitte",
+        "description": "Con mezza giornata puoi collegare il canyon fossile alle forme fluviali di Maiesso, prevedendo soste fotografiche e tempo di sicurezza.",
+        "steps": [
+          "Parti da Premia o Verampio in base alla logistica.",
+          "Attraversa l’Orrido Sud seguendo la segnaletica ufficiale.",
+          "Prosegui verso il Ponte di Maiesso e osserva le Marmitte senza avvicinarti alla corrente."
+        ]
+      },
+      "adventure": {
+        "title": "Percorso esteso per escursionisti",
+        "description": "Puoi dedicare più tempo alla lettura del sistema degli Orridi, ma i tratti meno frequentati richiedono esperienza e condizioni favorevoli.",
+        "steps": [
+          "Verifica eventuali chiusure e lo stato dei tratti attrezzati.",
+          "Non considerare Orrido Ovest e Vallaccia come semplici passeggiate turistiche.",
+          "Porta calzature adeguate, acqua e un margine di luce per il rientro."
+        ]
+      },
+      "classic": {
+        "title": "Visita classica e completa",
+        "description": "Un percorso equilibrato per conoscere il luogo con calma, includendo il tratto principale e almeno un punto panoramico.",
+        "steps": [
+          "Raggiungi l’accesso scelto e consulta la segnaletica locale.",
+          "Dedica tempo al tratto principale, usando la guida a capitoli.",
+          "Aggiungi Maiesso solo se meteo, tempo e condizioni del gruppo lo consentono."
+        ]
+      }
+    }
   }
 }
