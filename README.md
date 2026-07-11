@@ -92,14 +92,3 @@ npm audit
 ```
 
 Non pubblicare `.env`, `.env.local`, `.next` o `node_modules`.
-
-## Struttura AIDA dell'esperienza
-
-La homepage e le pagine delle attrazioni seguono una sequenza AIDA verificabile:
-
-1. **Attention:** proposta di valore e immagini del luogo.
-2. **Interest:** benefici pratici della guida, delle mappe e dell'audioguida.
-3. **Desire:** scelta visuale tra le due attrazioni e valorizzazione dell'itinerario collegato.
-4. **Action:** pulsanti per aprire guida, audio, mappa, notizie e condivisione.
-
-Il progetto non utilizza recensioni inventate, contatori falsi, scarsità artificiale o promesse non documentate.
