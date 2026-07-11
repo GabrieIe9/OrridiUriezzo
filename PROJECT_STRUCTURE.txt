@@ -8,8 +8,7 @@ OrridiUriezzo/
 │   │   └── page.tsx
 │   ├── api/
 │   │   ├── chat/route.ts
-│   │   ├── cron/refresh/route.ts
-│   │   └── tts/route.ts
+│   │   └── cron/refresh/route.ts
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.tsx

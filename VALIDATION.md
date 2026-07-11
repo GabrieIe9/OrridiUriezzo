@@ -1,56 +1,35 @@
-# Validazione finale
+# Validazione
 
-Data di validazione: 11 luglio 2026.
-
-## Comandi eseguiti sulla versione aggiornata
+## Comandi eseguiti
 
 ```text
-npm run lint: superato senza errori
+npm ci: superato
+npm run lint: superato
 npm run build: superato
-TypeScript: superato durante la build
-Rendering HTTP locale della pagina italiana: stato 200
+TypeScript: superato
+21 pagine generate
 ```
 
-La build ha generato 21 pagine e le route dinamiche:
+## Route dinamiche
 
 ```text
 /api/chat
-/api/tts
 /api/cron/refresh
 ```
 
-## Funzioni verificate dalla compilazione
+La route `/api/tts` è stata rimossa.
 
-- quattro lingue: italiano, inglese, spagnolo e tedesco;
-- guide da 10 capitoli per entrambe le attrazioni;
-- navigatore della lettura e salvataggio locale;
-- audioguida per capitolo con cache Blob, download e ripresa locale;
-- mappe filtrabili e servizi vicini;
-- news settimanali e archivio storico;
-- rotazione fotografie con copia persistente su Vercel Blob;
-- dati strutturati `TouristAttraction` e `BreadcrumbList`.
+## Audioguida
 
-## Integrità e sicurezza
+- usa `speechSynthesis` e `SpeechSynthesisUtterance` nel browser;
+- non usa ElevenLabs;
+- non genera o scarica MP3;
+- supporta capitoli, pausa, ripresa, stop, velocità, voce e avanzamento automatico;
+- salva localmente la posizione raggiunta;
+- mostra un messaggio dedicato nei browser senza sintesi vocale.
 
-- nessuna chiave Gemini o ElevenLabs inclusa nel progetto;
-- `.env` e `.env.local` esclusi da Git;
-- nessun URL del registro npm interno OpenAI nel lockfile;
-- `.npmrc` usa `https://registry.npmjs.org/`;
-- cron protetto da `CRON_SECRET`;
-- Gemini ed ElevenLabs sono chiamati esclusivamente lato server;
-- il testo inviato al TTS può provenire soltanto dai capitoli locali autorizzati;
-- fotografie accompagnate da fonte, autore e licenza quando disponibili.
+## Sicurezza
 
-## Dipendenze esterne non eseguite nel test
-
-Le chiamate reali a Wikimedia Commons, feed RSS, Gemini, ElevenLabs e Vercel Blob richiedono rete e credenziali del deployment. La build e il rendering usano i fallback locali quando tali servizi non sono configurati.
-
-## Correzioni verificate
-
-- componente `VisitPlanner` rimosso;
-- download MP3 rimosso dal player;
-- icone SVG centrate con selettori CSS specifici;
-- route TTS compilata con gestione dettagliata degli errori ElevenLabs;
-- `npm run lint`: superato;
-- `npm run build`: superato;
-- 21 pagine generate.
+- nessuna chiave ElevenLabs richiesta o inclusa;
+- Gemini resta esclusivamente server-side;
+- `.env`, `.env.local`, `.next` e `node_modules` sono esclusi dal progetto distribuibile.

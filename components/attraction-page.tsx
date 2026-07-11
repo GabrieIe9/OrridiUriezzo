@@ -106,7 +106,7 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
 
       <section id={`audio-${slug}`} className="section audio-section">
         <div className="shell">
-          <AudioGuide slug={slug} chapters={guide.chapters.map(({id, title, kicker}) => ({id, title, kicker}))} />
+          <AudioGuide slug={slug} chapters={guide.chapters.map(({id, title, kicker, paragraphs}) => ({id, title, kicker, paragraphs}))} />
         </div>
       </section>
 

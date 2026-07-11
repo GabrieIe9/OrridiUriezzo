@@ -1,7 +1,7 @@
 'use client';
 
 import type {CSSProperties} from 'react';
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {
   CheckCircle2,
   ChevronLeft,
@@ -13,14 +13,31 @@ import {
   RotateCcw,
   RotateCw,
   Square,
-  Volume2
+  Volume2,
+  Waves
 } from 'lucide-react';
 import {useLocale, useTranslations} from 'next-intl';
 import type {AttractionSlug} from '@/data/attractions';
 
-export type AudioChapter = {id: string; title: string; kicker: string};
+export type AudioChapter = {
+  id: string;
+  title: string;
+  kicker: string;
+  paragraphs: string[];
+};
 
-type CacheState = 'cached' | 'generated' | 'ready';
+type SpeechChunk = {
+  start: number;
+  end: number;
+  text: string;
+};
+
+const speechLanguages: Record<string, string> = {
+  it: 'it-IT',
+  en: 'en-US',
+  es: 'es-ES',
+  de: 'de-DE'
+};
 
 function formatTime(value: number) {
   if (!Number.isFinite(value) || value <= 0) return '0:00';
@@ -29,221 +46,346 @@ function formatTime(value: number) {
   return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
+function buildSpeechText(chapter: AudioChapter | undefined) {
+  if (!chapter) return '';
+  return [chapter.title, chapter.kicker, ...chapter.paragraphs]
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join('. ');
+}
+
+function splitIntoSpeechChunks(text: string, maxLength = 260): SpeechChunk[] {
+  const chunks: SpeechChunk[] = [];
+  let cursor = 0;
+
+  while (cursor < text.length) {
+    let end = Math.min(text.length, cursor + maxLength);
+
+    if (end < text.length) {
+      const candidate = text.slice(cursor, end);
+      const punctuation = Math.max(
+        candidate.lastIndexOf('. '),
+        candidate.lastIndexOf('! '),
+        candidate.lastIndexOf('? '),
+        candidate.lastIndexOf('; '),
+        candidate.lastIndexOf(', ')
+      );
+      const space = candidate.lastIndexOf(' ');
+      const splitAt = punctuation >= 120 ? punctuation + 1 : space >= 120 ? space : -1;
+      if (splitAt > 0) end = cursor + splitAt;
+    }
+
+    while (cursor < end && /\s/.test(text[cursor] || '')) cursor += 1;
+    while (end > cursor && /\s/.test(text[end - 1] || '')) end -= 1;
+
+    if (end <= cursor) break;
+    chunks.push({start: cursor, end, text: text.slice(cursor, end)});
+    cursor = end;
+  }
+
+  return chunks;
+}
+
+function estimateDuration(text: string, rate: number) {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  const wordsPerMinute = 155 * Math.max(0.5, rate);
+  return Math.max(1, (words / wordsPerMinute) * 60);
+}
+
 export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: AudioChapter[]}) {
   const t = useTranslations('audio');
   const locale = useLocale();
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const objectUrlsRef = useRef<Record<string, string>>({});
-  const pendingAutoPlayRef = useRef(false);
-  const lastSavedSecondRef = useRef(-1);
+  const sessionRef = useRef(0);
+  const speakChapterRef = useRef<(chapter: AudioChapter, requestedStart?: number) => void>(() => undefined);
+  const currentCharRef = useRef(0);
+  const pausedRef = useRef(false);
+  const selectedIdRef = useRef(chapters[0]?.id || '');
+  const autoAdvanceRef = useRef(false);
+  const playbackRateRef = useRef(1);
   const [selectedId, setSelectedId] = useState(chapters[0]?.id || '');
-  const [audioUrls, setAudioUrls] = useState<Record<string, string>>({});
-  const [cacheStates, setCacheStates] = useState<Record<string, CacheState>>({});
-  const [loading, setLoading] = useState(false);
+  const [supported, setSupported] = useState<boolean | null>(null);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [selectedVoiceUri, setSelectedVoiceUri] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [currentChar, setCurrentChar] = useState(0);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [autoAdvance, setAutoAdvance] = useState(false);
 
   const selectedIndex = Math.max(0, chapters.findIndex((chapter) => chapter.id === selectedId));
   const selectedChapter = chapters[selectedIndex];
-  const selectedAudioUrl = audioUrls[selectedId];
+  const speechText = useMemo(() => buildSpeechText(selectedChapter), [selectedChapter]);
+  const duration = useMemo(() => estimateDuration(speechText, playbackRate), [speechText, playbackRate]);
+  const progress = speechText.length ? Math.min(100, Math.max(0, (currentChar / speechText.length) * 100)) : 0;
+  const currentTime = duration * (progress / 100);
+  const speechLang = speechLanguages[locale] || locale;
 
-  const progress = useMemo(() => {
-    if (!duration) return 0;
-    return Math.min(100, Math.max(0, (currentTime / duration) * 100));
-  }, [currentTime, duration]);
+  const matchingVoices = useMemo(() => {
+    const prefix = speechLang.toLowerCase().split('-')[0];
+    const matches = voices.filter((voice) => voice.lang.toLowerCase().startsWith(prefix));
+    return matches.length ? matches : voices;
+  }, [speechLang, voices]);
 
-  const statusText = loading
-    ? t('statusPreparing')
-    : playing
-      ? t('statusPlaying')
-      : cacheStates[selectedId] === 'cached'
-        ? t('statusCached')
-        : cacheStates[selectedId] === 'generated'
-          ? t('statusGenerated')
-          : selectedAudioUrl
-            ? t('statusReady')
-            : t('statusIdle');
+  const selectedVoice = useMemo(
+    () => voices.find((voice) => voice.voiceURI === selectedVoiceUri) || matchingVoices[0] || null,
+    [matchingVoices, selectedVoiceUri, voices]
+  );
 
-  useEffect(() => {
-    const urls = objectUrlsRef.current;
-    return () => {
-      Object.values(urls).forEach((url) => URL.revokeObjectURL(url));
-    };
-  }, []);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    audio.pause();
-    setPlaying(false);
-    setCurrentTime(0);
-    setDuration(0);
-    setError(null);
-
-    if (selectedAudioUrl) {
-      audio.src = selectedAudioUrl;
-      audio.playbackRate = playbackRate;
-      audio.load();
-      if (pendingAutoPlayRef.current) {
-        pendingAutoPlayRef.current = false;
-        queueMicrotask(() => {
-          void audio.play().then(() => setPlaying(true)).catch(() => setError(t('playbackError')));
-        });
-      }
-    } else {
-      audio.removeAttribute('src');
-      audio.load();
-    }
-  }, [selectedAudioUrl, selectedId, playbackRate, t]);
-
-  async function loadAudio(chapter: AudioChapter | undefined = selectedChapter) {
-    if (!chapter) return null;
-    const cachedUrl = audioUrls[chapter.id];
-    if (cachedUrl) return cachedUrl;
-
-    setLoading(true);
-    setError(null);
-
+  const rememberPosition = useCallback((chapterId: string, value: number) => {
     try {
-      const response = await fetch('/api/tts', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({locale, slug, chapterId: chapter.id})
-      });
-
-      if (!response.ok) {
-        const payload = (await response.json().catch(() => null)) as {error?: string} | null;
-        throw new Error(payload?.error || t('genericError'));
-      }
-
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      objectUrlsRef.current[chapter.id] = url;
-      setAudioUrls((current) => ({...current, [chapter.id]: url}));
-
-      const serverCache = response.headers.get('X-TTS-Cache');
-      const cacheState: CacheState = response.redirected || (serverCache && serverCache !== 'MISS')
-        ? 'cached'
-        : serverCache === 'MISS'
-          ? 'generated'
-          : 'ready';
-      setCacheStates((current) => ({...current, [chapter.id]: cacheState}));
-      return url;
-    } catch (caught) {
-      setError(caught instanceof Error ? caught.message : t('genericError'));
-      return null;
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  async function play() {
-    const url = await loadAudio();
-    if (!url) return;
-
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    try {
-      if (audio.src !== url) {
-        audio.src = url;
-        audio.load();
-      }
-      audio.playbackRate = playbackRate;
-      await audio.play();
-      setPlaying(true);
+      window.localStorage.setItem(`orridi-speech-position:${locale}:${slug}:${chapterId}`, String(value));
     } catch {
-      setError(t('playbackError'));
-      setPlaying(false);
+      // Local speech progress is optional.
     }
+  }, [locale, slug]);
+
+  const clearPosition = useCallback((chapterId: string) => {
+    try {
+      window.localStorage.removeItem(`orridi-speech-position:${locale}:${slug}:${chapterId}`);
+    } catch {
+      // Local speech progress is optional.
+    }
+  }, [locale, slug]);
+
+  const restorePosition = useCallback((chapterId: string, textLength: number) => {
+    try {
+      const value = Number(window.localStorage.getItem(`orridi-speech-position:${locale}:${slug}:${chapterId}`));
+      return Number.isFinite(value) && value > 0 && value < textLength ? value : 0;
+    } catch {
+      return 0;
+    }
+  }, [locale, slug]);
+
+  const updateCurrentChar = useCallback((value: number, chapterId: string) => {
+    const safeValue = Math.max(0, value);
+    currentCharRef.current = safeValue;
+    setCurrentChar(safeValue);
+    rememberPosition(chapterId, safeValue);
+  }, [rememberPosition]);
+
+  const stopSpeech = useCallback((reset = false) => {
+    sessionRef.current += 1;
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    pausedRef.current = false;
+    setPaused(false);
+    setPlaying(false);
+
+    if (reset) {
+      currentCharRef.current = 0;
+      setCurrentChar(0);
+      clearPosition(selectedIdRef.current);
+    }
+  }, [clearPosition]);
+
+  const speakChapter = useCallback((chapter: AudioChapter, requestedStart = 0) => {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+      setError(t('unsupportedError'));
+      setSupported(false);
+      return;
+    }
+
+    const fullText = buildSpeechText(chapter);
+    if (!fullText) return;
+
+    const startChar = Math.min(Math.max(0, requestedStart), Math.max(0, fullText.length - 1));
+    const chunks = splitIntoSpeechChunks(fullText);
+    const firstChunkIndex = Math.max(0, chunks.findIndex((chunk) => chunk.end > startChar));
+    const session = sessionRef.current + 1;
+    sessionRef.current = session;
+    window.speechSynthesis.cancel();
+    setError(null);
+    pausedRef.current = false;
+    setPaused(false);
+    setPlaying(true);
+    updateCurrentChar(startChar, chapter.id);
+
+    const speakChunk = (chunkIndex: number, offset: number) => {
+      if (sessionRef.current !== session) return;
+      const chunk = chunks[chunkIndex];
+
+      if (!chunk) {
+        setPlaying(false);
+        setPaused(false);
+        updateCurrentChar(fullText.length, chapter.id);
+        clearPosition(chapter.id);
+
+        const activeIndex = chapters.findIndex((item) => item.id === chapter.id);
+        const next = chapters[activeIndex + 1];
+        if (autoAdvanceRef.current && next) {
+          selectedIdRef.current = next.id;
+          setSelectedId(next.id);
+          currentCharRef.current = 0;
+          setCurrentChar(0);
+          window.setTimeout(() => speakChapterRef.current(next, 0), 120);
+        }
+        return;
+      }
+
+      const partStart = Math.max(chunk.start, offset);
+      const partText = fullText.slice(partStart, chunk.end).trim();
+      if (!partText) {
+        speakChunk(chunkIndex + 1, chunks[chunkIndex + 1]?.start || fullText.length);
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(partText);
+      utterance.lang = speechLang;
+      utterance.rate = playbackRateRef.current;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      if (selectedVoice) utterance.voice = selectedVoice;
+
+      utterance.onstart = () => {
+        if (sessionRef.current !== session) return;
+        setPlaying(true);
+        setPaused(false);
+      };
+
+      utterance.onboundary = (event) => {
+        if (sessionRef.current !== session) return;
+        const absolute = Math.min(fullText.length, partStart + Math.max(0, event.charIndex || 0));
+        updateCurrentChar(absolute, chapter.id);
+      };
+
+      utterance.onend = () => {
+        if (sessionRef.current !== session) return;
+        updateCurrentChar(chunk.end, chapter.id);
+        speakChunk(chunkIndex + 1, chunks[chunkIndex + 1]?.start || fullText.length);
+      };
+
+      utterance.onerror = (event) => {
+        if (sessionRef.current !== session || event.error === 'canceled' || event.error === 'interrupted') return;
+        setPlaying(false);
+        setPaused(false);
+        setError(t('playbackError'));
+      };
+
+      window.speechSynthesis.speak(utterance);
+    };
+
+    speakChunk(firstChunkIndex, startChar);
+  }, [chapters, clearPosition, selectedVoice, speechLang, t, updateCurrentChar]);
+
+  useEffect(() => {
+    speakChapterRef.current = speakChapter;
+  }, [speakChapter]);
+
+  useEffect(() => {
+    selectedIdRef.current = selectedId;
+  }, [selectedId]);
+
+  useEffect(() => {
+    autoAdvanceRef.current = autoAdvance;
+  }, [autoAdvance]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const isSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+    const supportTimer = window.setTimeout(() => setSupported(isSupported), 0);
+    if (!isSupported) return () => window.clearTimeout(supportTimer);
+
+    const loadVoices = () => {
+      const available = window.speechSynthesis.getVoices();
+      setVoices(available);
+      const prefix = speechLang.toLowerCase().split('-')[0];
+      const preferred = available.find((voice) => voice.lang.toLowerCase() === speechLang.toLowerCase() && voice.localService)
+        || available.find((voice) => voice.lang.toLowerCase().startsWith(prefix) && voice.localService)
+        || available.find((voice) => voice.lang.toLowerCase().startsWith(prefix))
+        || available.find((voice) => voice.default)
+        || available[0];
+      if (preferred) setSelectedVoiceUri((current) => current || preferred.voiceURI);
+    };
+
+    const voicesTimer = window.setTimeout(loadVoices, 0);
+    window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
+    return () => {
+      window.clearTimeout(supportTimer);
+      window.clearTimeout(voicesTimer);
+      window.speechSynthesis.removeEventListener('voiceschanged', loadVoices);
+      sessionRef.current += 1;
+      window.speechSynthesis.cancel();
+    };
+  }, [speechLang]);
+
+  const statusText = supported === null
+    ? t('statusPreparing')
+    : supported === false
+      ? t('statusUnsupported')
+      : playing
+        ? t('statusPlaying')
+        : paused
+          ? t('statusPaused')
+          : t('statusReady');
+
+  function play() {
+    if (!selectedChapter) return;
+    if (typeof window !== 'undefined' && pausedRef.current && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      pausedRef.current = false;
+      setPaused(false);
+      setPlaying(true);
+      return;
+    }
+    const restored = currentCharRef.current || restorePosition(selectedChapter.id, speechText.length);
+    speakChapter(selectedChapter, restored);
   }
 
   function pause() {
-    audioRef.current?.pause();
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+    window.speechSynthesis.pause();
+    pausedRef.current = true;
+    setPaused(true);
     setPlaying(false);
   }
 
   function stop() {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.pause();
-    audio.currentTime = 0;
-    setCurrentTime(0);
-    setPlaying(false);
-    try {
-      window.localStorage.removeItem(`orridi-audio-position:${locale}:${slug}:${selectedId}`);
-    } catch {
-      // Local playback state is optional.
-    }
-  }
-
-  function skip(seconds: number) {
-    const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration)) return;
-    audio.currentTime = Math.min(audio.duration, Math.max(0, audio.currentTime + seconds));
-    setCurrentTime(audio.currentTime);
+    stopSpeech(true);
   }
 
   function seek(value: number) {
-    const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration)) return;
-    audio.currentTime = value;
-    setCurrentTime(value);
+    if (!selectedChapter || !speechText.length || !duration) return;
+    const target = Math.round((Math.max(0, Math.min(duration, value)) / duration) * speechText.length);
+    currentCharRef.current = target;
+    setCurrentChar(target);
+    rememberPosition(selectedChapter.id, target);
+    if (playing || paused) speakChapter(selectedChapter, target);
+  }
+
+  function skip(seconds: number) {
+    seek(currentTime + seconds);
   }
 
   function changeRate(value: number) {
+    playbackRateRef.current = value;
     setPlaybackRate(value);
-    if (audioRef.current) audioRef.current.playbackRate = value;
+    if ((playing || paused) && selectedChapter) {
+      speakChapter(selectedChapter, currentCharRef.current);
+    }
+  }
+
+  function selectChapter(id: string) {
+    stopSpeech(false);
+    selectedIdRef.current = id;
+    setSelectedId(id);
+    const chapter = chapters.find((item) => item.id === id);
+    const textLength = buildSpeechText(chapter).length;
+    const restored = restorePosition(id, textLength);
+    currentCharRef.current = restored;
+    setCurrentChar(restored);
+    setError(null);
   }
 
   function move(offset: number) {
     const target = chapters[selectedIndex + offset];
-    if (target) setSelectedId(target.id);
+    if (target) selectChapter(target.id);
   }
 
-  function restorePosition(audio: HTMLAudioElement) {
-    try {
-      const value = Number(window.localStorage.getItem(`orridi-audio-position:${locale}:${slug}:${selectedId}`));
-      if (Number.isFinite(value) && value > 3 && value < audio.duration - 5) {
-        audio.currentTime = value;
-        setCurrentTime(value);
-      }
-    } catch {
-      // Local playback state is optional.
-    }
-  }
-
-  function rememberPosition(audio: HTMLAudioElement) {
-    const second = Math.floor(audio.currentTime);
-    setCurrentTime(audio.currentTime);
-    if (second === lastSavedSecondRef.current || second % 5 !== 0) return;
-    lastSavedSecondRef.current = second;
-    try {
-      window.localStorage.setItem(`orridi-audio-position:${locale}:${slug}:${selectedId}`, String(audio.currentTime));
-    } catch {
-      // Local playback state is optional.
-    }
-  }
-
-
-  async function handleEnded() {
-    setPlaying(false);
-    try {
-      window.localStorage.removeItem(`orridi-audio-position:${locale}:${slug}:${selectedId}`);
-    } catch {
-      // Local playback state is optional.
-    }
-
-    const next = chapters[selectedIndex + 1];
-    if (!autoAdvance || !next) return;
-    pendingAutoPlayRef.current = true;
-    setSelectedId(next.id);
-    await loadAudio(next);
+  function selectVoice(uri: string) {
+    stopSpeech(false);
+    setSelectedVoiceUri(uri);
   }
 
   return (
@@ -258,8 +400,12 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
           </div>
         </div>
 
-        <span className={`audio-status-pill${loading ? ' is-loading' : ''}`}>
-          {loading ? <LoaderCircle className="spin" size={14} aria-hidden="true" /> : <CheckCircle2 size={14} aria-hidden="true" />}
+        <span className={`audio-status-pill${supported === null ? ' is-loading' : ''}`}>
+          {supported === null
+            ? <LoaderCircle className="spin" size={14} aria-hidden="true" />
+            : supported
+              ? <CheckCircle2 size={14} aria-hidden="true" />
+              : <Waves size={14} aria-hidden="true" />}
           {statusText}
         </span>
       </header>
@@ -277,8 +423,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             <select
               id={`audio-chapter-${slug}`}
               value={selectedId}
-              onChange={(event) => setSelectedId(event.target.value)}
-              disabled={loading}
+              onChange={(event) => selectChapter(event.target.value)}
             >
               {chapters.map((chapter, index) => (
                 <option key={chapter.id} value={chapter.id}>
@@ -288,7 +433,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             </select>
           </div>
 
-          <p className="audio-cache-note">{t('cacheNote')}</p>
+          <p className="audio-cache-note">{t('browserVoiceNote')}</p>
         </div>
 
         <div className="audio-player-panel">
@@ -297,16 +442,16 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
               type="range"
               min="0"
               max={duration || 0}
-              step="0.1"
+              step="0.5"
               value={Math.min(currentTime, duration || 0)}
               onChange={(event) => seek(Number(event.target.value))}
-              disabled={!selectedAudioUrl || !duration}
+              disabled={!supported || !speechText}
               aria-label={t('seek')}
               style={{'--audio-progress': `${progress}%`} as CSSProperties}
             />
             <div className="audio-time-row" aria-hidden="true">
               <span>{formatTime(currentTime)}</span>
-              <span>{formatTime(duration)}</span>
+              <span>≈ {formatTime(duration)}</span>
             </div>
           </div>
 
@@ -314,7 +459,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             <button
               type="button"
               onClick={() => move(-1)}
-              disabled={selectedIndex === 0 || loading}
+              disabled={selectedIndex === 0}
               className="audio-control audio-control-chapter"
               aria-label={t('previousChapter')}
             >
@@ -324,7 +469,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             <button
               type="button"
               onClick={() => skip(-15)}
-              disabled={!selectedAudioUrl}
+              disabled={!supported || !speechText}
               className="audio-control"
               aria-label={t('rewind')}
             >
@@ -336,11 +481,11 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
               <button
                 type="button"
                 onClick={play}
-                disabled={loading || !selectedChapter}
+                disabled={!supported || !selectedChapter}
                 className="audio-play-control"
-                aria-label={loading ? t('loading') : t('listen')}
+                aria-label={paused ? t('resume') : t('listen')}
               >
-                {loading ? <LoaderCircle className="spin" size={25} aria-hidden="true" /> : <Play size={26} fill="currentColor" aria-hidden="true" />}
+                <Play size={26} fill="currentColor" aria-hidden="true" />
               </button>
             ) : (
               <button type="button" onClick={pause} className="audio-play-control" aria-label={t('pause')}>
@@ -351,7 +496,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             <button
               type="button"
               onClick={() => skip(15)}
-              disabled={!selectedAudioUrl}
+              disabled={!supported || !speechText}
               className="audio-control"
               aria-label={t('forward')}
             >
@@ -362,7 +507,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
             <button
               type="button"
               onClick={() => move(1)}
-              disabled={selectedIndex >= chapters.length - 1 || loading}
+              disabled={selectedIndex >= chapters.length - 1}
               className="audio-control audio-control-chapter"
               aria-label={t('nextChapter')}
             >
@@ -371,7 +516,7 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
           </div>
 
           <div className="audio-player-options">
-            <button type="button" onClick={stop} disabled={!selectedAudioUrl} className="audio-stop-control">
+            <button type="button" onClick={stop} disabled={!supported || (!playing && !paused && currentChar === 0)} className="audio-stop-control">
               <Square size={14} fill="currentColor" aria-hidden="true" />
               {t('stop')}
             </button>
@@ -383,14 +528,22 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
               </label>
             </div>
 
+            {matchingVoices.length > 1 ? (
+              <label className="audio-speed-control audio-voice-control">
+                <Waves size={16} aria-hidden="true" />
+                <span>{t('voice')}</span>
+                <select value={selectedVoice?.voiceURI || ''} onChange={(event) => selectVoice(event.target.value)} aria-label={t('voice')}>
+                  {matchingVoices.map((voice) => (
+                    <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name}</option>
+                  ))}
+                </select>
+              </label>
+            ) : null}
+
             <label className="audio-speed-control">
               <Gauge size={16} aria-hidden="true" />
               <span>{t('speed')}</span>
-              <select
-                value={playbackRate}
-                onChange={(event) => changeRate(Number(event.target.value))}
-                aria-label={t('speed')}
-              >
+              <select value={playbackRate} onChange={(event) => changeRate(Number(event.target.value))} aria-label={t('speed')}>
                 <option value="0.75">0.75×</option>
                 <option value="1">1×</option>
                 <option value="1.25">1.25×</option>
@@ -400,20 +553,6 @@ export function AudioGuide({slug, chapters}: {slug: AttractionSlug; chapters: Au
           </div>
         </div>
       </div>
-
-      <audio
-        ref={audioRef}
-        preload="metadata"
-        onLoadedMetadata={(event) => {
-          setDuration(event.currentTarget.duration || 0);
-          restorePosition(event.currentTarget);
-        }}
-        onDurationChange={(event) => setDuration(event.currentTarget.duration || 0)}
-        onTimeUpdate={(event) => rememberPosition(event.currentTarget)}
-        onEnded={() => { void handleEnded(); }}
-        onPause={() => setPlaying(false)}
-        onPlay={() => setPlaying(true)}
-      />
 
       {error ? <p className="audio-error" role="alert">{error}</p> : null}
     </section>

@@ -4128,3 +4128,29 @@ html[data-theme='dark'] .gallery-updated-at {
   align-self: start;
   line-height: 0;
 }
+
+/* Browser speech voice selector */
+.audio-player-options {
+  flex-wrap: wrap;
+}
+
+.audio-voice-control {
+  max-width: min(100%, 260px);
+}
+
+.audio-voice-control select {
+  max-width: 170px;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 720px) {
+  .audio-voice-control {
+    width: 100%;
+    max-width: none;
+    justify-content: space-between;
+  }
+
+  .audio-voice-control select {
+    max-width: min(64vw, 230px);
+  }
+}
