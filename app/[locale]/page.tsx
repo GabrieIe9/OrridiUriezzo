@@ -1,9 +1,18 @@
 import type {Metadata} from 'next';
 import Image from 'next/image';
-import {ArrowRight, Droplets, Headphones, MapPinned, Mountain} from 'lucide-react';
+import {
+  ArrowRight,
+  BookOpenCheck,
+  Droplets,
+  Headphones,
+  Languages,
+  MapPinned,
+  Mountain,
+  Route
+} from 'lucide-react';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Link} from '@/i18n/navigation';
-import {getHomeCardImages} from '@/lib/visuals';
+import {getHomeAidaImages, getHomeCardImages} from '@/lib/visuals';
 import {FadeIn} from '@/components/fade-in';
 import {ShareQrButton} from '@/components/share-qr-button';
 import type {AppLocale} from '@/i18n/routing';
@@ -31,7 +40,10 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
   const t = await getTranslations('home');
   const share = await getTranslations('share');
   const shareUrl = italianShareUrl;
-  const cardImages = await getHomeCardImages();
+  const [cardImages, heroImages] = await Promise.all([
+    getHomeCardImages(),
+    getHomeAidaImages()
+  ]);
 
   const cards = [
     {
@@ -48,60 +60,131 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
     }
   ];
 
+  const benefits = [
+    {key: 'understand', icon: BookOpenCheck},
+    {key: 'orient', icon: MapPinned},
+    {key: 'listen', icon: Headphones}
+  ] as const;
+
+  const proof = [
+    {key: 'languages', icon: Languages},
+    {key: 'chapters', icon: BookOpenCheck},
+    {key: 'route', icon: Route}
+  ] as const;
+
   return (
-    <main className="home-main">
-      <section className="home-intro shell">
-        <FadeIn>
-          <span className="eyebrow">{t('eyebrow')}</span>
-          <h1>{t('title')}</h1>
-          <p>{t('intro')}</p>
+    <main className="home-main home-main-aida">
+      <section className="aida-hero shell" aria-labelledby="home-aida-title">
+        <FadeIn className="aida-hero-copy">
+          <span className="eyebrow">{t('aida.attention.eyebrow')}</span>
+          <h1 id="home-aida-title">{t('aida.attention.title')}</h1>
+          <p>{t('aida.attention.description')}</p>
+          <div className="aida-hero-actions">
+            <Link href="/orridi-uriezzo" className="button button-primary">
+              {t('aida.attention.primaryCta')} <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <Link href="/marmitte-dei-giganti" className="button button-secondary">
+              {t('aida.attention.secondaryCta')}
+            </Link>
+          </div>
+          <div className="aida-proof-row" aria-label={t('aida.proof.ariaLabel')}>
+            {proof.map(({key, icon: Icon}) => (
+              <div className="aida-proof-item" key={key}>
+                <Icon size={18} aria-hidden="true" />
+                <span>{t(`aida.proof.${key}`)}</span>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
+        <FadeIn className="aida-hero-visual" delay={100}>
+          <figure className="aida-hero-image aida-hero-image-primary">
+            <Image
+              src={heroImages.orridi}
+              alt={t('aida.attention.orridiAlt')}
+              fill
+              priority
+              sizes="(max-width: 900px) 92vw, 38vw"
+            />
+          </figure>
+          <figure className="aida-hero-image aida-hero-image-secondary">
+            <Image
+              src={heroImages.marmitte}
+              alt={t('aida.attention.marmitteAlt')}
+              fill
+              priority
+              sizes="(max-width: 900px) 45vw, 20vw"
+            />
+          </figure>
+          <div className="aida-hero-badge">
+            <strong>{t('aida.attention.badgeTitle')}</strong>
+            <span>{t('aida.attention.badgeText')}</span>
+          </div>
         </FadeIn>
       </section>
 
-
-      <section className="home-quick-actions shell" aria-labelledby="home-quick-actions-title">
-        <div className="home-quick-actions-heading">
-          <span className="eyebrow">{t('quickActions.intro')}</span>
-          <h2 id="home-quick-actions-title">{t('quickActions.title')}</h2>
+      <section className="aida-interest shell" aria-labelledby="aida-interest-title">
+        <div className="aida-section-heading">
+          <span className="eyebrow">{t('aida.interest.eyebrow')}</span>
+          <h2 id="aida-interest-title">{t('aida.interest.title')}</h2>
+          <p>{t('aida.interest.description')}</p>
         </div>
-        <div className="home-quick-actions-grid">
-          <Link href="/orridi-uriezzo#map-orridi-uriezzo" className="home-quick-action">
-            <span aria-hidden="true"><MapPinned size={22} /></span>
-            <strong>{t('quickActions.map')}</strong>
-            <p>{t('quickActions.mapText')}</p>
-            <ArrowRight size={18} aria-hidden="true" />
-          </Link>
-          <Link href="/orridi-uriezzo#audio-orridi-uriezzo" className="home-quick-action">
-            <span aria-hidden="true"><Headphones size={22} /></span>
-            <strong>{t('quickActions.audio')}</strong>
-            <p>{t('quickActions.audioText')}</p>
-            <ArrowRight size={18} aria-hidden="true" />
-          </Link>
+        <div className="aida-benefit-grid">
+          {benefits.map(({key, icon: Icon}, index) => (
+            <FadeIn className="aida-benefit-card" key={key} delay={index * 60}>
+              <span className="aida-benefit-icon" aria-hidden="true"><Icon size={22} /></span>
+              <h3>{t(`aida.interest.cards.${key}.title`)}</h3>
+              <p>{t(`aida.interest.cards.${key}.text`)}</p>
+            </FadeIn>
+          ))}
         </div>
       </section>
 
-      <section className="attraction-selector shell" aria-label={t('selectorAria')}>
-        {cards.map(({slug, href, icon: Icon, image}, index) => (
-          <FadeIn key={slug} delay={index * 100} className="selector-wrap">
-            <Link href={href} className="attraction-card">
-              <Image src={image} alt={t(`cards.${slug}.alt`)} fill priority sizes="(max-width: 900px) 100vw, 50vw" />
-              <div className="card-overlay" />
-              <div className="card-content">
-                <span className="card-icon"><Icon size={23} aria-hidden="true" /></span>
-                <span className="card-location">{t(`cards.${slug}.location`)}</span>
-                <h2>{t(`cards.${slug}.title`)}</h2>
-                <p>{t(`cards.${slug}.subtitle`)}</p>
-                <span className="card-link">{t('discover')} <ArrowRight size={18} aria-hidden="true" /></span>
-              </div>
-            </Link>
-          </FadeIn>
-        ))}
-      </section>
+      <section className="aida-desire shell" aria-labelledby="aida-desire-title">
+        <div className="aida-section-heading aida-section-heading-centered">
+          <span className="eyebrow">{t('aida.desire.eyebrow')}</span>
+          <h2 id="aida-desire-title">{t('aida.desire.title')}</h2>
+          <p>{t('aida.desire.description')}</p>
+        </div>
 
-      <section className="home-note shell">
-        <FadeIn>
+        <div className="attraction-selector" aria-label={t('selectorAria')}>
+          {cards.map(({slug, href, icon: Icon, image}, index) => (
+            <FadeIn key={slug} delay={index * 100} className="selector-wrap">
+              <Link href={href} className="attraction-card">
+                <Image src={image} alt={t(`cards.${slug}.alt`)} fill sizes="(max-width: 900px) 100vw, 50vw" />
+                <div className="card-overlay" />
+                <div className="card-content">
+                  <span className="card-icon"><Icon size={23} aria-hidden="true" /></span>
+                  <span className="card-location">{t(`cards.${slug}.location`)}</span>
+                  <h2>{t(`cards.${slug}.title`)}</h2>
+                  <p>{t(`cards.${slug}.subtitle`)}</p>
+                  <span className="card-link">{t('discover')} <ArrowRight size={18} aria-hidden="true" /></span>
+                </div>
+              </Link>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn className="aida-route-note">
+          <Route size={24} aria-hidden="true" />
           <p><strong>{t('trailNoteTitle')}</strong> {t('trailNote')}</p>
-          <div className="home-share">
+        </FadeIn>
+      </section>
+
+      <section className="aida-action-section">
+        <div className="shell aida-action-card">
+          <div className="aida-action-copy">
+            <span className="eyebrow light">{t('aida.action.eyebrow')}</span>
+            <h2>{t('aida.action.title')}</h2>
+            <p>{t('aida.action.description')}</p>
+          </div>
+          <div className="aida-action-buttons">
+            <Link href="/orridi-uriezzo#orridi-uriezzo-guide" className="button button-light">
+              {t('aida.action.primaryCta')} <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <Link href="/news" className="button aida-button-outline-light">
+              {t('aida.action.newsCta')}
+            </Link>
             <ShareQrButton
               shareUrl={shareUrl}
               buttonLabel={share('button')}
@@ -114,7 +197,7 @@ export default async function HomePage({params}: {params: Promise<{locale: AppLo
               qrAlt={share('qrAlt')}
             />
           </div>
-        </FadeIn>
+        </div>
       </section>
     </main>
   );

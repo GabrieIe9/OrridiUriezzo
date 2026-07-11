@@ -61,3 +61,16 @@ export async function getHomeCardImages() {
     'marmitte-dei-giganti': marmitte.card
   } as const;
 }
+
+
+export async function getHomeAidaImages() {
+  const [orridi, marmitte] = await Promise.all([
+    getAttractionVisuals('orridi-uriezzo'),
+    getAttractionVisuals('marmitte-dei-giganti')
+  ]);
+
+  return {
+    orridi: orridi.gallery[0]?.src || orridi.hero,
+    marmitte: marmitte.gallery[0]?.src || marmitte.hero
+  } as const;
+}

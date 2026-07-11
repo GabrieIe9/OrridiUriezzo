@@ -21,12 +21,24 @@
     "theme": {
       "switchToDark": "Enable dark mode",
       "switchToLight": "Enable light mode"
+    },
+    "aida": {
+      "proofAria": "Tools included in the guide",
+      "tenChapters": "10 in-depth chapters",
+      "browserAudio": "In-browser audio guide",
+      "mapsServices": "Maps, access and services",
+      "startGuide": "Start the guide",
+      "listenNow": "Listen now",
+      "finalEyebrow": "Ready to visit?",
+      "finalTitle": "Take {place} with you on the trail",
+      "finalText": "Open the map, save this page and use the written and audio guide directly from your phone during the walk.",
+      "readNews": "Check the latest news"
     }
   },
   "home": {
     "meta": {
-      "title": "Uriezzo Gorges and the Giant’s Potholes",
-      "description": "Explore two glacial landscapes in Antigorio Valley with practical guides, multilingual audio and visitor information."
+      "title": "Uriezzo Gorges and Giant’s Potholes: complete guide",
+      "description": "Plan your visit to the Uriezzo Gorges and Giant’s Potholes with chapter guides, maps, browser audio, services and local news."
     },
     "eyebrow": "Ossola Valley · Piedmont",
     "title": "Two landscapes carved by water",
@@ -56,6 +68,56 @@
       "mapText": "View access points, viewpoints and useful services.",
       "audio": "Listen to the guide",
       "audioText": "Play audio chapters and resume from your saved position."
+    },
+    "aida": {
+      "attention": {
+        "eyebrow": "Ossola Valley · Complete visitor guide",
+        "title": "Step into the landscape left behind by the ice",
+        "description": "Plan your visit to the Uriezzo Gorges and Giant’s Potholes with history, routes, maps, nearby services and an audio guide on your phone.",
+        "primaryCta": "Start with the Gorges",
+        "secondaryCta": "Discover the Potholes",
+        "badgeTitle": "One connected walk",
+        "badgeText": "Two natural wonders linked by the Maiesso trail",
+        "orridiAlt": "A passage between the sculpted walls of the Uriezzo Gorges",
+        "marmitteAlt": "Polished rock and water at the Giant’s Potholes in Maiesso"
+      },
+      "proof": {
+        "ariaLabel": "Guide highlights",
+        "languages": "4 languages",
+        "chapters": "20 chapters",
+        "route": "Maps and audio guide"
+      },
+      "interest": {
+        "eyebrow": "Everything you need",
+        "title": "Arrive prepared, notice more and waste less time",
+        "description": "The guide brings together what you need before and during the visit, without making you search across scattered sources.",
+        "cards": {
+          "understand": {
+            "title": "Understand what you see",
+            "text": "Glacial history, geology and local context explained in clear, detailed chapters."
+          },
+          "orient": {
+            "title": "Find access and services",
+            "text": "Maps, parking, viewpoints, restaurants and camper areas available from your phone."
+          },
+          "listen": {
+            "title": "Listen while you walk",
+            "text": "The audio guide uses your device voice: no app, no account and no waiting."
+          }
+        }
+      },
+      "desire": {
+        "eyebrow": "Choose the experience",
+        "title": "Which natural wonder will you begin with?",
+        "description": "Walk through an ancient subglacial stream bed or watch the Toce continue to shape the granite."
+      },
+      "action": {
+        "eyebrow": "Take the guide with you",
+        "title": "Open the route before leaving and find it again on the trail",
+        "description": "Save the site on your phone, check local updates and share the guide with the people joining you.",
+        "primaryCta": "Open the Gorges guide",
+        "newsCta": "Latest news"
+      }
     }
   },
   "audio": {

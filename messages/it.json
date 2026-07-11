@@ -21,12 +21,24 @@
     "theme": {
       "switchToDark": "Attiva modalità scura",
       "switchToLight": "Attiva modalità chiara"
+    },
+    "aida": {
+      "proofAria": "Strumenti inclusi nella guida",
+      "tenChapters": "10 capitoli approfonditi",
+      "browserAudio": "Audioguida nel browser",
+      "mapsServices": "Mappe, accessi e servizi",
+      "startGuide": "Inizia la guida",
+      "listenNow": "Ascolta ora",
+      "finalEyebrow": "Pronto per la visita?",
+      "finalTitle": "Porta {place} con te sul sentiero",
+      "finalText": "Apri la mappa, salva questa pagina e usa guida e audioguida direttamente dal telefono durante l’escursione.",
+      "readNews": "Controlla le ultime notizie"
     }
   },
   "home": {
     "meta": {
-      "title": "Orridi di Uriezzo e Marmitte dei Giganti",
-      "description": "Scopri due paesaggi glaciali della Valle Antigorio con guide pratiche, audio multilingua e indicazioni per la visita."
+      "title": "Orridi di Uriezzo e Marmitte dei Giganti: guida completa",
+      "description": "Organizza la visita agli Orridi di Uriezzo e alle Marmitte dei Giganti con guida a capitoli, mappe, audioguida, servizi e notizie locali."
     },
     "eyebrow": "Val d’Ossola · Piemonte",
     "title": "Due paesaggi scolpiti dall’acqua",
@@ -56,6 +68,56 @@
       "mapText": "Consulta accessi, punti panoramici e servizi utili.",
       "audio": "Ascolta la guida",
       "audioText": "Avvia i capitoli audio e riprendi dal punto salvato."
+    },
+    "aida": {
+      "attention": {
+        "eyebrow": "Val d’Ossola · Guida completa alla visita",
+        "title": "Entra nel paesaggio che il ghiaccio ha lasciato dietro di sé",
+        "description": "Prepara la visita agli Orridi di Uriezzo e alle Marmitte dei Giganti con storia, percorsi, mappe, servizi e audioguida direttamente sul telefono.",
+        "primaryCta": "Inizia dagli Orridi",
+        "secondaryCta": "Scopri le Marmitte",
+        "badgeTitle": "Un’unica escursione",
+        "badgeText": "Due meraviglie collegate dal sentiero di Maiesso",
+        "orridiAlt": "Passaggio tra le pareti scolpite degli Orridi di Uriezzo",
+        "marmitteAlt": "Rocce levigate e acqua alle Marmitte dei Giganti di Maiesso"
+      },
+      "proof": {
+        "ariaLabel": "Punti di forza della guida",
+        "languages": "4 lingue",
+        "chapters": "20 capitoli",
+        "route": "Mappe e audioguida"
+      },
+      "interest": {
+        "eyebrow": "Tutto ciò che serve",
+        "title": "Arriva preparato, osserva meglio, perdi meno tempo",
+        "description": "La guida riunisce in un unico posto ciò che serve prima e durante la visita, senza obbligarti a cercare informazioni sparse.",
+        "cards": {
+          "understand": {
+            "title": "Capisci ciò che stai guardando",
+            "text": "Storia glaciale, geologia e territorio spiegati in capitoli chiari ma approfonditi."
+          },
+          "orient": {
+            "title": "Trova accessi e servizi",
+            "text": "Mappe, parcheggi, punti panoramici, ristoranti e aree camper consultabili dal telefono."
+          },
+          "listen": {
+            "title": "Ascolta mentre cammini",
+            "text": "L’audioguida usa la voce del dispositivo: nessuna app, nessun account e nessuna attesa."
+          }
+        }
+      },
+      "desire": {
+        "eyebrow": "Scegli l’esperienza",
+        "title": "Da quale meraviglia vuoi iniziare?",
+        "description": "Cammina dentro un antico torrente subglaciale oppure osserva il Toce mentre continua a modellare il granito."
+      },
+      "action": {
+        "eyebrow": "Porta la guida con te",
+        "title": "Apri il percorso prima di partire e ritrovalo sul sentiero",
+        "description": "Salva il sito sul telefono, controlla le novità locali e condividi la guida con chi verrà con te.",
+        "primaryCta": "Apri la guida agli Orridi",
+        "newsCta": "Ultime notizie"
+      }
     }
   },
   "audio": {

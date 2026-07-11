@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {BookOpen, Camera, Clock3, ExternalLink, Footprints, MapPin, Route} from 'lucide-react';
+import {ArrowRight, BookOpen, BookOpenCheck, Camera, Clock3, ExternalLink, Footprints, Headphones, MapPin, MapPinned, Route} from 'lucide-react';
 import {getLocale, getTranslations} from 'next-intl/server';
 import type {AttractionSlug} from '@/data/attractions';
 import {getAttractionVisuals} from '@/lib/visuals';
@@ -82,11 +82,25 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
           <span className="eyebrow light">{t('eyebrow')}</span>
           <h1>{t('title')}</h1>
           <p>{t('subtitle')}</p>
-          <a href={visuals.mapsUrl} target="_blank" rel="noreferrer" className="button button-light">
-            <MapPin size={18} aria-hidden="true" /> {common('openMap')} <ExternalLink size={15} aria-hidden="true" />
-          </a>
+          <div className="detail-hero-actions">
+            <a href={`#${guideSectionId}`} className="button button-light">
+              <BookOpen size={18} aria-hidden="true" /> {common('aida.startGuide')} <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a href={`#audio-${slug}`} className="button detail-hero-secondary">
+              <Headphones size={18} aria-hidden="true" /> {common('aida.listenNow')}
+            </a>
+            <a href={visuals.mapsUrl} target="_blank" rel="noreferrer" className="button detail-hero-secondary">
+              <MapPin size={18} aria-hidden="true" /> {common('openMap')} <ExternalLink size={15} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
+
+      <div className="shell attraction-proof-strip" aria-label={common('aida.proofAria')}>
+        <div><BookOpenCheck size={20} aria-hidden="true" /><span>{common('aida.tenChapters')}</span></div>
+        <div><Headphones size={20} aria-hidden="true" /><span>{common('aida.browserAudio')}</span></div>
+        <div><MapPinned size={20} aria-hidden="true" /><span>{common('aida.mapsServices')}</span></div>
+      </div>
 
       <section className="section intro-section">
         <div className="shell detail-grid">
@@ -200,6 +214,27 @@ export async function AttractionPage({slug}: {slug: AttractionSlug}) {
 
       <LocationMap slug={slug} visuals={visuals} />
       <NearbyPlaces />
+
+      <section className="section attraction-final-action">
+        <div className="shell attraction-final-action-card">
+          <div>
+            <span className="eyebrow light">{common('aida.finalEyebrow')}</span>
+            <h2>{common('aida.finalTitle', {place: t('title')})}</h2>
+            <p>{common('aida.finalText')}</p>
+          </div>
+          <div className="attraction-final-buttons">
+            <a href={visuals.mapsUrl} target="_blank" rel="noreferrer" className="button button-light">
+              <MapPin size={18} aria-hidden="true" /> {common('openMap')} <ExternalLink size={15} aria-hidden="true" />
+            </a>
+            <a href={`#audio-${slug}`} className="button aida-button-outline-light">
+              <Headphones size={18} aria-hidden="true" /> {common('aida.listenNow')}
+            </a>
+            <a href={`/${locale}/news`} className="button aida-button-outline-light">
+              {common('aida.readNews')}
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

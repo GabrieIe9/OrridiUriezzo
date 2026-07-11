@@ -4154,3 +4154,572 @@ html[data-theme='dark'] .gallery-updated-at {
     max-width: min(64vw, 230px);
   }
 }
+
+/* AIDA conversion flow: attention, interest, desire, action */
+.home-main-aida {
+  padding-top: clamp(34px, 6vw, 76px);
+  padding-bottom: 0;
+}
+
+.aida-hero {
+  min-height: min(760px, calc(100dvh - 110px));
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(440px, 1.08fr);
+  gap: clamp(34px, 7vw, 96px);
+  align-items: center;
+}
+
+.aida-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.aida-hero-copy h1 {
+  max-width: 780px;
+  margin: 0 0 24px;
+  color: var(--forest-950);
+  font-size: clamp(3.35rem, 7.2vw, 6.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.aida-hero-copy > p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--stone-700);
+  font-size: clamp(1.04rem, 1.8vw, 1.24rem);
+  line-height: 1.7;
+}
+
+.aida-hero-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.aida-hero-actions .button {
+  min-height: 52px;
+  padding-inline: 22px;
+}
+
+.aida-proof-row {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.aida-proof-item {
+  min-height: 40px;
+  padding: 9px 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--forest-800);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(23, 63, 53, 0.12);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(16, 45, 39, 0.05);
+}
+
+.aida-hero-visual {
+  position: relative;
+  min-height: 610px;
+}
+
+.aida-hero-visual::before {
+  position: absolute;
+  inset: 12% 4% 4% 11%;
+  content: '';
+  background: linear-gradient(145deg, rgba(120, 146, 110, 0.26), rgba(109, 154, 163, 0.18));
+  border-radius: 48% 52% 43% 57% / 48% 39% 61% 52%;
+  filter: blur(1px);
+}
+
+.aida-hero-image {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  background: var(--stone-200);
+  border: 8px solid rgba(255, 255, 255, 0.82);
+  box-shadow: 0 30px 75px rgba(11, 39, 32, 0.22);
+}
+
+.aida-hero-image img {
+  object-fit: cover;
+}
+
+.aida-hero-image-primary {
+  inset: 0 12% 5% 0;
+  border-radius: 180px 34px 120px 34px;
+}
+
+.aida-hero-image-secondary {
+  right: 0;
+  bottom: 4%;
+  width: 45%;
+  height: 42%;
+  z-index: 2;
+  border-width: 6px;
+  border-radius: 24px 90px 24px 90px;
+}
+
+.aida-hero-badge {
+  position: absolute;
+  left: -18px;
+  bottom: 9%;
+  z-index: 3;
+  width: min(255px, 47%);
+  padding: 18px 20px;
+  color: #fff;
+  background: rgba(10, 42, 34, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(6, 25, 20, 0.25);
+  backdrop-filter: blur(14px);
+}
+
+.aida-hero-badge strong,
+.aida-hero-badge span {
+  display: block;
+}
+
+.aida-hero-badge strong {
+  margin-bottom: 5px;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.aida-hero-badge span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.aida-interest,
+.aida-desire {
+  padding-top: clamp(76px, 10vw, 130px);
+}
+
+.aida-section-heading {
+  max-width: 820px;
+  margin-bottom: 36px;
+}
+
+.aida-section-heading-centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.aida-section-heading h2 {
+  margin: 0 0 16px;
+  color: var(--forest-950);
+  font-size: clamp(2.6rem, 5.8vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.aida-section-heading p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--stone-700);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.aida-section-heading-centered p {
+  margin-inline: auto;
+}
+
+.aida-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.aida-benefit-card {
+  min-height: 260px;
+  padding: clamp(24px, 3.4vw, 38px);
+  color: var(--forest-950);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(23, 63, 53, 0.11);
+  border-radius: 24px;
+  box-shadow: 0 18px 48px rgba(16, 45, 39, 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.aida-benefit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(23, 63, 53, 0.24);
+  box-shadow: 0 26px 58px rgba(16, 45, 39, 0.11);
+}
+
+.aida-benefit-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 28px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--forest-800);
+  border-radius: 15px;
+}
+
+.aida-benefit-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+}
+
+.aida-benefit-card p {
+  margin: 0;
+  color: var(--stone-700);
+  line-height: 1.68;
+}
+
+.aida-desire .attraction-selector {
+  margin-top: 0;
+}
+
+.aida-route-note {
+  width: min(920px, 100%);
+  margin: 26px auto 0;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--forest-900);
+  background: rgba(120, 146, 110, 0.11);
+  border: 1px solid rgba(23, 63, 53, 0.11);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.aida-route-note svg {
+  flex: 0 0 auto;
+}
+
+.aida-route-note p {
+  margin: 0;
+}
+
+.aida-action-section {
+  margin-top: clamp(76px, 10vw, 130px);
+  padding: 32px 0;
+  color: #fff;
+  background: var(--forest-950);
+}
+
+.aida-action-card {
+  min-height: 340px;
+  padding-block: clamp(52px, 8vw, 92px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(30px, 7vw, 90px);
+  align-items: center;
+}
+
+.aida-action-copy {
+  max-width: 790px;
+}
+
+.aida-action-copy h2,
+.attraction-final-action-card h2 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.aida-action-copy p,
+.attraction-final-action-card p {
+  max-width: 690px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+}
+
+.aida-action-buttons,
+.attraction-final-buttons {
+  min-width: 235px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aida-action-buttons .button,
+.attraction-final-buttons .button {
+  width: 100%;
+}
+
+.aida-button-outline-light {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.aida-button-outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.aida-action-buttons .home-share-button {
+  color: var(--forest-950);
+  background: var(--moss-500);
+  box-shadow: none;
+}
+
+.detail-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.detail-hero-secondary {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.detail-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.attraction-proof-strip {
+  position: relative;
+  z-index: 5;
+  margin-top: -28px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(23, 63, 53, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 55px rgba(8, 32, 26, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+.attraction-proof-strip > div {
+  min-height: 54px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--forest-900);
+  border-right: 1px solid rgba(23, 63, 53, 0.1);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.attraction-proof-strip > div:last-child {
+  border-right: 0;
+}
+
+.attraction-final-action {
+  padding-top: 30px;
+  color: #fff;
+  background: var(--stone-100);
+}
+
+.attraction-final-action-card {
+  padding: clamp(34px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(30px, 7vw, 80px);
+  align-items: center;
+  background:
+    radial-gradient(circle at 92% 5%, rgba(120, 146, 110, 0.23), transparent 32%),
+    var(--forest-950);
+  border-radius: 30px;
+  box-shadow: 0 28px 70px rgba(8, 31, 25, 0.2);
+}
+
+html[data-theme='dark'] .aida-hero-copy h1,
+html[data-theme='dark'] .aida-section-heading h2,
+html[data-theme='dark'] .aida-benefit-card h3 {
+  color: #edf5f0;
+}
+
+html[data-theme='dark'] .aida-hero-copy > p,
+html[data-theme='dark'] .aida-section-heading p,
+html[data-theme='dark'] .aida-benefit-card p {
+  color: #afc0b7;
+}
+
+html[data-theme='dark'] .aida-proof-item,
+html[data-theme='dark'] .aida-benefit-card,
+html[data-theme='dark'] .attraction-proof-strip {
+  color: #e7f1eb;
+  background: rgba(20, 35, 31, 0.94);
+  border-color: rgba(220, 238, 229, 0.12);
+}
+
+html[data-theme='dark'] .attraction-proof-strip > div {
+  color: #cbe1d5;
+  border-color: rgba(220, 238, 229, 0.12);
+}
+
+html[data-theme='dark'] .aida-route-note {
+  color: #cbe1d5;
+  background: rgba(120, 170, 148, 0.09);
+  border-color: rgba(220, 238, 229, 0.12);
+}
+
+html[data-theme='dark'] .attraction-final-action {
+  background: #0d1714;
+}
+
+@media (max-width: 1040px) {
+  .aida-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.8fr);
+    gap: 34px;
+  }
+
+  .aida-hero-visual {
+    min-height: 520px;
+  }
+
+  .aida-action-card,
+  .attraction-final-action-card {
+    grid-template-columns: 1fr;
+  }
+
+  .aida-action-buttons,
+  .attraction-final-buttons {
+    min-width: 0;
+    max-width: 520px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .aida-action-buttons .button,
+  .attraction-final-buttons .button {
+    width: auto;
+    flex: 1 1 190px;
+  }
+}
+
+@media (max-width: 820px) {
+  .home-main-aida {
+    padding-top: 26px;
+  }
+
+  .aida-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .aida-hero-copy h1 {
+    max-width: 680px;
+    font-size: clamp(3.1rem, 13vw, 5.7rem);
+  }
+
+  .aida-hero-visual {
+    min-height: 520px;
+  }
+
+  .aida-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aida-benefit-card {
+    min-height: 0;
+  }
+
+  .attraction-proof-strip {
+    margin-top: -18px;
+    grid-template-columns: 1fr;
+  }
+
+  .attraction-proof-strip > div {
+    min-height: 46px;
+    justify-content: flex-start;
+    border-right: 0;
+    border-bottom: 1px solid rgba(23, 63, 53, 0.1);
+    text-align: left;
+  }
+
+  .attraction-proof-strip > div:last-child {
+    border-bottom: 0;
+  }
+
+  html[data-theme='dark'] .attraction-proof-strip > div {
+    border-bottom-color: rgba(220, 238, 229, 0.12);
+  }
+}
+
+@media (max-width: 560px) {
+  .aida-hero-actions .button {
+    width: 100%;
+  }
+
+  .aida-proof-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .aida-proof-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .aida-proof-item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .aida-hero-visual {
+    min-height: 430px;
+  }
+
+  .aida-hero-image-primary {
+    inset: 0 4% 7% 0;
+    border-radius: 110px 24px 86px 24px;
+  }
+
+  .aida-hero-image-secondary {
+    width: 47%;
+    height: 38%;
+    border-radius: 18px 55px 18px 55px;
+  }
+
+  .aida-hero-badge {
+    left: 8px;
+    bottom: 3%;
+    width: min(230px, 58%);
+    padding: 14px 15px;
+  }
+
+  .aida-route-note {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .detail-hero-actions .button,
+  .aida-action-buttons .button,
+  .attraction-final-buttons .button {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .aida-action-card {
+    min-height: 0;
+    padding-block: 48px;
+  }
+
+  .attraction-final-action {
+    padding-inline: 10px;
+  }
+
+  .attraction-final-action-card {
+    padding: 32px 20px;
+    border-radius: 22px;
+  }
+}

@@ -21,12 +21,24 @@
     "theme": {
       "switchToDark": "Activar modo oscuro",
       "switchToLight": "Activar modo claro"
+    },
+    "aida": {
+      "proofAria": "Herramientas incluidas en la guía",
+      "tenChapters": "10 capítulos detallados",
+      "browserAudio": "Audioguía en el navegador",
+      "mapsServices": "Mapas, accesos y servicios",
+      "startGuide": "Empezar la guía",
+      "listenNow": "Escuchar ahora",
+      "finalEyebrow": "¿Todo listo para la visita?",
+      "finalTitle": "Lleva {place} contigo por el sendero",
+      "finalText": "Abre el mapa, guarda esta página y utiliza la guía escrita y la audioguía directamente desde el teléfono durante la excursión.",
+      "readNews": "Consultar las últimas noticias"
     }
   },
   "home": {
     "meta": {
-      "title": "Gargantas de Uriezzo y Marmitas de los Gigantes",
-      "description": "Descubre dos paisajes glaciares del Valle Antigorio con guías prácticas, audio multilingüe e información para la visita."
+      "title": "Gargantas de Uriezzo y Marmitas de los Gigantes: guía completa",
+      "description": "Organiza la visita a las Gargantas de Uriezzo y las Marmitas de los Gigantes con capítulos, mapas, audioguía, servicios y noticias locales."
     },
     "eyebrow": "Valle de Ossola · Piamonte",
     "title": "Dos paisajes esculpidos por el agua",
@@ -56,6 +68,56 @@
       "mapText": "Consulta accesos, miradores y servicios útiles.",
       "audio": "Escuchar la guía",
       "audioText": "Reproduce los capítulos y continúa desde la posición guardada."
+    },
+    "aida": {
+      "attention": {
+        "eyebrow": "Valle de Ossola · Guía completa de visita",
+        "title": "Entra en el paisaje que dejó el hielo",
+        "description": "Prepara la visita a las Gargantas de Uriezzo y las Marmitas de los Gigantes con historia, rutas, mapas, servicios y audioguía en el teléfono.",
+        "primaryCta": "Empezar por las Gargantas",
+        "secondaryCta": "Descubrir las Marmitas",
+        "badgeTitle": "Una excursión conectada",
+        "badgeText": "Dos maravillas unidas por el sendero de Maiesso",
+        "orridiAlt": "Paso entre las paredes esculpidas de las Gargantas de Uriezzo",
+        "marmitteAlt": "Roca pulida y agua en las Marmitas de los Gigantes de Maiesso"
+      },
+      "proof": {
+        "ariaLabel": "Ventajas de la guía",
+        "languages": "4 idiomas",
+        "chapters": "20 capítulos",
+        "route": "Mapas y audioguía"
+      },
+      "interest": {
+        "eyebrow": "Todo lo necesario",
+        "title": "Llega preparado, observa mejor y pierde menos tiempo",
+        "description": "La guía reúne en un solo lugar lo que necesitas antes y durante la visita, sin tener que buscar información dispersa.",
+        "cards": {
+          "understand": {
+            "title": "Comprende lo que ves",
+            "text": "Historia glaciar, geología y territorio explicados en capítulos claros y detallados."
+          },
+          "orient": {
+            "title": "Encuentra accesos y servicios",
+            "text": "Mapas, aparcamientos, miradores, restaurantes y áreas para autocaravanas desde el teléfono."
+          },
+          "listen": {
+            "title": "Escucha mientras caminas",
+            "text": "La audioguía usa la voz del dispositivo: sin aplicación, sin cuenta y sin esperas."
+          }
+        }
+      },
+      "desire": {
+        "eyebrow": "Elige la experiencia",
+        "title": "¿Por cuál de las dos maravillas quieres empezar?",
+        "description": "Camina por el antiguo lecho de un torrente subglaciar u observa cómo el Toce sigue modelando el granito."
+      },
+      "action": {
+        "eyebrow": "Lleva la guía contigo",
+        "title": "Abre el recorrido antes de salir y recupéralo en el sendero",
+        "description": "Guarda el sitio en el teléfono, consulta las novedades locales y comparte la guía con tus acompañantes.",
+        "primaryCta": "Abrir la guía de las Gargantas",
+        "newsCta": "Últimas noticias"
+      }
     }
   },
   "audio": {

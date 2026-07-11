@@ -17,7 +17,18 @@ TypeScript: superato
 /api/cron/refresh
 ```
 
-La route `/api/tts` è stata rimossa.
+La route `/api/tts` non è presente: l'audioguida usa la voce del browser.
+
+## Percorso AIDA
+
+- **Attention:** hero con proposta di valore, immagini distinte e CTA immediate.
+- **Interest:** benefici concreti della guida presentati in tre schede.
+- **Desire:** confronto visivo tra Orridi e Marmitte e collegamento della stessa escursione.
+- **Action:** CTA finale, condivisione e azioni ripetute nelle pagine delle attrazioni.
+- testi AIDA presenti in italiano, inglese, spagnolo e tedesco;
+- nessuna prova sociale fittizia o affermazione non verificabile;
+- layout responsive con CTA a larghezza piena su smartphone;
+- contrasto e dark mode coperti dai nuovi stili.
 
 ## Audioguida
 

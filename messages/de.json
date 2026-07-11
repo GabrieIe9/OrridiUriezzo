@@ -21,12 +21,24 @@
     "theme": {
       "switchToDark": "Dunkelmodus aktivieren",
       "switchToLight": "Hellmodus aktivieren"
+    },
+    "aida": {
+      "proofAria": "In der Führung enthaltene Werkzeuge",
+      "tenChapters": "10 ausführliche Kapitel",
+      "browserAudio": "Audioguide im Browser",
+      "mapsServices": "Karten, Zugänge und Angebote",
+      "startGuide": "Führung starten",
+      "listenNow": "Jetzt anhören",
+      "finalEyebrow": "Bereit für den Besuch?",
+      "finalTitle": "Nimm {place} mit auf den Weg",
+      "finalText": "Öffne die Karte, speichere diese Seite und nutze Text- und Audioguide während der Wanderung direkt auf deinem Smartphone.",
+      "readNews": "Aktuelle Meldungen prüfen"
     }
   },
   "home": {
     "meta": {
-      "title": "Uriezzo-Schluchten und Strudeltöpfe der Riesen",
-      "description": "Entdecke zwei Gletscherlandschaften im Antigorio-Tal mit praktischen Hinweisen, mehrsprachigem Audio und Besuchsinformationen."
+      "title": "Uriezzo-Schluchten und Strudeltöpfe: vollständiger Guide",
+      "description": "Plane den Besuch der Uriezzo-Schluchten und Strudeltöpfe mit Kapiteln, Karten, Browser-Audio, Angeboten und lokalen Meldungen."
     },
     "eyebrow": "Ossola-Tal · Piemont",
     "title": "Zwei Landschaften, vom Wasser geformt",
@@ -56,6 +68,56 @@
       "mapText": "Zugänge, Aussichtspunkte und Angebote anzeigen.",
       "audio": "Audioguide anhören",
       "audioText": "Kapitel abspielen und an der gespeicherten Stelle fortsetzen."
+    },
+    "aida": {
+      "attention": {
+        "eyebrow": "Ossola-Tal · Vollständiger Besucherführer",
+        "title": "Betritt die Landschaft, die das Eis zurückgelassen hat",
+        "description": "Plane deinen Besuch der Uriezzo-Schluchten und der Strudeltöpfe mit Geschichte, Wegen, Karten, Angeboten und Audioguide auf dem Smartphone.",
+        "primaryCta": "Bei den Schluchten beginnen",
+        "secondaryCta": "Strudeltöpfe entdecken",
+        "badgeTitle": "Eine verbundene Wanderung",
+        "badgeText": "Zwei Naturwunder am Weg von Maiesso",
+        "orridiAlt": "Durchgang zwischen den geformten Wänden der Uriezzo-Schluchten",
+        "marmitteAlt": "Geglätteter Fels und Wasser an den Strudeltöpfen von Maiesso"
+      },
+      "proof": {
+        "ariaLabel": "Stärken des Guides",
+        "languages": "4 Sprachen",
+        "chapters": "20 Kapitel",
+        "route": "Karten und Audioguide"
+      },
+      "interest": {
+        "eyebrow": "Alles an einem Ort",
+        "title": "Gut vorbereitet ankommen, mehr erkennen und weniger Zeit verlieren",
+        "description": "Der Guide bündelt alles, was du vor und während des Besuchs brauchst, ohne dass du verstreute Informationen suchen musst.",
+        "cards": {
+          "understand": {
+            "title": "Verstehe, was du siehst",
+            "text": "Gletschergeschichte, Geologie und Landschaft in klaren, ausführlichen Kapiteln."
+          },
+          "orient": {
+            "title": "Zugänge und Angebote finden",
+            "text": "Karten, Parkplätze, Aussichtspunkte, Restaurants und Stellplätze auf dem Smartphone."
+          },
+          "listen": {
+            "title": "Beim Gehen zuhören",
+            "text": "Der Audioguide nutzt die Stimme des Geräts: keine App, kein Konto und keine Wartezeit."
+          }
+        }
+      },
+      "desire": {
+        "eyebrow": "Wähle dein Erlebnis",
+        "title": "Mit welchem Naturwunder möchtest du beginnen?",
+        "description": "Gehe durch das Bett eines alten subglazialen Bachs oder beobachte, wie der Toce den Granit weiter formt."
+      },
+      "action": {
+        "eyebrow": "Nimm den Guide mit",
+        "title": "Öffne die Route vor der Abfahrt und finde sie auf dem Weg wieder",
+        "description": "Speichere die Website auf dem Smartphone, prüfe lokale Neuigkeiten und teile den Guide mit deiner Begleitung.",
+        "primaryCta": "Guide zu den Schluchten öffnen",
+        "newsCta": "Aktuelle Meldungen"
+      }
     }
   },
   "audio": {
